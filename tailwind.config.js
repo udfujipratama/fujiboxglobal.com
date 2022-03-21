@@ -1,11 +1,20 @@
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}'],
   plugins: [require('daisyui')],
+  daisyui: {
+    styled: true,
+    themes: ['corporate'],
+    base: true,
+    utils: true,
+    logs: true,
+    rtl: false,
+    prefix: '',
+    darkTheme: 'dark',
+  },
   theme: {
     colors: {
       transparent: 'transparent',
       current: 'currentColor',
-      whatsapp: 'green',
       white: '#ffffff',
       purple: '#3f3cbb',
       midnight: '#121063',
