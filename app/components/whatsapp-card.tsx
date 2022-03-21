@@ -8,15 +8,16 @@ export const WhatsAppCard: FunctionComponent<WhatsAppCardProps> = () => {
       <div className="card-body">
         <div className="flex justify-between items-center">
           <div>
-            <h2 className="card-title text-3xl mb-2">Leave us a message</h2>
+            <h2 className="card-title text-3xl mb-2">
+              Kontak kami via WhatsApp
+            </h2>
             <p className="max-w-xl">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consequatur incidunt beatae facilis dolor
+              Memudahkan Anda untuk berkomunikasi dengan tim kami.
             </p>
           </div>
           <div>
             <button className="btn gap-2 bg-white hover:bg-slate-100 text-whatsapp">
-              Message us
+              WhatsApp Kami
               <span>(WA)</span>
             </button>
           </div>
