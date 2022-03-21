@@ -1,11 +1,10 @@
-import { Navbar } from '~/components'
+import { Navbar, WhatsAppCard } from '~/components'
 
 export default function Index() {
   return (
     <div>
       <Navbar />
-
-      <button className="btn">Hello daisyUI</button>
+      <WhatsAppCard />
     </div>
   )
 }
