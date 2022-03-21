@@ -3,7 +3,17 @@ module.exports = {
   plugins: [require('daisyui')],
   daisyui: {
     styled: true,
-    themes: ['corporate'],
+    themes: [
+      {
+        corporate: {
+          ...require('daisyui/src/colors/themes')['[data-theme=corporate]'],
+          '--rounded-box': '1rem',
+          '--rounded-btn': '0.5rem',
+          '--rounded-badge': '1.9rem',
+          '--border-btn': '0',
+        },
+      },
+    ],
     base: true,
     utils: true,
     logs: true,
@@ -12,17 +22,10 @@ module.exports = {
     darkTheme: 'dark',
   },
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      white: '#ffffff',
-      purple: '#3f3cbb',
-      midnight: '#121063',
-      metal: '#565584',
-      tahiti: '#3ab7bf',
-      silver: '#ecebff',
-      'bubble-gum': '#ff77e9',
-      bermuda: '#78dcca',
+    extend: {
+      colors: {
+        whatsapp: '#48BB78',
+      },
     },
   },
 }
