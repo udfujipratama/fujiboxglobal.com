@@ -1,8 +1,11 @@
+import { Navbar } from '~/components'
+
 export default function Index() {
   return (
-    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
-      <h1>Fujibox Global</h1>
-      <h1>Staging</h1>
+    <div>
+      <Navbar />
+
+      <button className="btn">Hello daisyUI</button>
     </div>
   )
 }
