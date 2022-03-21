@@ -1,7 +1,7 @@
 export default function Index() {
   return (
-    <div style={{ fontFamily: "system-ui, sans-serif", lineHeight: "1.4" }}>
-      <h1>Fujibox Global</h1>
+    <div style={{ fontFamily: 'system-ui, sans-serif', lineHeight: '1.4' }}>
+      <h1>PT Fujibox Global Pratama</h1>
     </div>
-  );
+  )
 }
