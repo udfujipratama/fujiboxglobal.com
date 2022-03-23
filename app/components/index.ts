@@ -1,3 +1,5 @@
 export * from './navbar'
 export * from './product-cards'
 export * from './whatsapp-card'
+export * from './hero'
+export * from './category'
