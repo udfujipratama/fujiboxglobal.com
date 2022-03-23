@@ -1,3 +1,4 @@
+import { gql } from '@urql/core'
 import { LoaderFunction, useLoaderData } from 'remix'
 import {
   ArticleList,
@@ -8,14 +9,35 @@ import {
   ProductCards,
   WhatsAppCard,
 } from '~/components'
+import { graphcmsClient } from '~/lib'
 
 export const loader: LoaderFunction = async () => {
-  const products = [
-    { id: 1, name: 'Box 1' },
-    { id: 2, name: 'Box 2' },
-    { id: 3, name: 'Box 3' },
-    { id: 4, name: 'Box 4' },
-  ]
+  const allProductsQuery = gql`
+    query AllProducts {
+      products {
+        id
+        slug
+        name
+        description
+        width
+        height
+        length
+        images {
+          url
+        }
+      }
+    }
+  `
+
+  const response = await graphcmsClient.query(allProductsQuery).toPromise()
+  const { products } = response.data
+
+  // const products = [
+  //   { id: 1, name: 'Box 1' },
+  //   { id: 2, name: 'Box 2' },
+  //   { id: 3, name: 'Box 3' },
+  //   { id: 4, name: 'Box 4' },
+  // ]
 
   const categories = [
     { id: 1, name: 'Dus Kuning Emas' },
