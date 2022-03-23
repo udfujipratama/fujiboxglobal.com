@@ -9,9 +9,9 @@ export const ProductCards: FunctionComponent<ProductsProps> = ({
 	products,
 }) => {
 	return (
-		<div className="container lg mb-4">
+		<div className="container lg mb-8">
 			<article className="prose">
-				<h1>New Product</h1>
+				<h1>Produk Terbaru</h1>
 			</article>
 			<div className="flex gap-4">
 				{products.map((product) => {
@@ -39,7 +39,7 @@ export const ProductCard: FunctionComponent<ProductProps> = ({ product }) => {
 			<div className="card-body">
 				<h2 className="card-title">
 					{product.name}
-					<div className="badge badge-primary">BARU</div>
+					{/* <div className="badge badge-primary">BARU</div> */}
 				</h2>
 				<p>Deskripsi produk</p>
 				<div className="card-actions justify-end">

@@ -1,32 +1,32 @@
-import { FunctionComponent } from "react";
+import { FunctionComponent } from 'react';
+import { IoLogoWhatsapp } from 'react-icons/io';
 
 interface WhatsAppCardProps {}
 
 export const WhatsAppCard: FunctionComponent<WhatsAppCardProps> = () => {
-  return (
-    <div className="container lg mb-4">
-      <div className="card card-side bg-whatsapp text-white shadow-xl ">
-        <div className="card-body">
-          <div className="flex justify-between items-center">
-            <div>
-              <h2 className="card-title text-3xl mb-2">
-                Kontak kami via WhatsApp
-              </h2>
-              <p className="max-w-xl">
-                Memudahkan Anda untuk berkomunikasi dengan tim kami.
-              </p>
-            </div>
-            <div>
-              <button className="btn gap-2 bg-white hover:bg-slate-100 text-whatsapp">
-                WhatsApp Kami
-                <span>(WA)</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  );
+	return (
+		<div className="container lg mb-8">
+			<div className="card card-side bg-whatsapp text-white shadow-xl ">
+				<div className="card-body">
+					<div className="flex justify-between items-center">
+						<div>
+							<h2 className="card-title text-3xl mb-2">
+								Ingin terhubung langsung dengan marketing kami ?
+							</h2>
+						</div>
+						<div>
+							<button className="btn btn-lg btn-wide gap-2 bg-white hover:bg-slate-100 text-whatsapp">
+								Tanya Fujibox
+								<span>
+									<IoLogoWhatsapp />
+								</span>
+							</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
 };
 
 export default WhatsAppCard;

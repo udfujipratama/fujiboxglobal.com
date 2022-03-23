@@ -23,6 +23,9 @@ module.exports = {
   },
   theme: {
     extend: {
+      h2:{
+        marginTop: '0px'
+      },
       container: {
         center: true
       },
