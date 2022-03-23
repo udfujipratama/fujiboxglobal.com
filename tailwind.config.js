@@ -1,6 +1,6 @@
 module.exports = {
   content: ['./app/**/*.{js,ts,jsx,tsx}'],
-  plugins: [require('daisyui')],
+  plugins: [require("@tailwindcss/typography"), require('daisyui')],
   daisyui: {
     styled: true,
     themes: [
@@ -25,6 +25,10 @@ module.exports = {
     extend: {
       container: {
         center: true
+      },
+
+      minHeight:{
+        hero: '500px'
       },
       colors: {
         whatsapp: '#48BB78',
