@@ -5,7 +5,7 @@ interface NavbarProps {}
 
 export const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
-    <div className="container lg">
+    <div className="container lg mb-4">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
           <Link to="/" className="btn btn-ghost normal-case text-xl">
