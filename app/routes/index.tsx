@@ -1,7 +1,7 @@
 import { LoaderFunction, useLoaderData } from 'remix'
 import {
   ArticleList,
-  Category,
+  ProductCategorySection,
   Footer,
   Hero,
   Navbar,
@@ -41,7 +41,7 @@ export default function Index() {
       <Hero />
       <ProductCards products={products} />
       <WhatsAppCard />
-      <Category categories={categories} />
+      <ProductCategorySection categories={categories} />
       <ArticleList />
       <Footer />
     </div>
