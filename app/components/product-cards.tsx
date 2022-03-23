@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+import { Link } from 'remix'
 import { Product } from '~/types'
 
 interface ProductsProps {
@@ -10,7 +11,12 @@ export const ProductCards: FunctionComponent<ProductsProps> = ({
 }) => {
   return (
     <div className="container lg mb-8">
-      <h1 className="text-4xl font-bold">Produk Terbaru</h1>
+      <div className="flex items-center gap-4">
+        <h1 className="text-4xl font-bold">Produk Terbaru</h1>
+        <Link className="btn btn-sm" to="/products">
+          Lihat semua produk
+        </Link>
+      </div>
       <div className="flex gap-4">
         {products.map((product) => {
           return <ProductCard key={product.id} product={product} />
