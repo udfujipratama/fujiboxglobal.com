@@ -8,9 +8,9 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
     <div className="container lg mb-4">
       <div className="navbar bg-base-100">
         <div className="navbar-start">
-          <Link to="/" className="btn btn-ghost normal-case text-xl">
+          <Link to="/">
             <img
-              className="max-h-14"
+              className="max-h-12"
               src="/images/logo/fujibox-logo.png"
               alt="Fujibox"
             />
