@@ -16,9 +16,9 @@ export const ProductCategorySection: FunctionComponent<CategoryProps> = ({
             <h1 className="text-4xl font-bold">Kategori produk</h1>
           </div>
           <img
-            className="rounded-2xl object-fill max-h-[420px]"
+            className="rounded-2xl object-cover max-h-[520px]"
             alt="Contoh kategori produk"
-            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/ifohFFVvQ26HWzskzf8p"
+            src="https://media.graphassets.com/ifohFFVvQ26HWzskzf8p"
           />
         </div>
         <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
@@ -39,11 +39,7 @@ const CategoryCard: FunctionComponent<CategoryCardsProps> = ({ category }) => {
   return (
     <div className="card bg-base-100 shadow-xl w-full hover:bg-fujibox hover:text-white">
       <figure>
-        <img
-          // src="https://images.unsplash.com/photo-1626253934161-08cfea22e968?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1306&q=80"
-          src={category.image.url}
-          alt="product-image-category"
-        />
+        <img src={category.image.url} alt={category.name} />
       </figure>
       <div className="card-body">
         <h2 className="card-title">{category.name}</h2>
