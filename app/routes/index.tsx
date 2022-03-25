@@ -53,14 +53,12 @@ export default function Index() {
   const { products, categories } = useLoaderData()
 
   return (
-    <div>
-      <Navbar />
+    <>
       <Hero />
       <ProductCards products={products} />
       <WhatsAppCard />
       <ProductCategorySection categories={categories} />
       {/* <ArticleList /> */}
-      <Footer />
-    </div>
+    </>
   )
 }
