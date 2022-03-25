@@ -12,8 +12,8 @@ import {
 import { graphcmsClient } from '~/lib'
 
 export const loader: LoaderFunction = async () => {
-  const allProductsQuery = gql`
-    query AllProducts {
+  const allProductsAndCategoryQuery = gql`
+    query AllProductsAndCategory {
       products {
         id
         slug
@@ -38,7 +38,9 @@ export const loader: LoaderFunction = async () => {
     }
   `
 
-  const response = await graphcmsClient.query(allProductsQuery).toPromise()
+  const response = await graphcmsClient
+    .query(allProductsAndCategoryQuery)
+    .toPromise()
   const { products, categories } = response.data
 
   return {
@@ -53,6 +55,7 @@ export default function Index() {
   return (
     <div>
       <Navbar />
+
       <Hero />
       <ProductCards products={products} />
       <WhatsAppCard />

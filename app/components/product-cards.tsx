@@ -1,9 +1,9 @@
 import { FunctionComponent } from 'react'
 import { Link } from 'remix'
-import { Product } from '~/types'
+import { TProduct } from '~/types'
 
 interface ProductsProps {
-  products: Product[]
+  products: TProduct[]
 }
 
 export const ProductCards: FunctionComponent<ProductsProps> = ({
@@ -13,7 +13,7 @@ export const ProductCards: FunctionComponent<ProductsProps> = ({
     <div className="container lg mb-8">
       <div className="flex items-center gap-4">
         <h1 className="text-4xl font-bold">Produk Terbaru</h1>
-        <Link className="btn btn-sm" to="/products">
+        <Link className="btn btn-primary btn-sm" to="/products">
           Lihat semua produk
         </Link>
       </div>
@@ -27,29 +27,29 @@ export const ProductCards: FunctionComponent<ProductsProps> = ({
 }
 
 interface ProductProps {
-  product: Product
+  product: TProduct
 }
 
 export const ProductCard: FunctionComponent<ProductProps> = ({ product }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-lg">
+    <div className="card w-96 bg-base-100 shadow-lg hover:bg-fujibox hover:text-white">
       <figure>
         <img
           className="min-h-[225px]"
-          src="https://images.unsplash.com/photo-1607166452427-7e4477079cb9?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1770&q=80"
+          src={product.images[0].url}
           alt={product.name}
         />
       </figure>
       <div className="card-body">
         <h2 className="card-title">
-          {product.name}
+          Product Name
           {/* <div className="badge badge-primary">BARU</div> */}
         </h2>
-        <p>Deskripsi produk</p>
+        {/* <p>Deskripsi produk</p>
         <div className="card-actions justify-end">
           <div className="badge badge-outline">Label 1</div>
           <div className="badge badge-outline">Label 2</div>
-        </div>
+        </div> */}
       </div>
     </div>
   )

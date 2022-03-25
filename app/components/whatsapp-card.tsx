@@ -16,7 +16,7 @@ export const WhatsAppCard: FunctionComponent<WhatsAppCardProps> = () => {
             </div>
             <div>
               <a
-                href="https://wa.me/6281234567890"
+                href="https://wa.me/6281291071355"
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-lg btn-wide gap-2 bg-white hover:bg-slate-100 text-whatsapp"

@@ -35,6 +35,7 @@ module.exports = {
       },
       colors: {
         whatsapp: '#48BB78',
+        fujibox: '#2f5f99'
       },
     },
   },
