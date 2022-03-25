@@ -1,5 +1,6 @@
 import { gql } from '@urql/core'
 import { json, Link, LoaderFunction, useLoaderData } from 'remix'
+import { CardsList } from '~/components'
 import { graphcmsClient } from '~/lib'
 import { Tcategory } from '~/types'
 
@@ -30,15 +31,9 @@ export default function Categories() {
 
   return (
     <>
-      {categories.map((category) => {
-        return (
-          <div key={category.id}>
-            <Link to={`/kategori/${category.slug}`}>{category.name}</Link>
-          </div>
-        )
-      })}
-
-      {/* <pre>{JSON.stringify(categories, null, 2)}</pre> */}
+      <div>
+        <CardsList route="kategori" items={categories} />
+      </div>
     </>
   )
 }
