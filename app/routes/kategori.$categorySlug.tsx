@@ -32,9 +32,7 @@ export const loader: LoaderFunction = async ({ params }) => {
     .toPromise()
   const { category } = response.data
 
-  return json({
-    category,
-  })
+  return json(category)
 }
 
 export default function CategorySlug() {
