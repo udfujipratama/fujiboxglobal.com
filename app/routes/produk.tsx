@@ -98,7 +98,16 @@ export default function Products() {
 
           <div id="items-pagination">
             <CardsList route="produk" items={products} />
-            <div>Pagination</div>
+            <div className="flex justify-center mt-10">
+              <div className="btn-group">
+                <button className="btn btn-sm">«</button>
+                <button className="btn btn-sm btn-active">1</button>
+                <button className="btn btn-sm">2</button>
+                <button className="btn btn-sm">3</button>
+                <button className="btn btn-sm">4</button>
+                <button className="btn btn-sm">»</button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
