@@ -11,8 +11,8 @@ export const ProductCards: FunctionComponent<ProductsProps> = ({
 }) => {
   return (
     <div className="container lg mb-8">
-      <div className="flex items-center gap-4">
-        <h1 className="text-4xl font-bold">Produk Terbaru</h1>
+      <div className="flex items-center gap-4 mb-4">
+        <h1 className="text-4xl font-bold">Produk terbaru</h1>
         <Link className="btn btn-primary btn-sm" to="/products">
           Lihat semua produk
         </Link>
@@ -32,7 +32,7 @@ interface ProductProps {
 
 export const ProductCard: FunctionComponent<ProductProps> = ({ product }) => {
   return (
-    <div className="card w-96 bg-base-100 shadow-lg hover:bg-fujibox hover:text-white">
+    <div className="card w-96 bg-base-100 shadow-lg hover:bg-fujibox hover:text-white cursor-pointer">
       <figure>
         <img
           className="min-h-[225px]"
@@ -42,14 +42,9 @@ export const ProductCard: FunctionComponent<ProductProps> = ({ product }) => {
       </figure>
       <div className="card-body">
         <h2 className="card-title">
-          Product Name
+          {product.name}
           {/* <div className="badge badge-primary">BARU</div> */}
         </h2>
-        {/* <p>Deskripsi produk</p>
-        <div className="card-actions justify-end">
-          <div className="badge badge-outline">Label 1</div>
-          <div className="badge badge-outline">Label 2</div>
-        </div> */}
       </div>
     </div>
   )

@@ -11,7 +11,7 @@ export const WhatsAppCard: FunctionComponent<WhatsAppCardProps> = () => {
           <div className="flex justify-between items-center">
             <div>
               <h2 className="card-title text-3xl mb-2">
-                Ingin terhubung langsung dengan marketing kami ?
+                Ingin terhubung langsung dengan marketing kami?
               </h2>
             </div>
             <div>

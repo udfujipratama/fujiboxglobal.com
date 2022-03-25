@@ -55,12 +55,11 @@ export default function Index() {
   return (
     <div>
       <Navbar />
-
       <Hero />
       <ProductCards products={products} />
       <WhatsAppCard />
       <ProductCategorySection categories={categories} />
-      <ArticleList />
+      {/* <ArticleList /> */}
       <Footer />
     </div>
   )
