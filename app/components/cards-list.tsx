@@ -29,12 +29,12 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
 
   return (
     <Link to={`/${route}/${item.slug}`}>
-      <div className="card bg-base-100 shadow-xl w-full hover:bg-fujibox hover:text-white cursor-pointer">
+      <div className="card card-compact bg-base-100 shadow-xl w-full hover:bg-fujibox hover:text-white cursor-pointer">
         <figure>
           <img src={itemImageUrl} alt={item.name} />
         </figure>
         <div className="card-body">
-          <h2 className="card-title">{item.name}</h2>
+          <h2 className="card-title text-base">{item.name}</h2>
         </div>
       </div>
     </Link>

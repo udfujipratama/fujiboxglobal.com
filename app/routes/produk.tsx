@@ -35,8 +35,20 @@ export default function Products() {
 
   return (
     <>
-      <div>
-        <CardsList route="produk" items={products} />
+      <div className="container my-20">
+        <nav>Breadcrumb</nav>
+
+        <div id="sidebar-items" className="flex flex-col xl:flex-row">
+          <aside id="sidebar" className="flex flex-col min-w-[250px]">
+            <div id="sidebar-categories">Categories</div>
+            <div id="sidebar-collections">Collections</div>
+          </aside>
+
+          <div id="items-pagination">
+            <CardsList route="produk" items={products} />
+            <div>Pagination</div>
+          </div>
+        </div>
       </div>
     </>
   )

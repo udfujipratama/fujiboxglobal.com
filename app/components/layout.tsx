@@ -9,7 +9,7 @@ export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div>
       <Navbar />
-      {children}
+      <div className="mx-4">{children}</div>
       <Footer />
     </div>
   )
