@@ -8,8 +8,8 @@ export const WhatsAppCard: FunctionComponent<WhatsAppCardProps> = () => {
     <div className="container lg mb-8">
       <div className="card card-side bg-whatsapp text-white shadow-xl ">
         <div className="card-body">
-          <div className="flex justify-between items-center">
-            <div>
+          <div className="flex flex-col md:flex-row justify-between md:items-center">
+            <div className="mb-4 md:mb-0">
               <h2 className="card-title text-3xl mb-2">
                 Ingin terhubung langsung dengan marketing kami?
               </h2>
