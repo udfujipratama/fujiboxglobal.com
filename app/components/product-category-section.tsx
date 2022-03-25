@@ -15,7 +15,7 @@ export const ProductCategorySection: FunctionComponent<CategoryProps> = ({
         <div className="flex flex-col">
           <div className="flex items-center gap-4 mb-4">
             <h1 className="text-4xl font-bold">Kategori produk</h1>
-            <Link className="btn btn-primary btn-sm" to="/categories">
+            <Link className="btn btn-primary btn-sm" to="/kategori">
               Lihat semua kategori
             </Link>
           </div>

@@ -30,8 +30,8 @@ export default function ProductSlug() {
   const product = useLoaderData()
 
   return (
-    <div>
+    <>
       <pre>{JSON.stringify(product, null, 2)}</pre>
-    </div>
+    </>
   )
 }

@@ -29,16 +29,16 @@ export default function Categories() {
   const categories = useLoaderData<CategoriesData>()
 
   return (
-    <div>
+    <>
       {categories.map((category) => {
         return (
           <div key={category.id}>
-            <Link to={`/categories/${category.slug}`}>{category.name}</Link>
+            <Link to={`/kategori/${category.slug}`}>{category.name}</Link>
           </div>
         )
       })}
 
       {/* <pre>{JSON.stringify(categories, null, 2)}</pre> */}
-    </div>
+    </>
   )
 }

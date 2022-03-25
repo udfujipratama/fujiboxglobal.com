@@ -13,7 +13,7 @@ export const ProductCards: FunctionComponent<ProductsProps> = ({
     <div className="container lg mb-8">
       <div className="flex items-center gap-4 mb-4">
         <h1 className="text-4xl font-bold">Produk terbaru</h1>
-        <Link className="btn btn-primary btn-sm" to="/products">
+        <Link className="btn btn-primary btn-sm" to="/produk">
           Lihat semua produk
         </Link>
       </div>

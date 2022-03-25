@@ -41,8 +41,8 @@ export default function CategorySlug() {
   const category = useLoaderData()
 
   return (
-    <div>
+    <>
       <pre>{JSON.stringify(category, null, 2)}</pre>
-    </div>
+    </>
   )
 }

@@ -24,13 +24,16 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
                 <Link to="/">Beranda</Link>
               </li>
               <li>
-                <Link to="/produk">Katalog</Link>
+                <Link to="/produk">Produk</Link>
               </li>
               <li>
-                <Link to="/cerita">Artikel</Link>
+                <Link to="/kategori">Kategori</Link>
               </li>
               <li>
-                <Link to="/kontak">Pemesanan</Link>
+                <Link to="/koleksi">Koleksi</Link>
+              </li>
+              <li>
+                <Link to="/pemesanan">Pemesanan</Link>
               </li>
             </ul>
           </div>

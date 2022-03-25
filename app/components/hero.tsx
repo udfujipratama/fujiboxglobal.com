@@ -12,7 +12,7 @@ export const Hero: FunctionComponent<HeroProps> = () => {
           <div className="max-w-md">
             <h1 className="mb-5 text-5xl font-bold">Selamat datang</h1>
             <p className="mb-5">Berbagai produk untuk kemasan dan dus.</p>
-            <Link className="btn btn-primary" to="/products">
+            <Link className="btn btn-primary" to="/produk">
               Lihat semua produk
             </Link>
           </div>

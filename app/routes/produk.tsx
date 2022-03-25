@@ -35,19 +35,17 @@ export default function Products() {
 
   return (
     <>
-      <Navbar />
       <div>
         {products.map((product) => {
           return (
-            <div>
-              <Link to={`/products/${product.slug}`}>{product.name}</Link>
+            <div key={product.id}>
+              <Link to={`/produk/${product.slug}`}>{product.name}</Link>
             </div>
           )
         })}
         {/* 
         <pre>{JSON.stringify(products, null, 2)}</pre> */}
       </div>
-      <Footer />
     </>
   )
 }
