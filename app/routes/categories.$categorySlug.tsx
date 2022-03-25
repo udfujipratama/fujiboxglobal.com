@@ -5,28 +5,36 @@ import { graphcmsClient } from '~/lib'
 export const loader: LoaderFunction = async ({ params }) => {
   const { categorySlug } = params
 
-  const oneCategoryQuery = gql`
-    query OneCategory($slug: String) {
-      categories(where: { slug: $slug }) {
+  const oneCategoryBySlugQuery = gql`
+    query oneCategoryBySlug($slug: String!) {
+      category(where: { slug: $slug }) {
+        id
+        name
+        image {
+          url
+        }
         products {
-          height
           id
           name
           material
-          width
+          height
           length
+          width
+          images {
+            url
+          }
         }
       }
     }
   `
   const response = await graphcmsClient
-    .query(oneCategoryQuery, { slug: categorySlug })
+    .query(oneCategoryBySlugQuery, { slug: categorySlug })
     .toPromise()
-  const { categories } = response.data
+  const { category } = response.data
 
-  return {
-    categories,
-  }
+  return json({
+    category,
+  })
 }
 
 export default function CategorySlug() {
@@ -34,7 +42,7 @@ export default function CategorySlug() {
 
   return (
     <div>
-      <pre> {JSON.stringify(category, null, 2)}</pre>
+      <pre>{JSON.stringify(category, null, 2)}</pre>
     </div>
   )
 }
