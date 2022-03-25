@@ -12,6 +12,9 @@ export const loader: LoaderFunction = async () => {
         id
         name
         slug
+        image {
+          url
+        }
       }
     }
   `
@@ -29,7 +32,7 @@ export default function Categories() {
     <div>
       {categories.map((category) => {
         return (
-          <div>
+          <div key={category.id}>
             <Link to={`/categories/${category.slug}`}>{category.name}</Link>
           </div>
         )
