@@ -4,26 +4,39 @@ import { graphcmsClient } from '~/lib'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const { productSlug } = params
-  const oneProductQuery = gql`
-    query OneProduct($slug: String) {
-      products(where: { slug: $slug }) {
-        description
-        height
+  const oneProductBySlugQuery = gql`
+    query OneProductBySlug($slug: String) {
+      product(where: { slug: $slug }) {
         id
-        length
-        material
         name
         slug
+        description
+        material
+        height
+        length
         width
+        images {
+          url
+        }
+        categories {
+          id
+          name
+          slug
+        }
+        collections {
+          id
+          name
+          slug
+        }
       }
     }
   `
   const response = await graphcmsClient
-    .query(oneProductQuery, { slug: productSlug })
+    .query(oneProductBySlugQuery, { slug: productSlug })
     .toPromise()
-  const { products } = response.data
+  const { product } = response.data
 
-  return json(products)
+  return json(product)
 }
 
 export default function ProductSlug() {
