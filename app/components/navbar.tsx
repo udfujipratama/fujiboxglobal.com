@@ -27,14 +27,14 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
                 <Link to="/produk">Produk</Link>
               </li>
               <li>
+                <Link to="/pemesanan">Pemesanan</Link>
+              </li>
+              {/* <li>
                 <Link to="/kategori">Kategori</Link>
               </li>
               <li>
                 <Link to="/koleksi">Koleksi</Link>
-              </li>
-              <li>
-                <Link to="/pemesanan">Pemesanan</Link>
-              </li>
+              </li> */}
             </ul>
           </div>
           <div className="dropdown dropdown-end">
