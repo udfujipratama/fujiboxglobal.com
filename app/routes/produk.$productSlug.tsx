@@ -1,9 +1,9 @@
 import { gql } from '@urql/core'
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { json, Link, LoaderFunction, useLoaderData } from 'remix'
+import { ProductImagesCarousel } from '~/components'
 import { RecommendedProducts } from '~/contents'
 import { graphcmsClient } from '~/lib'
-import Products from './produk'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const { productSlug } = params
@@ -19,6 +19,7 @@ export const loader: LoaderFunction = async ({ params }) => {
         length
         width
         images {
+          id
           url
         }
         categories {
@@ -57,9 +58,10 @@ export default function ProductSlug() {
     <>
       <div className="container">
         <div className="flex flex-col md:flex-row gap-8">
-          <div className="border-solid border-2 border-gray">
+          <ProductImagesCarousel productImages={product.images} />
+          {/* <div className="border-solid border-2 border-gray">
             <img src={product.images[0].url} alt={product.name} />
-          </div>
+          </div> */}
           <div className="w-full max-w-[500px]">
             <nav className="text-base breadcrumbs text-slate-400">
               <ul>
