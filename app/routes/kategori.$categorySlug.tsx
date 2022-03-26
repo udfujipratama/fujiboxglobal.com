@@ -1,5 +1,6 @@
 import { gql } from '@urql/core'
 import { json, LoaderFunction, useLoaderData } from 'remix'
+import { ProductsExplorer } from '~/contents'
 import { graphcmsClient } from '~/lib'
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -25,22 +26,40 @@ export const loader: LoaderFunction = async ({ params }) => {
           }
         }
       }
+      categories {
+        id
+        slug
+        name
+      }
+      collections {
+        id
+        slug
+        name
+      }
     }
   `
   const response = await graphcmsClient
     .query(oneCategoryBySlugQuery, { slug: categorySlug })
     .toPromise()
-  const { category } = response.data
+  const { category, categories, collections } = response.data
 
-  return json(category)
+  return json({ category, categories, collections })
 }
 
 export default function CategorySlug() {
-  const category = useLoaderData()
+  const { category, categories, collections } = useLoaderData()
 
   return (
     <>
-      <pre>{JSON.stringify(category, null, 2)}</pre>
+      <div className="container mt-10">
+        <h2 className="text-4xl">{category.name}</h2>
+      </div>
+
+      <ProductsExplorer
+        products={category.products}
+        categories={categories}
+        collections={collections}
+      />
     </>
   )
 }
