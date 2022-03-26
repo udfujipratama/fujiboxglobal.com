@@ -59,6 +59,9 @@ export default function ProductSlug() {
                 <li>
                   <Link to="/produk">Produk</Link>
                 </li>
+                <li>
+                  <Link to={`/produk/${product.slug}`}>{product.name}</Link>
+                </li>
               </ul>
             </nav>
             <h1 className="text-4xl mb-4">{product.name}</h1>
