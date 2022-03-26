@@ -1,5 +1,6 @@
 import { gql } from '@urql/core'
-import { json, LoaderFunction, useLoaderData } from 'remix'
+import { IoLogoWhatsapp } from 'react-icons/io'
+import { json, Link, LoaderFunction, useLoaderData } from 'remix'
 import { graphcmsClient } from '~/lib'
 
 export const loader: LoaderFunction = async ({ params }) => {
@@ -44,7 +45,51 @@ export default function ProductSlug() {
 
   return (
     <>
-      <pre>{JSON.stringify(product, null, 2)}</pre>
+      <div className="container">
+        <div className="flex justify-between">
+          <div className="border-solid border-2 border-gray">
+            <img src={product.images[0].url} alt={product.name} />
+          </div>
+          <div className="w-1/2">
+            <nav className="text-base breadcrumbs text-slate-400">
+              <ul>
+                <li>
+                  <Link to="/">Beranda</Link>
+                </li>
+                <li>
+                  <Link to="/produk">Produk</Link>
+                </li>
+              </ul>
+            </nav>
+            <h1 className="text-4xl mb-4">{product.name}</h1>
+            <div className="grid grid-cols-[60px_1fr] gap-4 border-solid border-2 border-gray p-4">
+              <div>Bahan:</div>
+              <div>{product.material}</div>
+              <div>Panjang:</div>
+              <div>{product.length} cm</div>
+              <div>Lebar: </div>
+              <div>{product.width} cm </div>
+              <div>Tinggi: </div>
+              <div>{product.height} cm</div>
+              <div>Kategori:</div>
+              <div>
+                {product.categories.map((category: any) => {
+                  return (
+                    <Link key={category.id} to={`/kategori/${category.slug}`}>
+                      {category.name},
+                    </Link>
+                  )
+                })}
+              </div>
+            </div>
+            <div className="p-4">
+              <h2 className="text-2xl mb-4">Deskripsi</h2>
+              <p>{product.description}</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      {/* <pre>{JSON.stringify(product, null, 2)}</pre> */}
     </>
   )
 }
