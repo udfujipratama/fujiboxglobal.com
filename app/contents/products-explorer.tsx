@@ -64,7 +64,12 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
           </aside>
 
           <div id="items-pagination">
-            <CardsList route="produk" items={products} />
+            {products.length > 0 ? (
+              <CardsList route="produk" items={products} />
+            ) : (
+              <p>Maaf tidak ada produk tersedia.</p>
+            )}
+
             <div className="flex justify-center mt-10">
               <div className="btn-group">
                 <button className="btn btn-sm">«</button>
