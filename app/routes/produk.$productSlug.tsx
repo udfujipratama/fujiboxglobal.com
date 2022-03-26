@@ -32,7 +32,7 @@ export const loader: LoaderFunction = async ({ params }) => {
           slug
         }
       }
-      products {
+      products(first: 5) {
         id
         slug
         name

@@ -6,7 +6,7 @@ import { graphcmsClient } from '~/lib'
 export const loader: LoaderFunction = async () => {
   const allProductsAndCategoryQuery = gql`
     query AllProductsAndCategory {
-      products {
+      products(first: 10) {
         id
         slug
         name
@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async () => {
           url
         }
       }
-      categories {
+      categories(first: 10) {
         id
         slug
         name
