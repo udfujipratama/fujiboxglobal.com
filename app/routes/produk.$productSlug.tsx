@@ -56,7 +56,7 @@ export default function ProductSlug() {
 
   return (
     <>
-      <div className="container">
+      <div className="container max-w-5xl">
         <div className="flex flex-col md:flex-row gap-8">
           <ProductImagesCarousel productImages={product.images} />
           {/* <div className="border-solid border-2 border-gray">

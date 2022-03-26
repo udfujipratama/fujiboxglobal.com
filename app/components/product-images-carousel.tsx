@@ -15,11 +15,11 @@ export const ProductImagesCarousel: FunctionComponent<
             <div
               key={productImage.id}
               id={`item${index + 1}`}
-              className="carousel-item w-full max-w-[500px] border-solid border-2 border-gray"
+              className="carousel-item w-full max-w-[500px]"
             >
               <img
                 src={productImage.url}
-                className="object-cover w-full max-w-[500px]"
+                className="object-cover w-full max-w-[500px] border-solid border-2 border-gray"
                 alt={`Gambar produk ${index + 1}`}
               />
             </div>
@@ -32,7 +32,7 @@ export const ProductImagesCarousel: FunctionComponent<
             <a key={productImage.id} href={`#item${index + 1}`}>
               <img
                 src={productImage.url}
-                className="object-cover h-[50px] w-[50px] lg:h-[100px] lg:w-[100px]"
+                className="object-cover h-[50px] w-[50px] lg:h-[100px] lg:w-[100px] border-solid border-2 border-gray"
                 alt={`Gambar produk ${index + 1}`}
               />
             </a>
