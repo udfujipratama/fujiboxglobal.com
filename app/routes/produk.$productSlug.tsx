@@ -75,11 +75,24 @@ export default function ProductSlug() {
               <div>Tinggi: </div>
               <div>{product.height} cm</div>
               <div>Kategori:</div>
-              <div>
+              <div className="flex flex-wrap gap-2">
                 {product.categories.map((category: any) => {
                   return (
                     <Link key={category.id} to={`/kategori/${category.slug}`}>
-                      {category.name},
+                      {category.name}
+                    </Link>
+                  )
+                })}
+              </div>
+              <div>Koleksi:</div>
+              <div className="flex flex-wrap gap-2">
+                {product.collections.map((collection: any) => {
+                  return (
+                    <Link
+                      key={collection.id}
+                      to={`/koleksi/${collection.slug}`}
+                    >
+                      {collection.name}
                     </Link>
                   )
                 })}
