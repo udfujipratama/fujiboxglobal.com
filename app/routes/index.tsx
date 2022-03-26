@@ -49,7 +49,7 @@ export default function Index() {
       <Hero />
 
       <div className="container my-20">
-        <div className="flex items-center gap-4 mb-4">
+        <div className="flex flex-wrap items-center gap-4 mb-4">
           <h1 className="text-4xl font-bold">Produk terbaru</h1>
           <Link className="btn btn-primary btn-sm" to="/produk">
             Lihat semua produk
@@ -63,7 +63,7 @@ export default function Index() {
       <div className="container my-20">
         <div className="flex w-full justify-between flex-col gap-4">
           <div className="flex flex-col">
-            <div className="flex items-center gap-4 mb-4">
+            <div className="flex flex-wrap items-center gap-4 mb-4">
               <h1 className="text-4xl font-bold">Kategori produk</h1>
               <Link className="btn btn-primary btn-sm" to="/kategori">
                 Lihat semua kategori
