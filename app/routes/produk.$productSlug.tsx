@@ -1,7 +1,9 @@
 import { gql } from '@urql/core'
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { json, Link, LoaderFunction, useLoaderData } from 'remix'
+import { RecommendedProducts } from '~/contents'
 import { graphcmsClient } from '~/lib'
+import Products from './produk'
 
 export const loader: LoaderFunction = async ({ params }) => {
   const { productSlug } = params
@@ -30,18 +32,26 @@ export const loader: LoaderFunction = async ({ params }) => {
           slug
         }
       }
+      products {
+        id
+        slug
+        name
+        images {
+          url
+        }
+      }
     }
   `
   const response = await graphcmsClient
     .query(oneProductBySlugQuery, { slug: productSlug })
     .toPromise()
-  const { product } = response.data
+  const { product, products } = response.data
 
-  return json(product)
+  return json({ product, products })
 }
 
 export default function ProductSlug() {
-  const product = useLoaderData()
+  const { product, products } = useLoaderData()
 
   return (
     <>
@@ -118,6 +128,7 @@ export default function ProductSlug() {
           </div>
         </div>
       </div>
+      <RecommendedProducts products={products} />
       {/* <pre>{JSON.stringify(product, null, 2)}</pre> */}
     </>
   )
