@@ -10,11 +10,11 @@ export const WhatsAppCard: FunctionComponent<WhatsAppCardProps> = () => {
         <div className="card-body">
           <div className="flex flex-col md:flex-row justify-between md:items-center">
             <div className="mb-4 md:mb-0">
-              <h2 className="card-title text-3xl mb-2">
+              <h2 className="card-title text-center text-3xl mb-2">
                 Ingin terhubung langsung dengan marketing kami?
               </h2>
             </div>
-            <div>
+            <div className="flex justify-center">
               <a
                 href="https://wa.me/6281291071355"
                 target="_blank"
