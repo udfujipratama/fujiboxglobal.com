@@ -46,11 +46,11 @@ export default function ProductSlug() {
   return (
     <>
       <div className="container">
-        <div className="flex justify-between">
+        <div className="flex flex-col md:flex-row gap-8">
           <div className="border-solid border-2 border-gray">
             <img src={product.images[0].url} alt={product.name} />
           </div>
-          <div className="w-1/2">
+          <div className="w-full max-w-[500px]">
             <nav className="text-base breadcrumbs text-slate-400">
               <ul>
                 <li>

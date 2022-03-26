@@ -5,7 +5,7 @@ interface FooterProps {}
 
 export const Footer: FunctionComponent<FooterProps> = () => {
   return (
-    <footer className="footer footer-center p-10 bg-base-200 text-base-content rounded">
+    <footer className="footer footer-center p-10 mt-40 bg-base-200 text-base-content rounded">
       <div className="grid grid-flow-col gap-4">
         <Link to="/" className="link link-hover">
           Beranda
