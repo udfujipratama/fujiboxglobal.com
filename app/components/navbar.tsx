@@ -29,12 +29,6 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
               <li>
                 <Link to="/pemesanan">Pemesanan</Link>
               </li>
-              {/* <li>
-                <Link to="/kategori">Kategori</Link>
-              </li>
-              <li>
-                <Link to="/koleksi">Koleksi</Link>
-              </li> */}
             </ul>
           </div>
           <div className="dropdown dropdown-end">
@@ -62,13 +56,10 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
                 <Link to="/">Beranda</Link>
               </li>
               <li>
-                <Link to="/produk">Katalog</Link>
+                <Link to="/produk">Produk</Link>
               </li>
               <li>
-                <Link to="/cerita">Artikel</Link>
-              </li>
-              <li>
-                <Link to="/kontak">Pemesanan</Link>
+                <Link to="/pemesanan">Pemesanan</Link>
               </li>
             </ul>
           </div>
