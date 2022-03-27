@@ -17,6 +17,7 @@ export const loader: LoaderFunction = async ({ params }) => {
         products {
           id
           name
+          slug
           material
           height
           length
@@ -48,7 +49,6 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function CategorySlug() {
   const { category, categories, collections } = useLoaderData()
-
   return (
     <>
       <div className="container mt-10">
