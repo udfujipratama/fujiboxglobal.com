@@ -70,7 +70,7 @@ export default function Index() {
               </Link>
             </div>
             <img
-              className="rounded-2xl object-cover max-h-[520px]"
+              className="rounded-2xl object-cover max-h-[700px]"
               alt="Kategori produk"
               src="https://media.graphassets.com/ifohFFVvQ26HWzskzf8p"
             />
