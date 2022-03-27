@@ -10,7 +10,7 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
         <div className="navbar-start">
           <Link to="/">
             <img
-              className="max-h-12"
+              className="max-h-10"
               src="/images/logo/fujibox-logo.png"
               alt="Fujibox"
             />
