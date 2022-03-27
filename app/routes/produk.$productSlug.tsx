@@ -63,7 +63,7 @@ export default function ProductSlug() {
             <img src={product.images[0].url} alt={product.name} />
           </div> */}
           <div className="w-full max-w-[500px]">
-            <nav className="text-base breadcrumbs text-slate-400">
+            <nav className="text-base breadcrumbs overflow-x-hidden text-slate-400">
               <ul>
                 <li>
                   <Link to="/">Beranda</Link>
