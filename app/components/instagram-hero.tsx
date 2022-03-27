@@ -16,7 +16,7 @@ export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <span className="text-lg">Follow us on</span>
+              <span className="text-lg">Follow us @fujiboxglobal</span>
               <span className="text-xl mb-1">
                 <GrInstagram />
               </span>
