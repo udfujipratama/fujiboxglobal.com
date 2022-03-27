@@ -8,7 +8,9 @@ export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
       <div className="hero min-h-screen shadow-2xl">
         <div className="hero-content flex-col gap-1">
           <div className="my-20">
-            <h1 className="text-5xl font-bold">Kami hadir di Instagram !</h1>
+            <h1 className="text-4xl text-center md:text-5xl font-bold">
+              Kami hadir di Instagram !
+            </h1>
             <div className="w-full"></div>
             <a
               href={`https://www.instagram.com/fujiboxglobal/?hl=en`}
@@ -16,8 +18,8 @@ export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
               target="_blank"
               rel="noreferrer"
             >
-              <span className="text-lg">Follow us @fujiboxglobal</span>
-              <span className="text-xl mb-1">
+              <span className="text-lg md:text-xl">Follow us </span>
+              <span className="text-lg md:text-xl mb-1">
                 <GrInstagram />
               </span>
             </a>
