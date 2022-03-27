@@ -4,7 +4,7 @@ interface ArticleListProps {}
 
 export const ArticleList: FunctionComponent<ArticleListProps> = () => {
   return (
-    <div className="container lg mb-8">
+    <div className="container mb-8">
       <article className="prose mb-4">
         <h1>Edukasi pembeli</h1>
       </article>
