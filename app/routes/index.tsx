@@ -1,6 +1,6 @@
 import { gql } from '@urql/core'
 import { Link, LoaderFunction, useLoaderData } from 'remix'
-import { CardsList, Hero, WhatsAppCard } from '~/components'
+import { CardsList, Hero, InstagramHero, WhatsAppCard } from '~/components'
 import { graphcmsClient } from '~/lib'
 
 export const loader: LoaderFunction = async () => {
@@ -47,7 +47,6 @@ export default function Index() {
   return (
     <>
       <Hero />
-
       <div className="container my-20">
         <div className="flex flex-wrap items-center gap-4 mb-4">
           <h1 className="text-4xl font-bold">Produk terbaru</h1>
@@ -57,9 +56,7 @@ export default function Index() {
         </div>
         <CardsList route="produk" items={products} />
       </div>
-
       <WhatsAppCard />
-
       <div className="container my-20">
         <div className="flex w-full justify-between flex-col gap-4">
           <div className="flex flex-col">
@@ -78,6 +75,7 @@ export default function Index() {
           <CardsList route="kategori" items={categories} />
         </div>
       </div>
+      <InstagramHero />
     </>
   )
 }
