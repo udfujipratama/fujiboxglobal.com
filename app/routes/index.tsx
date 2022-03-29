@@ -70,7 +70,7 @@ export default function Index() {
             <img
               className="rounded-2xl object-cover max-h-[700px]"
               alt="Kategori produk"
-              src="https://media.graphassets.com/ifohFFVvQ26HWzskzf8p"
+              src="https://media.graphcms.com/MtQ6cUD5QIysrF7zJiMd?_ga=2.219704345.1809180898.1648532698-1199703748.1645432742"
             />
           </div>
           <CardsList route="kategori" items={categories} />
