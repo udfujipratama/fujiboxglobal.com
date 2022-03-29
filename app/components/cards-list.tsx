@@ -29,7 +29,7 @@ interface CardItemsProps {
 
 const CardItem: FunctionComponent<CardItemsProps> = ({ route, item, tag }) => {
   const itemImageUrl = item.image?.url ? item.image?.url : item.images[0].url
-  console.log(tag)
+
   return (
     <Link to={`/${route}/${item.slug}`}>
       <div className="card card-compact bg-base-100 shadow-xl w-full hover:bg-primary hover:text-white cursor-pointer">
