@@ -51,10 +51,6 @@ export default function CategorySlug() {
   const { category, categories, collections } = useLoaderData()
   return (
     <>
-      <div className="container mt-10">
-        <h2 className="text-4xl">{category.name}</h2>
-      </div>
-
       <ProductsExplorer
         products={category.products}
         categories={categories}
