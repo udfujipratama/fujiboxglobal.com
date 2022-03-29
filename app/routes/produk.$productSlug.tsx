@@ -13,11 +13,13 @@ export const loader: LoaderFunction = async ({ params }) => {
         id
         name
         slug
-        description
         material
         height
         length
         width
+        exampleRichText {
+          html
+        }
         images {
           id
           url
@@ -53,17 +55,15 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function ProductSlug() {
   const { product, products } = useLoaderData()
-
+  const html = product.exampleRichText.html
   return (
     <>
       <div className="container max-w-5xl">
         <div className="flex flex-col md:flex-row gap-8">
           <ProductImagesCarousel productImages={product.images} />
-          {/* <div className="border-solid border-2 border-gray">
-            <img src={product.images[0].url} alt={product.name} />
-          </div> */}
+
           <div className="w-full max-w-[500px]">
-            <nav className="text-base breadcrumbs overflow-x-hidden text-slate-400">
+            <nav className="text-sm breadcrumbs overflow-x-hidden text-slate-400">
               <ul>
                 <li>
                   <Link to="/">Beranda</Link>
@@ -112,7 +112,12 @@ export default function ProductSlug() {
             </div>
             <div className="p-4">
               <h2 className="text-2xl mb-4">Deskripsi</h2>
-              <p>{product.description}</p>
+
+              <div
+                dangerouslySetInnerHTML={{
+                  __html: html,
+                }}
+              />
             </div>
             <div>
               <a
