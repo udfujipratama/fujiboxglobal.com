@@ -16,7 +16,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
   return (
     <>
       <div className="container my-14">
-        <nav className="text-base breadcrumbs mb-5">
+        <nav className="text-sm breadcrumbs mb-5 text-slate-400">
           <ul>
             <li>
               <Link to="/">Beranda</Link>
@@ -70,7 +70,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
               <p>Maaf tidak ada produk tersedia.</p>
             )}
 
-            <div className="flex justify-center mt-10">
+            {/* <div className="flex justify-center mt-10">
               <div className="btn-group">
                 <button className="btn btn-sm">«</button>
                 <button className="btn btn-sm btn-active">1</button>
@@ -79,7 +79,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
                 <button className="btn btn-sm">4</button>
                 <button className="btn btn-sm">»</button>
               </div>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>
