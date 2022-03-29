@@ -76,7 +76,7 @@ export default function ProductSlug() {
                 </li>
               </ul>
             </nav>
-            <h1 className="text-4xl mb-4">{product.name}</h1>
+            <h1 className="text-2xl lg:text-3xl mb-4">{product.name}</h1>
             <div className="grid grid-cols-[60px_1fr] gap-4 border-solid border-2 border-gray p-4">
               <div>Bahan:</div>
               <div>{product.material}</div>
