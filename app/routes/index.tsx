@@ -6,24 +6,24 @@ import { graphcmsClient } from '~/lib'
 export const loader: LoaderFunction = async () => {
   const allProductsAndCategoryQuery = gql`
     query AllProductsAndCategory {
-      products(last: 5, where: { tag: "NEW" }) {
-        height
-        length
-        id
-        material
-        name
-        slug
-        width
-        images {
-          url
-          id
+      category(where: { name: "New Product" }) {
+        products(last: 5) {
+          name
+          slug
+          images {
+            url
+            id
+          }
+          height
+          length
+          material
+          width
         }
       }
-      categories(first: 10) {
+      categories(where: { name_not: "New Product" }) {
         id
         slug
         name
-        description
         image {
           url
         }
@@ -34,16 +34,16 @@ export const loader: LoaderFunction = async () => {
   const response = await graphcmsClient
     .query(allProductsAndCategoryQuery)
     .toPromise()
-  const { products, categories } = response.data
+  const { category, categories } = response.data
 
   return {
-    products,
+    category,
     categories,
   }
 }
 
 export default function Index() {
-  const { products, categories } = useLoaderData()
+  const { category, categories } = useLoaderData()
 
   return (
     <>
@@ -55,7 +55,7 @@ export default function Index() {
             Lihat semua produk
           </Link>
         </div>
-        <CardsList route="produk" items={products} />
+        <CardsList tag="NEW" route="produk" items={category.products} />
       </div>
       <WhatsAppCard />
       <div className="container my-20">
