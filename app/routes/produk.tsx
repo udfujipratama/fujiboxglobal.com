@@ -1,6 +1,6 @@
-import { json, Link, LoaderFunction, useLoaderData } from 'remix'
+import { json, LoaderFunction, useLoaderData } from 'remix'
 import { gql } from '@urql/core'
-import { CardsList } from '~/components'
+
 import { graphcmsClient } from '~/lib'
 import { ProductsExplorer } from '~/contents'
 
