@@ -26,7 +26,7 @@ export const ProductImagesCarousel: FunctionComponent<
           )
         })}
       </div>
-      <div className="flex w-full py-2 gap-2">
+      <div className="flex  w-full py-2 justify-around">
         {productImages.map((productImage, index) => {
           return (
             <a key={productImage.id} href={`#item${index + 1}`}>
