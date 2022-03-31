@@ -7,7 +7,7 @@ export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
     <div className="container">
       <div className="hero min-h-screen shadow-2xl">
         <div className="hero-content flex-col gap-1">
-          <div className="mt-10 mb-10">
+          <div className="mt-20 mb-20">
             <h1 className="text-4xl text-center md:text-5xl font-bold">
               Kami hadir di Instagram !
             </h1>
