@@ -28,7 +28,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
         </nav>
 
         <div id="sidebar-items" className="flex flex-col xl:flex-row">
-          <aside id="sidebar" className="flex flex-col min-w-[250px] gap-10">
+          <aside id="sidebar" className="flex flex-col min-w-[300px] gap-10">
             <div id="sidebar-categories">
               <h4 className="font-bold mb-4 underline underline-offset-8">
                 Kategori
@@ -40,7 +40,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
                     to={`/kategori/${category.slug}`}
                     className="link link-hover"
                   >
-                    <li>{category.name}</li>
+                    <li className="mb-2">{category.name}</li>
                   </Link>
                 ))}
               </ul>
@@ -56,7 +56,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
                     to={`/koleksi/${collection.slug}`}
                     className="link link-hover"
                   >
-                    <li>{collection.name}</li>
+                    <li className="mb-2">{collection.name}</li>
                   </Link>
                 ))}
               </ul>
