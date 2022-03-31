@@ -11,10 +11,6 @@ export const loader: LoaderFunction = async () => {
         id
         slug
         name
-        description
-        width
-        height
-        length
         images {
           url
         }
