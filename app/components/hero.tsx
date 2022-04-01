@@ -9,7 +9,7 @@ export const Hero: FunctionComponent<HeroProps> = () => {
       <div className="hero">
         <Link to="/koleksi/idul-fitri-or-lebaran">
           <img
-            className="w-full object-cover m-h-hero"
+            className="w-[1280px] object-cover m-h-hero"
             src="https://media.graphcms.com/QfFCE1BaQSKj6ymQgZHJ?_ga=2.113091843.602837813.1648699355-1199703748.1645432742"
             alt="hero-cover"
           />
