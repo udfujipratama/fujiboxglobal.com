@@ -45,7 +45,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
                 ))}
               </ul>
             </div>
-            <div id="sidebar-collections">
+            <div id="sidebar-collections" className="mb-10">
               <h4 className="font-bold mb-4 underline underline-offset-8">
                 Koleksi
               </h4>
