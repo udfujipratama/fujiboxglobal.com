@@ -35,12 +35,16 @@ export const loader: LoaderFunction = async ({ params }) => {
           slug
         }
       }
+
       products(first: 5) {
         id
         slug
         name
         images {
           url
+        }
+        categories {
+          name
         }
       }
     }

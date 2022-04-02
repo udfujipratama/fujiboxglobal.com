@@ -25,6 +25,9 @@ export const loader: LoaderFunction = async ({ params }) => {
           images {
             url
           }
+          categories {
+            name
+          }
         }
       }
       categories {

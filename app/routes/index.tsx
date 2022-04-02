@@ -18,6 +18,9 @@ export const loader: LoaderFunction = async () => {
           length
           material
           width
+          categories {
+            name
+          }
         }
       }
       categories(where: { name_not: "New Product" }) {
@@ -35,7 +38,7 @@ export const loader: LoaderFunction = async () => {
     .query(allProductsAndCategoryQuery)
     .toPromise()
   const { category, categories } = response.data
-
+  console.log(categories)
   return {
     category,
     categories,
