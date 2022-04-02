@@ -31,22 +31,32 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item, tag }) => {
   const itemImageUrl = item.image?.url ? item.image?.url : item.images[0].url
 
   return (
-    <Link to={`/${route}/${item.slug}`}>
-      <div className="card card-compact bg-base-100 shadow-xl w-full hover:bg-primary hover:text-white cursor-pointer">
-        <figure>
-          <img src={itemImageUrl} alt={item.name} />
-        </figure>
-        <div className="card-body">
-          {tag === 'NEW' ? (
-            <div className="badge badge-error">
-              <span className="font-bold text-white"> NEW</span>
-            </div>
-          ) : (
-            <></>
-          )}
-          <h2 className="card-title text-sm">{item.name}</h2>
-        </div>
+    <div className="card card-compact bg-base-100 shadow-xl w-full">
+      <figure>
+        <img src={itemImageUrl} alt={item.name} />
+      </figure>
+      <div className="card-body">
+        {tag === 'NEW' ? (
+          <div className="badge badge-error">
+            <span className="font-bold text-white"> NEW</span>
+          </div>
+        ) : (
+          <></>
+        )}
+
+        {route === 'kategori' ? (
+          <></>
+        ) : (
+          <span className="text-[10px] text-slate-400">
+            {item.categories[0].name}
+          </span>
+        )}
+
+        <h2 className="card-title text-sm">{item.name}</h2>
+        <Link className="btn btn-primary btn-sm" to={`/${route}/${item.slug}`}>
+          Lihat produk
+        </Link>
       </div>
-    </Link>
+    </div>
   )
 }
