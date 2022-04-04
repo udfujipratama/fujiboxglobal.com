@@ -30,7 +30,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
           </nav>
         </div>
 
-        <div className="flex flex-col xl:flex-row">
+        <div className="flex flex-col xl:flex-row gap-8">
           <ProductsExplorerSidebar
             categories={categories}
             collections={collections}
