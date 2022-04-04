@@ -1,23 +1,29 @@
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { useNavigate, useSearchParams } from 'remix'
+import { useLocation, useNavigate, useSearchParams } from 'remix'
 
 interface SearchFormProps {}
 
 export const SearchForm: FunctionComponent<SearchFormProps> = () => {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
-  const searchQuery = searchParams?.get('q') || undefined
+  const searchQuery = searchParams?.get('q') || ''
+  const location = useLocation()
 
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm({
-    defaultValues: {
-      searchQuery,
-    },
+    defaultValues: { searchQuery },
   })
+
+  useEffect(() => {
+    if (location.pathname !== '/produk') {
+      reset({ searchQuery: '' })
+    }
+  }, [location, reset])
 
   const onSubmit = (data: any) => {
     try {
