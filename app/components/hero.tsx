@@ -9,8 +9,8 @@ export const Hero: FunctionComponent<HeroProps> = () => {
       <div className="hero">
         <Link to="/koleksi/idul-fitri-or-lebaran">
           <img
-            className="w-[1280px] object-cover m-h-hero"
-            src="https://media.graphcms.com/QfFCE1BaQSKj6ymQgZHJ?_ga=2.113091843.602837813.1648699355-1199703748.1645432742"
+            className="w-[1280px] object-cover rounded-xl"
+            src="https://media.graphassets.com/kGDjy6KARruA0MeAFoaH?_gl=1*1f23h42*_ga*OTYxMjM0NjA0LjE2NDc4NDkwNDU.*_ga_G6FYGSYGZ4*MTY0OTA0NzcwNi4xMS4xLjE2NDkwNDc3MjIuNDQ."
             alt="hero-cover"
           />
         </Link>
