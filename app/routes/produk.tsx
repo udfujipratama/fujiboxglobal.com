@@ -4,43 +4,54 @@ import { gql } from '@urql/core'
 import { graphcmsClient } from '~/lib'
 import { ProductsExplorer } from '~/contents'
 
-export const loader: LoaderFunction = async () => {
-  const allProductsCategoriesCollectionsQuery = gql`
-    query AllProductsCategoriesCollections {
-      products {
-        id
-        slug
-        name
-        images {
-          url
+export const loader: LoaderFunction = async ({ request }) => {
+  const url = new URL(request.url)
+  const searchQuery = url.searchParams.get('q')
+
+  if (searchQuery) {
+    return json({
+      products: [],
+      categories: [],
+      collections: [],
+    })
+  } else {
+    const allProductsCategoriesCollectionsQuery = gql`
+      query AllProductsCategoriesCollections {
+        products {
+          id
+          slug
+          name
+          images {
+            url
+          }
+          categories {
+            name
+          }
         }
         categories {
+          id
+          slug
+          name
+        }
+        collections {
+          id
+          slug
           name
         }
       }
-      categories {
-        id
-        slug
-        name
-      }
-      collections {
-        id
-        slug
-        name
-      }
-    }
-  `
+    `
 
-  const response = await graphcmsClient
-    .query(allProductsCategoriesCollectionsQuery)
-    .toPromise()
-  const { products, categories, collections } = response.data
+    const response = await graphcmsClient
+      .query(allProductsCategoriesCollectionsQuery)
+      .toPromise()
+    const { products, categories, collections } = response.data
 
-  return json({
-    products,
-    categories,
-    collections,
-  })
+    return json({
+      products,
+      categories,
+      collections,
+    })
+  }
 }
 
 export default function Products() {
