@@ -1,9 +1,12 @@
 import { FunctionComponent } from 'react'
 import { useForm } from 'react-hook-form'
+import { useNavigate } from 'remix'
 
 interface SearchFormProps {}
 
 export const SearchForm: FunctionComponent<SearchFormProps> = () => {
+  const navigate = useNavigate()
+
   const {
     register,
     handleSubmit,
@@ -11,7 +14,12 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
   } = useForm()
 
   const onSubmit = (data: any) => {
-    console.log(data)
+    try {
+      const { searchQuery } = data
+      navigate(`/produk?q=${searchQuery}`)
+    } catch (error) {
+      console.error(error)
+    }
   }
 
   return (
