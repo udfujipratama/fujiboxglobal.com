@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async ({ params }) => {
         length
         width
         description {
-          html
+          descriptionHtml
         }
         images {
           id
@@ -59,7 +59,8 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function ProductSlug() {
   const { product, products } = useLoaderData()
-  const html = product.description.html
+  const descriptionHtml = product?.description?.descriptionHtml
+
   return (
     <>
       <div className="container max-w-5xl">
@@ -117,11 +118,13 @@ export default function ProductSlug() {
             <div className="p-4">
               <h2 className="text-2xl mb-4">Deskripsi</h2>
 
-              <div
-                dangerouslySetInnerHTML={{
-                  __html: html,
-                }}
-              />
+              {descriptionHtml && (
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: descriptionHtml,
+                  }}
+                />
+              )}
             </div>
             <div>
               <a
