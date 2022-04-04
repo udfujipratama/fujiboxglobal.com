@@ -10,12 +10,12 @@ export const loader: LoaderFunction = async ({ request }) => {
 
   if (searchQuery) {
     const searchProductsQuery = gql`
-      query SearchProducts($name: String) {
-        products(where: { name: $slug }) {
+      query SearchProducts($searchQuery: String!) {
+        products(where: { OR: [{ name_contains: $searchQuery }] }) {
           id
           slug
           name
-          images {
+          images(first: 1) {
             url
           }
           categories {
@@ -35,7 +35,12 @@ export const loader: LoaderFunction = async ({ request }) => {
       }
     `
 
-    const response = await graphcmsClient.query(searchProductsQuery).toPromise()
+    const response = await graphcmsClient
+      .query(searchProductsQuery, {
+        searchQuery,
+      })
+      .toPromise()
+
     const { products, categories, collections } = response.data
 
     return json({
@@ -50,7 +55,7 @@ export const loader: LoaderFunction = async ({ request }) => {
           id
           slug
           name
-          images {
+          images(first: 1) {
             url
           }
           categories {

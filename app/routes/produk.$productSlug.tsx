@@ -8,7 +8,7 @@ import { graphcmsClient } from '~/lib'
 export const loader: LoaderFunction = async ({ params }) => {
   const { productSlug } = params
   const oneProductBySlugQuery = gql`
-    query OneProductBySlug($slug: String) {
+    query OneProductBySlug($slug: String!) {
       product(where: { slug: $slug }) {
         id
         name
