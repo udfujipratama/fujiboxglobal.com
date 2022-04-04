@@ -18,7 +18,7 @@ export const loader: LoaderFunction = async ({ params }) => {
         length
         width
         description {
-          descriptionHtml
+          html
         }
         images {
           id
