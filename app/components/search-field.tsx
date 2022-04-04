@@ -5,11 +5,11 @@ interface SearchFieldProps {}
 export const SearchField: FunctionComponent<SearchFieldProps> = () => {
   return (
     <div className="form-control">
-      <div className="input-group">
+      <div className="input-group mb-4">
         <input
           type="text"
           placeholder="Search…"
-          className="input input-bordered"
+          className="input w-full lg:w-[300px] input-bordered"
         />
         <button className="btn btn-primary btn-square">
           <svg

@@ -1,6 +1,7 @@
 import { FunctionComponent } from 'react'
+import { IoIosArrowDropdown } from 'react-icons/io'
 import { Link } from 'remix'
-import { CardsList } from '~/components'
+import { CardsList, SearchField } from '~/components'
 
 interface ProductsExplorerProps {
   categories: any[]
@@ -15,25 +16,35 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
 }) => {
   return (
     <>
-      <div className="container my-14">
-        <nav className="text-sm breadcrumbs mb-5 text-slate-400">
-          <ul>
-            <li>
-              <Link to="/">Beranda</Link>
-            </li>
-            <li>
-              <Link to="/produk">Produk</Link>
-            </li>
-          </ul>
-        </nav>
+      <div className="container my-10">
+        <div className="flex w-full items-center mb-4">
+          <nav className="text-sm breadcrumbs text-slate-400">
+            <ul>
+              <li>
+                <Link to="/">Beranda</Link>
+              </li>
+              <li>
+                <Link to="/produk">Produk</Link>
+              </li>
+            </ul>
+          </nav>
+        </div>
 
         <div id="sidebar-items" className="flex flex-col xl:flex-row">
           <aside id="sidebar" className="flex flex-col min-w-[300px] gap-10">
-            <div id="sidebar-categories">
-              <h4 className="font-bold mb-4 underline underline-offset-8">
-                Kategori
-              </h4>
-              <ul>
+            <div id="sidebar-categories" className="dropdown">
+              <div className="flex gap-4">
+                <h4
+                  tabIndex={0}
+                  className="font-bold mb-4 underline underline-offset-8"
+                >
+                  Kategori ({categories.length})
+                </h4>
+                <span className="pt-[4px]">
+                  <IoIosArrowDropdown />
+                </span>
+              </div>
+              <ul tabIndex={0} className="dropdown-content menu">
                 {categories.map((category: any) => (
                   <Link
                     key={category.id}
@@ -45,11 +56,20 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
                 ))}
               </ul>
             </div>
-            <div id="sidebar-collections" className="mb-10">
-              <h4 className="font-bold mb-4 underline underline-offset-8">
-                Koleksi
-              </h4>
-              <ul>
+            <div id="sidebar-collections" className="dropdown mb-10">
+              <div className="flex gap-4">
+                <h4
+                  tabIndex={0}
+                  className="font-bold mb-4 underline underline-offset-8"
+                >
+                  Koleksi ({collections.length})
+                </h4>
+                <span className="pt-[4px]">
+                  <IoIosArrowDropdown />
+                </span>
+              </div>
+
+              <ul tabIndex={0} className="dropdown-content menu">
                 {collections.map((collection: any) => (
                   <Link
                     key={collection.id}
@@ -64,6 +84,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
           </aside>
 
           <div id="items-pagination">
+            <SearchField />
             {products.length > 0 ? (
               <CardsList route="produk" items={products} />
             ) : (
