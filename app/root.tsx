@@ -1,3 +1,4 @@
+import NProgress from 'nprogress'
 import {
   Links,
   LinksFunction,
@@ -6,11 +7,15 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useTransition,
 } from 'remix'
 import type { MetaFunction } from 'remix'
 
-import styles from './styles/app.css'
+import appStylesUrl from '~/styles/app.css'
+import nProgressStylesUrl from '~/styles/nprogress.css'
+
 import { Layout } from '~/components'
+import { useEffect } from 'react'
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -34,12 +39,26 @@ export const links: LinksFunction = () => {
     },
     {
       rel: 'stylesheet',
-      href: styles,
+      href: appStylesUrl,
+    },
+    {
+      rel: 'stylesheet',
+      href: nProgressStylesUrl,
     },
   ]
 }
 
 export default function App() {
+  const transition = useTransition()
+
+  useEffect(() => {
+    // when the state is idle then we can to complete the progress bar
+    if (transition.state === 'idle') NProgress.done()
+    // and when it's something else it means it's either submitting a form or
+    // waiting for the loaders of the next location so we start it
+    else NProgress.start()
+  }, [transition.state])
+
   return (
     <html lang="id">
       <head>
