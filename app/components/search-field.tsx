@@ -1,17 +1,30 @@
 import { FunctionComponent } from 'react'
+import { useForm } from 'react-hook-form'
 
 interface SearchFormProps {}
 
 export const SearchForm: FunctionComponent<SearchFormProps> = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm()
+
+  const onSubmit = (data: any) => {
+    console.log(data)
+  }
+
   return (
-    <div className="form-control">
+    <form className="form-control" onSubmit={handleSubmit(onSubmit)}>
       <div className="input-group">
         <input
+          {...register('searchQuery')}
+          name="searchQuery"
           type="text"
           placeholder="Search…"
           className="input w-full lg:w-[300px] input-bordered"
         />
-        <button className="btn btn-primary btn-square">
+        <button type="submit" className="btn btn-primary btn-square">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-6 w-6"
@@ -28,6 +41,6 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
           </svg>
         </button>
       </div>
-    </div>
+    </form>
   )
 }

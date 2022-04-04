@@ -14,8 +14,15 @@ export const CardsList: FunctionComponent<CategoryProps> = ({
 }) => {
   return (
     <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-      {items.map((item) => {
-        return <CardItem key={item.id} route={route} item={item} tag={tag} />
+      {items.map((item, index) => {
+        return (
+          <CardItem
+            key={item.id || index}
+            route={route}
+            item={item}
+            tag={tag}
+          />
+        )
       })}
     </div>
   )
@@ -36,17 +43,13 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item, tag }) => {
         <img src={itemImageUrl} alt={item.name} />
       </figure>
       <div className="card-body">
-        {tag === 'NEW' ? (
+        {tag === 'NEW' && (
           <div className="badge badge-error">
             <span className="font-bold text-white"> NEW</span>
           </div>
-        ) : (
-          <></>
         )}
 
-        {route === 'kategori' ? (
-          <></>
-        ) : (
+        {route !== 'kategori' && (
           <span className="text-[10px] text-slate-400">
             {item.categories[0].name}
           </span>
