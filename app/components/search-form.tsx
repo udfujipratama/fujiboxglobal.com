@@ -22,6 +22,8 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
   useEffect(() => {
     if (location.pathname !== '/produk') {
       reset({ searchQuery: '' })
+    } else if (!searchQuery) {
+      reset({ searchQuery: '' })
     }
   }, [location, reset])
 
