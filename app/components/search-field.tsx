@@ -1,17 +1,23 @@
 import { FunctionComponent } from 'react'
 import { useForm } from 'react-hook-form'
-import { useNavigate } from 'remix'
+import { useNavigate, useSearchParams } from 'remix'
 
 interface SearchFormProps {}
 
 export const SearchForm: FunctionComponent<SearchFormProps> = () => {
   const navigate = useNavigate()
+  const [searchParams] = useSearchParams()
+  const searchQuery = searchParams?.get('q') || undefined
 
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm()
+  } = useForm({
+    defaultValues: {
+      searchQuery,
+    },
+  })
 
   const onSubmit = (data: any) => {
     try {
@@ -27,6 +33,7 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
       <div className="input-group">
         <input
           {...register('searchQuery')}
+          defaultValue={searchQuery}
           name="searchQuery"
           type="text"
           placeholder="Search…"
