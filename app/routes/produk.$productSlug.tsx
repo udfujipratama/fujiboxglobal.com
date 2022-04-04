@@ -59,7 +59,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function ProductSlug() {
   const { product, products } = useLoaderData()
-  const descriptionHtml = product?.description?.descriptionHtml
+  const descriptionHtml = product?.description?.html
 
   return (
     <>
