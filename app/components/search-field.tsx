@@ -1,8 +1,8 @@
 import { FunctionComponent } from 'react'
 
-interface SearchFieldProps {}
+interface SearchFormProps {}
 
-export const SearchField: FunctionComponent<SearchFieldProps> = () => {
+export const SearchForm: FunctionComponent<SearchFormProps> = () => {
   return (
     <div className="form-control">
       <div className="input-group mb-4">
@@ -20,9 +20,9 @@ export const SearchField: FunctionComponent<SearchFieldProps> = () => {
             stroke="currentColor"
           >
             <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              strokeWidth="2"
               d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
             />
           </svg>

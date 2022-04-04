@@ -1,7 +1,7 @@
 import { FunctionComponent } from 'react'
 import { IoIosArrowDropdown } from 'react-icons/io'
 import { Link } from 'remix'
-import { CardsList, SearchField } from '~/components'
+import { CardsList, SearchForm } from '~/components'
 
 interface ProductsExplorerProps {
   categories: any[]
@@ -84,7 +84,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
           </aside>
 
           <div id="items-pagination">
-            <SearchField />
+            <SearchForm />
             {products.length > 0 ? (
               <CardsList route="produk" items={products} />
             ) : (
