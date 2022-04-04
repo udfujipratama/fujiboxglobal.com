@@ -38,7 +38,6 @@ export const loader: LoaderFunction = async () => {
     .query(allProductsAndCategoryQuery)
     .toPromise()
   const { category, categories } = response.data
-  console.log(categories)
   return {
     category,
     categories,
