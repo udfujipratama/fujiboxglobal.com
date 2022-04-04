@@ -25,7 +25,7 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
     } else if (!searchQuery) {
       reset({ searchQuery: '' })
     }
-  }, [location, reset])
+  }, [location, searchQuery, reset])
 
   const onSubmit = (data: any) => {
     try {
