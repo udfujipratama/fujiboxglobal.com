@@ -17,7 +17,7 @@ export const loader: LoaderFunction = async ({ params }) => {
         height
         length
         width
-        exampleRichText {
+        description {
           html
         }
         images {
@@ -59,7 +59,7 @@ export const loader: LoaderFunction = async ({ params }) => {
 
 export default function ProductSlug() {
   const { product, products } = useLoaderData()
-  const html = product.exampleRichText.html
+  const html = product.description.html
   return (
     <>
       <div className="container max-w-5xl">

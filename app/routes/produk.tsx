@@ -9,14 +9,43 @@ export const loader: LoaderFunction = async ({ request }) => {
   const searchQuery = url.searchParams.get('q')
 
   if (searchQuery) {
+    const searchProductsQuery = gql`
+      query SearchProducts($name: String) {
+        products(where: { name: $slug }) {
+          id
+          slug
+          name
+          images {
+            url
+          }
+          categories {
+            name
+          }
+        }
+        categories {
+          id
+          slug
+          name
+        }
+        collections {
+          id
+          slug
+          name
+        }
+      }
+    `
+
+    const response = await graphcmsClient.query(searchProductsQuery).toPromise()
+    const { products, categories, collections } = response.data
+
     return json({
-      products: [],
-      categories: [],
-      collections: [],
+      products,
+      categories,
+      collections,
     })
   } else {
-    const allProductsCategoriesCollectionsQuery = gql`
-      query AllProductsCategoriesCollections {
+    const allProductsQuery = gql`
+      query AllProducts {
         products {
           id
           slug
@@ -41,9 +70,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       }
     `
 
-    const response = await graphcmsClient
-      .query(allProductsCategoriesCollectionsQuery)
-      .toPromise()
+    const response = await graphcmsClient.query(allProductsQuery).toPromise()
     const { products, categories, collections } = response.data
 
     return json({
