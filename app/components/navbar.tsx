@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import { Link } from 'remix'
+import { SearchForm } from '~/components'
 
 interface NavbarProps {}
 
@@ -7,14 +8,15 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
     <div className="container lg">
       <div className="navbar bg-base-100">
-        <div className="navbar-start">
-          <Link to="/">
+        <div className="navbar-start flex items-center gap-4">
+          <Link to="/" className="block">
             <img
               className="max-h-10"
               src="/images/logo/fujibox-logo.png"
               alt="Fujibox"
             />
           </Link>
+          <SearchForm />
         </div>
 
         <div className="navbar-end">

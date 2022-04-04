@@ -84,7 +84,6 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
           </aside>
 
           <div id="items-pagination">
-            <SearchForm />
             {products.length > 0 ? (
               <CardsList route="produk" items={products} />
             ) : (

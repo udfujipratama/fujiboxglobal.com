@@ -5,7 +5,7 @@ interface SearchFormProps {}
 export const SearchForm: FunctionComponent<SearchFormProps> = () => {
   return (
     <div className="form-control">
-      <div className="input-group mb-4">
+      <div className="input-group">
         <input
           type="text"
           placeholder="Search…"
