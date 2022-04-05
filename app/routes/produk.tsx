@@ -70,6 +70,11 @@ export const loader: LoaderFunction = async ({ request }) => {
             name
           }
         }
+        productsConnection {
+          aggregate {
+            count
+          }
+        }
         categories {
           id
           slug
@@ -89,10 +94,12 @@ export const loader: LoaderFunction = async ({ request }) => {
         skip,
       })
       .toPromise()
-    const { products, categories, collections } = response.data
+    const { products, productsConnection, categories, collections } =
+      response.data
 
     return json({
       products,
+      productsConnection,
       categories,
       collections,
     })
@@ -100,12 +107,14 @@ export const loader: LoaderFunction = async ({ request }) => {
 }
 
 export default function Products() {
-  const { products, categories, collections } = useLoaderData()
+  const { products, productsConnection, categories, collections } =
+    useLoaderData()
 
   return (
     <>
       <ProductsExplorer
         products={products}
+        productsConnection={productsConnection}
         categories={categories}
         collections={collections}
       />

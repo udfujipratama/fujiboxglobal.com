@@ -1,18 +1,20 @@
 import { FunctionComponent } from 'react'
 import { Link } from 'remix'
-import { CardsList } from '~/components'
+import { CardsList, PaginationButtons } from '~/components'
 import { ProductsExplorerSidebar } from '~/contents'
 
 interface ProductsExplorerProps {
   categories: any[]
+  productsConnection: any
   collections: any[]
   products: any[]
 }
 
 export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
+  products,
+  productsConnection,
   categories,
   collections,
-  products,
 }) => {
   return (
     <>
@@ -43,16 +45,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
               <p>Maaf tidak ada produk tersedia.</p>
             )}
 
-            <div className="flex justify-center mt-10">
-              <div className="btn-group">
-                <button className="btn btn-sm">«</button>
-                <button className="btn btn-sm btn-active">1</button>
-                <button className="btn btn-sm">2</button>
-                <button className="btn btn-sm">3</button>
-                <button className="btn btn-sm">4</button>
-                <button className="btn btn-sm">»</button>
-              </div>
-            </div>
+            <PaginationButtons productsConnection={productsConnection} />
           </div>
         </div>
       </div>
