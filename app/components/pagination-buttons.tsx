@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import { Link, useSearchParams } from 'remix'
+import queryString from 'query-string'
 
 interface PaginationButtonsProps {
   productsConnection: any
@@ -12,26 +13,36 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
   const { count } = productsConnection?.aggregate
   const itemsPerPage = 10
 
-  const currentPage: number = Number(searchParams.get('page')) || 1
+  const searchQuery = searchParams.get('q') || undefined
+  const pageQuery: number = Number(searchParams.get('page')) || 1
   const pagesQuantity: number = Math.ceil(count / itemsPerPage)
   const pagesArray: number[] = Array.from(
     { length: pagesQuantity },
     (_, i) => i + 1
   )
 
-  const canPrevious = currentPage > 2
-  const canNext = currentPage < pagesQuantity
+  const canPrevious = pageQuery > 1
+  const canNext = pageQuery < pagesQuantity
+
+  const previousPageLink = queryString.stringify({
+    page: pageQuery - 1,
+    q: searchQuery,
+  })
+  const nextPageLink = queryString.stringify({
+    page: pageQuery + 1,
+    q: searchQuery,
+  })
 
   return (
     <div className="flex justify-center mt-10">
       <div className="btn-group">
         {canPrevious && (
-          <Link to={`?page=${currentPage - 1}`} className="btn btn-sm">
+          <Link to={'?' + previousPageLink} className="btn btn-sm">
             «
           </Link>
         )}
         {pagesArray.map((pageNumber) => {
-          const isActive = currentPage === pageNumber
+          const isActive = pageQuery === pageNumber
           return (
             <Link
               key={pageNumber}
@@ -43,7 +54,7 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
           )
         })}
         {canNext && (
-          <Link to={`?page=${currentPage + 1}`} className="btn btn-sm">
+          <Link to={'?' + nextPageLink} className="btn btn-sm">
             »
           </Link>
         )}
