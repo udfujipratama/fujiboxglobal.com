@@ -24,8 +24,10 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
 
   const onSubmit = (data: any) => {
     try {
-      const { searchQuery } = data
-      navigate(`/produk?q=${searchQuery}`)
+      if (data.searchQuery) {
+        const q = data.searchQuery
+        navigate(`/produk?q=${q}`)
+      }
     } catch (error) {
       console.error(error)
     }
