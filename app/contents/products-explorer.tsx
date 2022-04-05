@@ -45,7 +45,9 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
               <p>Maaf tidak ada produk tersedia.</p>
             )}
 
-            <PaginationButtons productsConnection={productsConnection} />
+            {products?.length > 10 && (
+              <PaginationButtons productsConnection={productsConnection} />
+            )}
           </div>
         </div>
       </div>

@@ -4,6 +4,13 @@ import { gql } from '@urql/core'
 import { graphcmsClient } from '~/lib'
 import { ProductsExplorer } from '~/contents'
 
+type LoaderData = {
+  products: any[]
+  productsConnection: any
+  categories: any[]
+  collections: any[]
+}
+
 export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url)
   const searchQuery = url.searchParams.get('q')
@@ -18,16 +25,25 @@ export const loader: LoaderFunction = async ({ request }) => {
   // Logic for the data fetching whether filter or get all data
   if (searchQuery) {
     const searchProductsQuery = gql`
-      query SearchProducts($searchQuery: String!) {
-        products(where: { OR: [{ name_contains: $searchQuery }] }) {
+      query SearchProducts($first: Int!, $skip: Int!, $searchQuery: String!) {
+        products(
+          first: $first
+          skip: $skip
+          where: { OR: [{ name_contains: $searchQuery }] }
+        ) {
           id
           slug
           name
           images(first: 1) {
             url
           }
-          categories {
+          categories(first: 1) {
             name
+          }
+        }
+        productsConnection {
+          aggregate {
+            count
           }
         }
         categories {
@@ -45,14 +61,18 @@ export const loader: LoaderFunction = async ({ request }) => {
 
     const response = await graphcmsClient
       .query(searchProductsQuery, {
+        first,
+        skip,
         searchQuery,
       })
       .toPromise()
 
-    const { products, categories, collections } = response.data
+    const { products, productsConnection, categories, collections } =
+      response.data
 
     return json({
       products,
+      productsConnection,
       categories,
       collections,
     })
@@ -108,7 +128,7 @@ export const loader: LoaderFunction = async ({ request }) => {
 
 export default function Products() {
   const { products, productsConnection, categories, collections } =
-    useLoaderData()
+    useLoaderData<LoaderData>()
 
   return (
     <>
