@@ -10,12 +10,7 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
   const searchQuery = searchParams?.get('q') || ''
   const location = useLocation()
 
-  const {
-    register,
-    handleSubmit,
-    reset,
-    formState: { errors },
-  } = useForm({
+  const { register, handleSubmit, reset } = useForm({
     defaultValues: { searchQuery },
   })
 
