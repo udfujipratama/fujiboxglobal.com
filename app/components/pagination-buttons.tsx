@@ -12,19 +12,26 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
   const { count } = productsConnection?.aggregate
   const itemsPerPage = 10
 
-  const pageQuery: number = Number(searchParams.get('page')) || 1
+  const currentPage: number = Number(searchParams.get('page')) || 1
   const pagesQuantity: number = Math.ceil(count / itemsPerPage)
   const pagesArray: number[] = Array.from(
     { length: pagesQuantity },
     (_, i) => i + 1
   )
 
+  const canPrevious = currentPage > 2
+  const canNext = currentPage < pagesQuantity
+
   return (
     <div className="flex justify-center mt-10">
       <div className="btn-group">
-        <button className="btn btn-sm">«</button>
+        {canPrevious && (
+          <Link to={`?page=${currentPage - 1}`} className="btn btn-sm">
+            «
+          </Link>
+        )}
         {pagesArray.map((pageNumber) => {
-          const isActive = pageQuery === pageNumber
+          const isActive = currentPage === pageNumber
           return (
             <Link
               key={pageNumber}
@@ -35,7 +42,11 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
             </Link>
           )
         })}
-        <button className="btn btn-sm">»</button>
+        {canNext && (
+          <Link to={`?page=${currentPage + 1}`} className="btn btn-sm">
+            »
+          </Link>
+        )}
       </div>
     </div>
   )
