@@ -9,10 +9,10 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
   productsConnection,
 }) => {
   const [searchParams] = useSearchParams()
-  const itemsPerPage = 10
   const { count } = productsConnection?.aggregate
+  const itemsPerPage = 10
 
-  const pageQuery: number = Number(searchParams.get('page'))
+  const pageQuery: number = Number(searchParams.get('page')) || 1
   const pagesQuantity: number = Math.ceil(count / itemsPerPage)
   const pagesArray: number[] = Array.from(
     { length: pagesQuantity },
