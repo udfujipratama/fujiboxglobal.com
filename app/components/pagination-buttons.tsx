@@ -43,10 +43,15 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
         )}
         {pagesArray.map((pageNumber) => {
           const isActive = pageQuery === pageNumber
+          const pageLink = queryString.stringify({
+            page: pageNumber,
+            q: searchQuery,
+          })
+
           return (
             <Link
               key={pageNumber}
-              to={`?page=${pageNumber}`}
+              to={'?' + pageLink}
               className={`btn btn-sm ${isActive && 'btn-active'}`}
             >
               {pageNumber}
