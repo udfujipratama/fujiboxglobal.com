@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+
 import { CardsList } from '~/components'
 import { TProduct } from '~/types'
 

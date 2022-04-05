@@ -1,4 +1,3 @@
-export * from './article-list'
 export * from './cards-list'
 export * from './footer'
 export * from './hero'

@@ -1,4 +1,5 @@
 import NProgress from 'nprogress'
+import { useEffect } from 'react'
 import {
   Links,
   LinksFunction,
@@ -9,20 +10,21 @@ import {
   ScrollRestoration,
   useTransition,
 } from 'remix'
+
+import { Layout } from '~/components'
+
 import type { MetaFunction } from 'remix'
 
 import appStylesUrl from '~/styles/app.css'
 import nProgressStylesUrl from '~/styles/nprogress.css'
 
-import { Layout } from '~/components'
-import { useEffect } from 'react'
 
-export const meta: MetaFunction = () => ({
+export const meta: MetaFunction = () => {return {
   charset: 'utf-8',
   title: 'Fujibox',
   description: 'Crafting a good Packaging Product',
   viewport: 'width=device-width,initial-scale=1',
-})
+}}
 
 export const links: LinksFunction = () => {
   return [

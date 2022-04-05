@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+
 import { Navbar, Footer } from '~/components'
 
 interface LayoutProps {

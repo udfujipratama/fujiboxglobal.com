@@ -1,8 +1,8 @@
-import { json, LoaderFunction, useLoaderData } from 'remix'
 import { gql } from '@urql/core'
+import { json, LoaderFunction, useLoaderData } from 'remix'
 
-import { graphcmsClient } from '~/lib'
 import { ProductsExplorer } from '~/contents'
+import { graphcmsClient } from '~/lib'
 
 type LoaderData = {
   products: any[]
@@ -76,7 +76,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       categories,
       collections,
     })
-  } else {
+  } 
     const allProductsQuery = gql`
       query AllProducts($first: Int!, $skip: Int!) {
         products(first: $first, skip: $skip) {
@@ -123,7 +123,7 @@ export const loader: LoaderFunction = async ({ request }) => {
       categories,
       collections,
     })
-  }
+  
 }
 
 export default function Products() {
@@ -131,13 +131,11 @@ export default function Products() {
     useLoaderData<LoaderData>()
 
   return (
-    <>
-      <ProductsExplorer
+    <ProductsExplorer
         products={products}
         productsConnection={productsConnection}
         categories={categories}
         collections={collections}
       />
-    </>
   )
 }

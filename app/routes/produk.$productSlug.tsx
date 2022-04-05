@@ -1,6 +1,7 @@
 import { gql } from '@urql/core'
 import { IoLogoWhatsapp } from 'react-icons/io'
 import { json, Link, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
+
 import { ProductImagesCarousel } from '~/components'
 import { RecommendedProducts } from '~/contents'
 import { graphcmsClient } from '~/lib'

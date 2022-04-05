@@ -17,13 +17,13 @@ export const ProductsExplorerSidebar: FunctionComponent<
         title={`Kategori (${categories.length})`}
         content={
           <ul className="list-none">
-            {categories.map((category: any) => (
+            {categories.map((category: any) => {return (
               <Link key={category.id} to={`/kategori/${category.slug}`}>
                 <li className="py-1 md:py-2 link link-hover">
                   {category.name}
                 </li>
               </Link>
-            ))}
+            )})}
           </ul>
         }
       />
@@ -32,7 +32,7 @@ export const ProductsExplorerSidebar: FunctionComponent<
         title={`Koleksi (${collections.length})`}
         content={
           <ul>
-            {collections.map((collection: any) => (
+            {collections.map((collection: any) => {return (
               <Link
                 key={collection.id}
                 to={`/koleksi/${collection.slug}`}
@@ -42,7 +42,7 @@ export const ProductsExplorerSidebar: FunctionComponent<
                   {collection.name}
                 </li>
               </Link>
-            ))}
+            )})}
           </ul>
         }
       />
@@ -61,7 +61,7 @@ export const SidebarDisclosure: FunctionComponent<SidebarDisclosureProps> = ({
 }) => {
   return (
     <Disclosure>
-      {({ open }) => (
+      {({ open }) => {return (
         <div>
           <Disclosure.Button className="flex justify-between w-full underline underline-offset-8 font-bold hover:bg-primary-200 focus:outline-none focus-visible:ring focus-visible:ring-primary-500 focus-visible:ring-opacity-75 text-left">
             <span>{title}</span>
@@ -73,7 +73,7 @@ export const SidebarDisclosure: FunctionComponent<SidebarDisclosureProps> = ({
             {content}
           </Disclosure.Panel>
         </div>
-      )}
+      )}}
     </Disclosure>
   )
 }

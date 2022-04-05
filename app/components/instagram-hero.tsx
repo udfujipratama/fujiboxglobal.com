@@ -1,5 +1,6 @@
 import { FunctionComponent } from 'react'
 import { GrInstagram } from 'react-icons/gr'
+
 interface InstagramCardProps {}
 
 export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
@@ -12,7 +13,7 @@ export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
               Kami hadir di Instagram !
             </h1>
             <a
-              href={`https://www.instagram.com/fujiboxglobal/?hl=en`}
+              href="https://www.instagram.com/fujiboxglobal/?hl=en"
               className="btn btn-block rounded-full gap-4 mt-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
               target="_blank"
               rel="noreferrer"
@@ -32,7 +33,7 @@ export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
             frameBorder="0"
             marginHeight={0}
             marginWidth={0}
-          ></iframe>
+          />
         </div>
       </div>
     </div>

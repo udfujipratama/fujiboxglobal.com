@@ -1,5 +1,6 @@
 import { gql } from '@urql/core'
-import { json, Link, LoaderFunction, useLoaderData } from 'remix'
+import { json, LoaderFunction, useLoaderData } from 'remix'
+
 import { CardsList } from '~/components'
 import { graphcmsClient } from '~/lib'
 import { Tcategory } from '~/types'
@@ -17,23 +18,26 @@ export const loader: LoaderFunction = async () => {
           url
         }
       }
+      productsConnection {
+        aggregate {
+          count
+        }
+      }
     }
   `
 
   const response = await graphcmsClient.query(allCategoriesQuery).toPromise()
-  const { categories } = response.data
+  const { productsConnection, categories } = response.data
 
-  return json(categories)
+  return json({ productsConnection, categories })
 }
 
 export default function Categories() {
-  const categories = useLoaderData<CategoriesData>()
+  const { categories } = useLoaderData()
 
   return (
-    <>
-      <div>
+    <div>
         <CardsList route="kategori" items={categories} />
       </div>
-    </>
   )
 }

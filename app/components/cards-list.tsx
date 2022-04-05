@@ -43,7 +43,7 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item, tag }) => {
         <img src={itemImageUrl} alt={item.name} />
       </figure>
       <div className="card-body">
-        {tag === 'NEW' && (
+        {tag && tag === 'NEW' && (
           <div className="badge badge-error">
             <span className="font-bold text-white"> NEW</span>
           </div>
@@ -62,4 +62,8 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item, tag }) => {
       </div>
     </div>
   )
+}
+
+CardItem.defaultProps = {
+  tag: '',
 }

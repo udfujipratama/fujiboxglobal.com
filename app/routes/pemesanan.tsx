@@ -2,8 +2,7 @@ import { IoLogoWhatsapp } from 'react-icons/io'
 
 export default function Pemesanan() {
   return (
-    <>
-      <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
+    <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
         <div className="container flex justify-center">
           <iframe
             title="Formulir pemesanan"
@@ -34,6 +33,5 @@ export default function Pemesanan() {
           </a>
         </div>
       </div>
-    </>
   )
 }

@@ -1,7 +1,6 @@
-import { FunctionComponent, Fragment } from 'react'
 import { Menu, Transition } from '@headlessui/react'
+import { FunctionComponent, Fragment } from 'react'
 import { Link } from 'remix'
-import { AiOutlineDown } from 'react-icons/ai'
 
 import { SearchForm } from '~/components'
 
@@ -63,7 +62,7 @@ const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = ({
             {MenuLists.map((menu, index) => {
               return (
                 <Menu.Item key={index}>
-                  {({ active }) => (
+                  {({ active }) => {return (
                     <Link
                       to={menu.link}
                       className={`${
@@ -72,7 +71,7 @@ const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = ({
                     >
                       {menu.title}
                     </Link>
-                  )}
+                  )}}
                 </Menu.Item>
               )
             })}

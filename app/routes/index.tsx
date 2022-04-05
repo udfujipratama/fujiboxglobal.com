@@ -1,5 +1,6 @@
 import { gql } from '@urql/core'
 import { Link, LoaderFunction, useLoaderData } from 'remix'
+
 import { CardsList, Hero, InstagramHero, WhatsAppCard } from '~/components'
 import { graphcmsClient } from '~/lib'
 

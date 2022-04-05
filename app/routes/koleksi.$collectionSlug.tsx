@@ -1,5 +1,6 @@
 import { gql } from '@urql/core'
 import { json, LoaderFunction, useLoaderData } from 'remix'
+
 import { ProductsExplorer } from '~/contents'
 import { graphcmsClient } from '~/lib'
 
@@ -53,12 +54,10 @@ export const loader: LoaderFunction = async ({ params }) => {
 export default function CategorySlug() {
   const { collection, categories, collections } = useLoaderData()
   return (
-    <>
-      <ProductsExplorer
+    <ProductsExplorer
         products={collection.products}
         categories={categories}
         collections={collections}
       />
-    </>
   )
 }

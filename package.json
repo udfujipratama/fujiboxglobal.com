@@ -9,6 +9,8 @@
     "build:css": "tailwindcss -m -i ./styles/app.css -o app/styles/app.css",
     "dev": "concurrently 'npm run dev:css' 'remix dev'",
     "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
+    "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
+    "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
     "postinstall": "remix setup node"
   },
   "dependencies": {
@@ -33,10 +35,16 @@
     "@types/nprogress": "0.2.0",
     "@types/react": "^17.0.24",
     "@types/react-dom": "^17.0.9",
+    "@typescript-eslint/eslint-plugin": "5.18.0",
+    "@typescript-eslint/parser": "5.18.0",
     "autoprefixer": "^10.4.2",
     "concurrently": "^7.0.0",
     "daisyui": "^2.6.0",
-    "eslint": "^8.11.0",
+    "eslint": "8.12.0",
+    "eslint-config-airbnb": "19.0.4",
+    "eslint-config-airbnb-typescript": "16.2.0",
+    "eslint-config-prettier": "8.5.0",
+    "eslint-plugin-unused-imports": "2.0.0",
     "postcss": "^8.4.7",
     "tailwindcss": "^3.0.23",
     "typescript": "^4.5.5"

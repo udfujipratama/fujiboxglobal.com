@@ -1,6 +1,6 @@
+import queryString from 'query-string'
 import { FunctionComponent } from 'react'
 import { Link, useSearchParams } from 'remix'
-import queryString from 'query-string'
 
 interface PaginationButtonsProps {
   productsConnection: any
@@ -18,7 +18,7 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
   const pagesQuantity: number = Math.ceil(count / itemsPerPage)
   const pagesArray: number[] = Array.from(
     { length: pagesQuantity },
-    (_, i) => i + 1
+    (_, i) => {return i + 1}
   )
 
   const canPrevious = pageQuery > 1
@@ -37,7 +37,7 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
     <div className="flex justify-center mt-10">
       <div className="btn-group">
         {canPrevious && (
-          <Link to={'?' + previousPageLink} className="btn btn-sm">
+          <Link to={`?${  previousPageLink}`} className="btn btn-sm">
             «
           </Link>
         )}
@@ -51,7 +51,7 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
           return (
             <Link
               key={pageNumber}
-              to={'?' + pageLink}
+              to={`?${  pageLink}`}
               className={`btn btn-sm ${isActive && 'btn-active'}`}
             >
               {pageNumber}
@@ -59,7 +59,7 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
           )
         })}
         {canNext && (
-          <Link to={'?' + nextPageLink} className="btn btn-sm">
+          <Link to={`?${  nextPageLink}`} className="btn btn-sm">
             »
           </Link>
         )}
