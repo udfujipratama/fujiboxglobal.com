@@ -76,54 +76,53 @@ export const loader: LoaderFunction = async ({ request }) => {
       categories,
       collections,
     })
-  } 
-    const allProductsQuery = gql`
-      query AllProducts($first: Int!, $skip: Int!) {
-        products(first: $first, skip: $skip) {
-          id
-          slug
-          name
-          images(first: 1) {
-            url
-          }
-          categories(first: 1) {
-            name
-          }
+  }
+  const allProductsQuery = gql`
+    query AllProducts($first: Int!, $skip: Int!) {
+      products(first: $first, skip: $skip) {
+        id
+        slug
+        name
+        images(first: 1) {
+          url
         }
-        productsConnection {
-          aggregate {
-            count
-          }
-        }
-        categories {
-          id
-          slug
-          name
-        }
-        collections {
-          id
-          slug
+        categories(first: 1) {
           name
         }
       }
-    `
+      productsConnection {
+        aggregate {
+          count
+        }
+      }
+      categories {
+        id
+        slug
+        name
+      }
+      collections {
+        id
+        slug
+        name
+      }
+    }
+  `
 
-    const response = await graphcmsClient
-      .query(allProductsQuery, {
-        first,
-        skip,
-      })
-      .toPromise()
-    const { products, productsConnection, categories, collections } =
-      response.data
-
-    return json({
-      products,
-      productsConnection,
-      categories,
-      collections,
+  const response = await graphcmsClient
+    .query(allProductsQuery, {
+      first,
+      skip,
     })
-  
+    .toPromise()
+  const { products, productsConnection, categories, collections } =
+    response.data
+
+  return json({
+    products,
+    productsConnection,
+    categories,
+    collections,
+  })
 }
 
 export default function Products() {
@@ -132,10 +131,10 @@ export default function Products() {
 
   return (
     <ProductsExplorer
-        products={products}
-        productsConnection={productsConnection}
-        categories={categories}
-        collections={collections}
-      />
+      products={products}
+      productsConnection={productsConnection}
+      categories={categories}
+      collections={collections}
+    />
   )
 }

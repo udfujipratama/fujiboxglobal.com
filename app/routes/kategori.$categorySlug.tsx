@@ -19,16 +19,17 @@ export const loader: LoaderFunction = async ({ params }) => {
           id
           name
           slug
-          material
-          height
-          length
-          width
-          images {
+          images(first: 1) {
             url
           }
-          categories {
+          categories(first: 1) {
             name
           }
+        }
+      }
+      productsConnection {
+        aggregate {
+          count
         }
       }
       categories {
@@ -46,18 +47,28 @@ export const loader: LoaderFunction = async ({ params }) => {
   const response = await graphcmsClient
     .query(oneCategoryBySlugQuery, { slug: categorySlug })
     .toPromise()
-  const { category, categories, collections } = response.data
 
-  return json({ category, categories, collections })
+  const { category, productsConnection, categories, collections } =
+    response.data
+
+  return json({
+    category,
+    productsConnection,
+    categories,
+    collections,
+  })
 }
 
 export default function CategorySlug() {
-  const { category, categories, collections } = useLoaderData()
+  const { category, productsConnection, categories, collections } =
+    useLoaderData()
+
   return (
     <ProductsExplorer
-        products={category.products}
-        categories={categories}
-        collections={collections}
-      />
+      products={category.products}
+      productsConnection={productsConnection}
+      categories={categories}
+      collections={collections}
+    />
   )
 }
