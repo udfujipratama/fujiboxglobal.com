@@ -8,6 +8,14 @@ export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url)
   const searchQuery = url.searchParams.get('q')
 
+  // Logic for the pagination
+  const pageQuery = Number(url.searchParams.get('page'))
+  const itemsPerPage = 10
+
+  const first = itemsPerPage
+  const skip = pageQuery > 1 ? itemsPerPage * pageQuery - itemsPerPage : 0
+
+  // Logic for the data fetching whether filter or get all data
   if (searchQuery) {
     const searchProductsQuery = gql`
       query SearchProducts($searchQuery: String!) {
@@ -50,15 +58,15 @@ export const loader: LoaderFunction = async ({ request }) => {
     })
   } else {
     const allProductsQuery = gql`
-      query AllProducts {
-        products {
+      query AllProducts($first: Int!, $skip: Int!) {
+        products(first: $first, skip: $skip) {
           id
           slug
           name
           images(first: 1) {
             url
           }
-          categories {
+          categories(first: 1) {
             name
           }
         }
@@ -75,7 +83,12 @@ export const loader: LoaderFunction = async ({ request }) => {
       }
     `
 
-    const response = await graphcmsClient.query(allProductsQuery).toPromise()
+    const response = await graphcmsClient
+      .query(allProductsQuery, {
+        first,
+        skip,
+      })
+      .toPromise()
     const { products, categories, collections } = response.data
 
     return json({

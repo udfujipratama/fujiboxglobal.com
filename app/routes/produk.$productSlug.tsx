@@ -1,6 +1,6 @@
 import { gql } from '@urql/core'
 import { IoLogoWhatsapp } from 'react-icons/io'
-import { json, Link, LoaderFunction, useLoaderData } from 'remix'
+import { json, Link, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 import { ProductImagesCarousel } from '~/components'
 import { RecommendedProducts } from '~/contents'
 import { graphcmsClient } from '~/lib'
@@ -55,6 +55,15 @@ export const loader: LoaderFunction = async ({ params }) => {
   const { product, products } = response.data
 
   return json({ product, products })
+}
+
+export const meta: MetaFunction = () => {
+  return {
+    title: 'Semua produk Fujibox',
+    description: 'Cari produk Fujibox yang Anda butuhkan di sini.',
+    // 'og:image': product.images[0].url,
+    // 'og:image:alt': '',
+  }
 }
 
 export default function ProductSlug() {
