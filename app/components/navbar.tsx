@@ -79,11 +79,11 @@ const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = () => {
 export const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
     <div className="container lg py-4">
-      <div className="navbar bg-base-100">
+      <div className="navbar bg-base-100 gap-1">
         <div className="navbar-start flex items-center">
           <Link to="/" className="block">
             <img
-              className="max-h-10"
+              className="max-w-[90px] h-[45px] md:max-h-10"
               src="/images/logo/fujibox-logo.png"
               alt="Fujibox"
             />

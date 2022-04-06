@@ -39,8 +39,11 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
           </span>
         )}
 
-        <h2 className="card-title text-sm">{item.name}</h2>
-        <Link className="btn btn-primary btn-sm" to={`/${route}/${item.slug}`}>
+        <h2 className="card-title text-xs">{item.name}</h2>
+        <Link
+          className="btn btn-primary btn-sm text-xs"
+          to={`/${route}/${item.slug}`}
+        >
           Lihat produk
         </Link>
       </div>
