@@ -42,11 +42,11 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
           name="searchQuery"
           type="text"
           placeholder="Search…"
-          className="input input-xs input-bordered md:input-md"
+          className="input input-sm input-bordered md:input-md"
         />
         <button
           type="submit"
-          className="btn btn-xs md:btn-md btn-primary btn-square"
+          className="btn btn-sm md:btn-md btn-primary btn-square"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
