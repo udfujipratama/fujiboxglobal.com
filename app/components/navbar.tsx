@@ -25,9 +25,7 @@ interface HamburgerMenuProps {
   MenuLists: any
 }
 
-const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = ({
-  MenuLists: any,
-}) => {
+const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -62,16 +60,12 @@ const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = ({
             {MenuLists.map((menu, index) => {
               return (
                 <Menu.Item key={index}>
-                  {({ active }) => {return (
-                    <Link
-                      to={menu.link}
-                      className={`${
-                        active ? 'bg-primary text-white' : 'text-gray-900'
-                      } group flex rounded-md items-center w-full px-2 py-2 text-sm`}
-                    >
-                      {menu.title}
-                    </Link>
-                  )}}
+                  <Link
+                    to={menu.link}
+                    className="flex flex-col p-2 rounded-md active:bg-primary"
+                  >
+                    {menu.title}
+                  </Link>
                 </Menu.Item>
               )
             })}
@@ -86,7 +80,7 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
     <div className="container lg py-4">
       <div className="navbar bg-base-100">
-        <div className="navbar-start flex items-center gap-4">
+        <div className="navbar-start flex items-center">
           <Link to="/" className="block">
             <img
               className="max-h-10"

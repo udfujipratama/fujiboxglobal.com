@@ -25,6 +25,7 @@
     "react/jsx-props-no-spreading": "off",
     "react/no-unescaped-entities": "off",
     "react/forbid-prop-types": "off",
+    "react/no-array-index-key": "off",
     "unused-imports/no-unused-imports": "error",
     "import/order": [
       "error",

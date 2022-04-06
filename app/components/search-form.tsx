@@ -35,14 +35,14 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
 
   return (
     <form className="form-control" onSubmit={handleSubmit(onSubmit)}>
-      <div className="input-group ml-5 input-group-xs md:input-group-md">
+      <div className="input-group input-group-sm md:input-group-sm">
         <input
           {...register('searchQuery')}
           defaultValue={searchQuery}
           name="searchQuery"
           type="text"
           placeholder="Search…"
-          className="input input-sm input-bordered md:input-md"
+          className="input input-sm input-bordered ml-4 md:input-md"
         />
         <button
           type="submit"
