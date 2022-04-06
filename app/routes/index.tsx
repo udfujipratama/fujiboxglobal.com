@@ -58,7 +58,7 @@ export default function Index() {
             Lihat semua produk
           </Link>
         </div>
-        <CardsList tag="NEW" route="produk" items={category.products} />
+        <CardsList route="produk" items={category.products} />
       </div>
       <WhatsAppCard />
       <div className="container my-10">
