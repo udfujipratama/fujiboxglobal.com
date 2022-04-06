@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import { FunctionComponent } from 'react'
-import { Link } from 'remix'
+import { Link, useSearchParams } from 'remix'
 
 import { CardsList, PaginationButtons } from '~/components'
 import { ProductsExplorerSidebar } from '~/contents'
@@ -18,6 +18,9 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
   categories,
   collections,
 }) => {
+  const [searchParams] = useSearchParams()
+  const showPagination = searchParams.get('q') === null
+
   return (
     <div className="container my-10">
       <div className="flex w-full items-center mb-4">
@@ -45,8 +48,9 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
           ) : (
             <p>Maaf tidak ada produk tersedia.</p>
           )}
-
-          <PaginationButtons productsConnection={productsConnection} />
+          {showPagination && (
+            <PaginationButtons productsConnection={productsConnection} />
+          )}
         </div>
       </div>
     </div>
