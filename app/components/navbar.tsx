@@ -29,7 +29,7 @@ const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex justify-center w-full px-4 py-2 text-sm font-medium text-white bg-black rounded-md bg-primary hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+        <Menu.Button className="inline-flex justify-center w-full px-1 py-1 text-sm font-medium text-white bg-black rounded-md bg-primary hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -80,19 +80,19 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
     <div className="container lg py-4">
       <div className="navbar bg-base-100 gap-1">
-        <div className="navbar-start flex items-center">
+        <div className="flex-1">
           <Link to="/" className="block">
             <img
-              className="max-w-[90px] h-[45px] md:max-h-10"
+              className="max-h-10"
               src="/images/logo/fujibox-logo.png"
               alt="Fujibox"
             />
           </Link>
         </div>
-        <div className="navbar-center">
+        <div className="flex-none gap-2">
           <SearchForm />
         </div>
-        <div className="navbar-end">
+        <div>
           <div className="hidden lg:flex">
             <ul className="menu menu-horizontal p-0 text-primary">
               <li>

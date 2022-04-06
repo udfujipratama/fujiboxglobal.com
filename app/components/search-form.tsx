@@ -35,18 +35,18 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
 
   return (
     <form className="form-control" onSubmit={handleSubmit(onSubmit)}>
-      <div className="input-group input-group-sm md:input-group-sm">
+      <div className="input-group">
         <input
           {...register('searchQuery')}
           defaultValue={searchQuery}
           name="searchQuery"
           type="text"
           placeholder="Search…"
-          className="input input-sm input-bordered md:input-md"
+          className="input input-xs md:w-[700px] md:h-[49px] input-bordered rounded"
         />
         <button
           type="submit"
-          className="btn btn-sm md:btn-md btn-primary btn-square"
+          className="btn btn-xs md:btn-md btn-primary btn-square"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
