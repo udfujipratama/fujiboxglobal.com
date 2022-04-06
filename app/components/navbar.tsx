@@ -79,7 +79,7 @@ const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = () => {
 export const Navbar: FunctionComponent<NavbarProps> = () => {
   return (
     <div className="container lg py-4">
-      <div className="navbar bg-base-100 gap-1">
+      <div className="navbar bg-base-100 gap-2">
         <div className="flex-1">
           <Link to="/" className="block">
             <img
