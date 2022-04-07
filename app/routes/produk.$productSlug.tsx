@@ -6,23 +6,23 @@ import { ProductImagesCarousel } from '~/components'
 import { RecommendedProducts } from '~/contents'
 import { graphcmsClient, SEOHandle } from '~/lib'
 
-export const handle: SEOHandle = {
-  getSitemapEntries: async () => {
-    const allProductsQuery = gql`
-      query AllProducts {
-        products(orderBy: updatedAt_DESC) {
-          slug
-        }
-      }
-    `
-    const response = await graphcmsClient.query(allProductsQuery).toPromise()
-    const { products } = response.data
+// export const handle: SEOHandle = {
+//   getSitemapEntries: async () => {
+//     const allProductsQuery = gql`
+//       query AllProducts {
+//         products(orderBy: updatedAt_DESC) {
+//           slug
+//         }
+//       }
+//     `
+//     const response = await graphcmsClient.query(allProductsQuery).toPromise()
+//     const { products } = response.data
 
-    return products.map((product: any) => {
-      return { route: `/produk/${product.slug}`, priority: 0.8 }
-    })
-  },
-}
+//     return products.map((product: any) => {
+//       return { route: `/produk/${product.slug}`, priority: 0.8 }
+//     })
+//   },
+// }
 
 export const loader: LoaderFunction = async ({ params }) => {
   const { productSlug } = params
