@@ -1,4 +1,4 @@
-import { generateSitemap } from '@balavishnuvj/remix-seo'
+import { generateRobotsTxt, generateSitemap } from '@balavishnuvj/remix-seo'
 import { EntryContext } from 'remix'
 
 type Handler = (
@@ -11,6 +11,11 @@ export const otherRootRoutes: Record<string, Handler> = {
     return generateSitemap(request, remixContext, {
       siteUrl: 'https://fujiboxglobal.com',
     })
+  },
+  '/robots.txt': async () => {
+    return generateRobotsTxt([
+      { type: 'sitemap', value: 'https://fujiboxglobal.com/sitemap.xml' },
+    ])
   },
 }
 
