@@ -27,6 +27,7 @@ export const loader: LoaderFunction = async ({ request }) => {
     const searchProductsQuery = gql`
       query SearchProducts($first: Int!, $skip: Int!, $searchQuery: String!) {
         products(
+          orderBy: updatedAt_DESC
           first: $first
           skip: $skip
           where: { OR: [{ name_contains: $searchQuery }] }
@@ -79,7 +80,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   }
   const allProductsQuery = gql`
     query AllProducts($first: Int!, $skip: Int!) {
-      products(first: $first, skip: $skip) {
+      products(orderBy: updatedAt_DESC, first: $first, skip: $skip) {
         id
         slug
         name
