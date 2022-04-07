@@ -2,13 +2,19 @@ import { gql } from '@urql/core'
 import { json, LoaderFunction, useLoaderData } from 'remix'
 
 import { ProductsExplorer } from '~/contents'
-import { graphcmsClient } from '~/lib'
+import { graphcmsClient, SEOHandle } from '~/lib'
 
 type LoaderData = {
   products: any[]
   productsConnection: any
   categories: any[]
   collections: any[]
+}
+
+export const handle: SEOHandle = {
+  getSitemapEntries: async () => {
+    return [{ route: `/produk`, priority: 0.9 }]
+  },
 }
 
 export const loader: LoaderFunction = async ({ request }) => {
