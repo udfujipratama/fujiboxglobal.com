@@ -25,14 +25,16 @@ interface CardItemsProps {
 }
 
 const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
-  const itemImageUrl = item.image?.url ? item.image?.url : item.images[0].url
+  const itemImageUrl = item.image?.url ? item.image?.url : item.images[0]?.url
   const hasCategory = item.categories?.length && item.categories[0]?.name
 
   return (
     <div className="card card-compact bg-base-100 shadow-xl w-full">
-      <figure>
-        <img src={itemImageUrl} alt={item.name} />
-      </figure>
+      {itemImageUrl && (
+        <figure>
+          <img src={itemImageUrl} alt={item.name} />
+        </figure>
+      )}
       <div className="card-body">
         {hasCategory && route !== 'kategori' && (
           <span className="text-[10px] text-slate-400">
