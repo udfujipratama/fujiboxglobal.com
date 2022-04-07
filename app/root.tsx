@@ -21,9 +21,9 @@ import nProgressStylesUrl from '~/styles/nprogress.css'
 export const meta: MetaFunction = () => {
   return {
     charset: 'utf-8',
+    viewport: 'width=device-width,initial-scale=1',
     title: 'Fujibox',
     description: 'Crafting a good Packaging Product',
-    viewport: 'width=device-width,initial-scale=1',
   }
 }
 

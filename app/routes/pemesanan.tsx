@@ -1,4 +1,5 @@
 import { IoLogoWhatsapp } from 'react-icons/io'
+import { MetaFunction } from 'remix'
 
 import { SEOHandle } from '~/lib'
 
@@ -6,6 +7,14 @@ export const handle: SEOHandle = {
   getSitemapEntries: async () => {
     return [{ route: `/pemesanan`, priority: 0.9 }]
   },
+}
+
+export const meta: MetaFunction = () => {
+  return {
+    title: 'Pemesanan dengan Fujibox',
+    description:
+      'Suka dengan produk kami? Ingin marketing kami menghubungi Anda? Isi form reseller Fujibox ini untuk kami segera menghubungi Anda.',
+  }
 }
 
 export default function Pemesanan() {

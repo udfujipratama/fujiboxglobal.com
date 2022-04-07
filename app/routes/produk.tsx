@@ -1,5 +1,5 @@
 import { gql } from '@urql/core'
-import { json, LoaderFunction, useLoaderData } from 'remix'
+import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { ProductsExplorer } from '~/contents'
 import { graphcmsClient, SEOHandle } from '~/lib'
@@ -15,6 +15,13 @@ export const handle: SEOHandle = {
   getSitemapEntries: async () => {
     return [{ route: `/produk`, priority: 0.9 }]
   },
+}
+
+export const meta: MetaFunction = () => {
+  return {
+    title: 'Semua produk Fujibox',
+    description: 'Cari produk Fujibox yang Anda butuhkan di sini.',
+  }
 }
 
 export const loader: LoaderFunction = async ({ request }) => {

@@ -1,5 +1,5 @@
 import { gql } from '@urql/core'
-import { Link, LoaderFunction, useLoaderData } from 'remix'
+import { Link, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { CardsList, Hero, InstagramHero, WhatsAppCard } from '~/components'
 import { graphcmsClient, SEOHandle } from '~/lib'
@@ -8,6 +8,13 @@ export const handle: SEOHandle = {
   getSitemapEntries: async () => {
     return [{ route: `/`, priority: 1 }]
   },
+}
+
+export const meta: MetaFunction = () => {
+  return {
+    title: 'Fujibox',
+    description: 'Crafting a good packaging product.',
+  }
 }
 
 export const loader: LoaderFunction = async () => {

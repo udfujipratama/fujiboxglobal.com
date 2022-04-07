@@ -22,6 +22,24 @@ export const handle: SEOHandle = {
   },
 }
 
+export const meta: MetaFunction = ({ data }) => {
+  const { product } = data
+
+  if (!product) {
+    return {
+      title: `Produk tidak ditemukan - Produk - Fujibox`,
+      description: 'Maaf produk tidak ditemukan di halaman ini.',
+    }
+  }
+  const text: string = product?.description?.text
+  const description = text.split('\\n').join(' ')
+
+  return {
+    title: `${product?.name} - Produk - Fujibox`,
+    description,
+  }
+}
+
 export const loader: LoaderFunction = async ({ params }) => {
   const { productSlug } = params
   const oneProductBySlugQuery = gql`
@@ -36,6 +54,7 @@ export const loader: LoaderFunction = async ({ params }) => {
         width
         description {
           html
+          text
         }
         images {
           id
@@ -73,15 +92,6 @@ export const loader: LoaderFunction = async ({ params }) => {
   const { product, products } = response.data
 
   return json({ product, products })
-}
-
-export const meta: MetaFunction = () => {
-  return {
-    title: 'Semua produk Fujibox',
-    description: 'Cari produk Fujibox yang Anda butuhkan di sini.',
-    // 'og:image': product.images[0].url,
-    // 'og:image:alt': '',
-  }
 }
 
 export default function ProductSlug() {
