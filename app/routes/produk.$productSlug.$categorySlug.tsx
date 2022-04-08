@@ -71,14 +71,14 @@ export const loader: LoaderFunction = async ({ params }) => {
           slug
         }
       }
-
+      # this query for recommended-products
       category(where: { slug: $categorySlug }) {
         id
         name
         image {
           url
         }
-        products(last: 5) {
+        products(first: 5) {
           id
           name
           slug
@@ -101,7 +101,6 @@ export const loader: LoaderFunction = async ({ params }) => {
     .toPromise()
 
   const { product, category } = response.data
-  console.log(category)
 
   return json({ product, category })
 }
