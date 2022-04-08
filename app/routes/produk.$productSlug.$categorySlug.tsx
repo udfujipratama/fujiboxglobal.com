@@ -41,10 +41,10 @@ export const meta: MetaFunction = ({ data }) => {
 }
 
 export const loader: LoaderFunction = async ({ params }) => {
-  const { productSlug } = params
+  const { productSlug, categorySlug } = params
   const oneProductBySlugQuery = gql`
-    query OneProductBySlug($slug: String!) {
-      product(where: { slug: $slug }) {
+    query OneProductBySlug($productSlug: String!, $categorySlug: String!) {
+      product(where: { slug: $productSlug }) {
         id
         name
         slug
@@ -72,30 +72,42 @@ export const loader: LoaderFunction = async ({ params }) => {
         }
       }
 
-      products(first: 5) {
+      category(where: { slug: $categorySlug }) {
         id
-        slug
         name
-        images {
+        image {
           url
         }
-        categories {
+        products(last: 5) {
+          id
           name
+          slug
+          images(first: 1) {
+            url
+          }
+          categories(first: 1) {
+            name
+            slug
+          }
         }
       }
     }
   `
   const response = await graphcmsClient
-    .query(oneProductBySlugQuery, { slug: productSlug })
+    .query(oneProductBySlugQuery, {
+      productSlug,
+      categorySlug,
+    })
     .toPromise()
 
-  const { product, products } = response.data
+  const { product, category } = response.data
+  console.log(category)
 
-  return json({ product, products })
+  return json({ product, category })
 }
 
 export default function ProductSlug() {
-  const { product, products } = useLoaderData()
+  const { product, category } = useLoaderData()
 
-  return <ProductDetail product={product} products={products} />
+  return <ProductDetail product={product} products={category.products} />
 }

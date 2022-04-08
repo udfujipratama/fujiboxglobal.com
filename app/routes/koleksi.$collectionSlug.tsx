@@ -28,6 +28,7 @@ export const loader: LoaderFunction = async ({ params }) => {
           }
           categories {
             name
+            slug
           }
         }
       }

@@ -53,6 +53,7 @@ export const loader: LoaderFunction = async ({ request }) => {
           }
           categories(first: 1) {
             name
+            slug
           }
         }
         productsConnection {
@@ -102,6 +103,7 @@ export const loader: LoaderFunction = async ({ request }) => {
         }
         categories(first: 1) {
           name
+          slug
         }
       }
       productsConnection {

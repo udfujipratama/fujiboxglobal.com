@@ -24,6 +24,7 @@ export const loader: LoaderFunction = async ({ params }) => {
           }
           categories(first: 1) {
             name
+            slug
           }
         }
       }
