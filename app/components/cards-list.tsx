@@ -30,6 +30,11 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
     item.categories?.length && item.categories[0]?.name
   )
 
+  const LinkLihatProduk =
+    route === 'kategori'
+      ? `/${route}/${item.slug}`
+      : `/${route}/${item.slug}/${item.categories[0].slug}`
+
   return (
     <div className="card card-compact bg-base-100 shadow-xl w-full">
       {itemImageUrl && (
@@ -45,10 +50,7 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
         )}
 
         <h2 className="card-title text-xs">{item.name}</h2>
-        <Link
-          className="btn btn-primary btn-sm text-xs"
-          to={`/${route}/${item.slug}`}
-        >
+        <Link className="btn btn-primary btn-sm text-xs" to={LinkLihatProduk}>
           Lihat produk
         </Link>
       </div>
