@@ -3,18 +3,18 @@ import { Link } from 'remix'
 
 import type { Product, Products } from '~/types'
 
-interface CardsListProps {
+interface ProductCardsProps {
   route: string
-  items: Products
+  products: Products
 }
 
-export const CardsList: FunctionComponent<CardsListProps> = ({
+export const ProductCards: FunctionComponent<ProductCardsProps> = ({
   route,
-  items,
+  products,
 }) => {
   return (
     <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
-      {items.map((item, index) => {
+      {products.map((item, index) => {
         return <CardItem key={item.id || index} route={route} item={item} />
       })}
     </div>

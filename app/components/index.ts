@@ -1,4 +1,4 @@
-export * from './cards-list'
+export * from './product-cards'
 export * from './footer'
 export * from './hero'
 export * from './instagram-hero'

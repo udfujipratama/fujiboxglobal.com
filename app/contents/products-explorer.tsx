@@ -2,7 +2,7 @@ import PropTypes from 'prop-types'
 import { FunctionComponent } from 'react'
 import { Link, useSearchParams } from 'remix'
 
-import { CardsList, PaginationButtons } from '~/components'
+import { ProductCards, PaginationButtons } from '~/components'
 import { ProductsExplorerSidebar } from '~/contents'
 
 interface ProductsExplorerProps {
@@ -44,7 +44,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
 
         <div>
           {products.length > 0 ? (
-            <CardsList route="produk" items={products} />
+            <ProductCards route="produk" items={products} />
           ) : (
             <p>Maaf tidak ada produk tersedia.</p>
           )}

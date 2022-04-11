@@ -1,7 +1,7 @@
 import { gql } from '@urql/core'
 import { Link, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
-import { CardsList, Hero, InstagramHero, WhatsAppCard } from '~/components'
+import { ProductCards, Hero, InstagramHero, WhatsAppCard } from '~/components'
 import { graphcmsClient, SEOHandle } from '~/lib'
 
 export const handle: SEOHandle = {
@@ -18,45 +18,38 @@ export const meta: MetaFunction = () => {
 }
 
 export const loader: LoaderFunction = async () => {
-  const allProductsAndCategoryQuery = gql`
-    query AllProductsAndCategory {
-      collection(where: { name: "Produk Terbaru" }) {
-        products(last: 5) {
+  const PRODUCTS_QUERY = gql`
+    query NewProductsCollection {
+      newProducts: products(
+        last: 5
+        where: { collections_some: { slug: "produk-terbaru" } }
+      ) {
+        name
+        slug
+        images {
+          url
+          id
+        }
+        categories {
           name
           slug
-          images {
-            url
-            id
-          }
-          categories {
-            name
-            slug
-          }
-        }
-      }
-      categories(where: { name_not: "New Product" }) {
-        id
-        slug
-        name
-        image {
-          url
         }
       }
     }
   `
 
-  const response = await graphcmsClient
-    .query(allProductsAndCategoryQuery)
-    .toPromise()
-  const { collection, categories } = response.data
+  const response = await graphcmsClient.query(PRODUCTS_QUERY).toPromise()
+
+  const { newProducts, categories } = response.data
+
   return {
-    collection,
+    newProducts,
     categories,
   }
 }
 
 export default function Index() {
-  const { collection, categories } = useLoaderData()
+  const { newProducts, categories } = useLoaderData()
 
   return (
     <>
@@ -68,9 +61,12 @@ export default function Index() {
             Lihat semua produk
           </Link>
         </div>
-        <CardsList route="produk" items={collection.products} />
+
+        <ProductCards route="produk" products={newProducts} />
       </div>
+
       <WhatsAppCard />
+
       <div className="container my-10">
         <div className="flex w-full justify-between flex-col gap-4">
           <div className="flex flex-col">
@@ -88,9 +84,11 @@ export default function Index() {
               src="https://media.graphcms.com/MtQ6cUD5QIysrF7zJiMd?_ga=2.219704345.1809180898.1648532698-1199703748.1645432742"
             />
           </div>
-          <CardsList route="kategori" items={categories} />
+
+          {/* <CategoryCards route="kategori" categories={categories} /> */}
         </div>
       </div>
+
       <InstagramHero />
     </>
   )
