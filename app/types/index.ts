@@ -1,4 +1,8 @@
-export type TProduct = {
+export type Image = {
+  url: string
+}
+
+export type Product = {
   id: string
   slug: string
   name: string
@@ -6,12 +10,19 @@ export type TProduct = {
   width: number
   height: number
   length: number
-  images: Array<{ url: string }>
+  images: Array<Image>
 }
 
-export type Tcategory = {
-  id?: string
-  name?: string
+export type Category = {
+  id: string
+  name: string
   slug: string
-  image: { url: string }
+  image: Image
+}
+
+export type Collection = {
+  id: string
+  name: string
+  slug: string
+  image: Image
 }
