@@ -44,7 +44,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
 
         <div>
           {products.length > 0 ? (
-            <ProductCards route="produk" items={products} />
+            <ProductCards route="produk" products={products} />
           ) : (
             <p>Maaf tidak ada produk tersedia.</p>
           )}
