@@ -2,8 +2,10 @@ import queryString from 'query-string'
 import { FunctionComponent } from 'react'
 import { Link, useLocation, useSearchParams } from 'remix'
 
+import type { Connection } from '~/types'
+
 interface PaginationButtonsProps {
-  productsConnection: any
+  productsConnection: Connection
 }
 
 export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({

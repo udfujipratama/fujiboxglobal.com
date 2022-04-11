@@ -5,9 +5,11 @@ import { Link } from 'remix'
 import { ProductImagesCarousel } from '~/components'
 import { RecommendedProducts } from '~/contents'
 
+import type { Category, Collection, Product, Products } from '~/types'
+
 interface ProductDetailProps {
-  product: any
-  products: any[]
+  product: Product
+  products: Products
 }
 
 export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
@@ -48,7 +50,7 @@ export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
               <div>{product.height} cm</div>
               <div>Kategori:</div>
               <div className="flex flex-wrap gap-2">
-                {product.categories.map((category: any) => {
+                {product.categories.map((category: Category) => {
                   return (
                     <Link key={category.id} to={`/kategori/${category.slug}`}>
                       {category.name}
@@ -58,7 +60,7 @@ export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
               </div>
               <div>Koleksi:</div>
               <div className="flex flex-wrap gap-2">
-                {product.collections.map((collection: any) => {
+                {product.collections.map((collection: Collection) => {
                   return (
                     <Link
                       key={collection.id}

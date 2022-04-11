@@ -3,33 +3,25 @@ import { FunctionComponent, Fragment } from 'react'
 import { Link } from 'remix'
 
 import { SearchForm } from '~/components'
+import { MenuItems } from '~/types'
 
 interface NavbarProps {}
 
-const MenuLists = [
-  {
-    title: 'Beranda',
-    link: '/',
-  },
-  {
-    title: 'Produk',
-    link: '/produk',
-  },
-  {
-    title: 'Pemesanan',
-    link: '/pemesanan',
-  },
+const menuItems: MenuItems = [
+  { title: 'Beranda', link: '/' },
+  { title: 'Produk', link: '/produk' },
+  { title: 'Pemesanan', link: '/pemesanan' },
 ]
 
-interface HamburgerMenuProps {
-  MenuLists: any
+interface NavMenuProps {
+  menuItems: MenuItems
 }
 
-const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = () => {
+const NavMenu: FunctionComponent<NavMenuProps> = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
-        <Menu.Button className="inline-flex justify-center w-full px-1 py-1 text-sm font-medium text-white bg-black rounded-md bg-primary hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+        <Menu.Button className="inline-flex justify-center w-full px-1 py-1 text-sm font-medium text-white bg-black rounded-md hover:bg-opacity-30 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             className="h-5 w-5"
@@ -57,14 +49,14 @@ const HamburgerMenu: FunctionComponent<HamburgerMenuProps> = () => {
       >
         <Menu.Items className="absolute z-10 right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="px-1 py-1 ">
-            {MenuLists.map((menu, index) => {
+            {menuItems.map((menuItem, index) => {
               return (
                 <Menu.Item key={index}>
                   <Link
-                    to={menu.link}
+                    to={menuItem.link}
                     className="flex flex-col p-2 rounded-md active:bg-primary"
                   >
-                    {menu.title}
+                    {menuItem.title}
                   </Link>
                 </Menu.Item>
               )
@@ -107,7 +99,7 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
             </ul>
           </div>
           <div className="navbar-center flex lg:hidden">
-            <HamburgerMenu MenuLists={MenuLists} />
+            <NavMenu menuItems={menuItems} />
           </div>
         </div>
       </div>

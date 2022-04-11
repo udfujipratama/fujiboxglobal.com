@@ -1,12 +1,14 @@
 import { FunctionComponent } from 'react'
 import { Link } from 'remix'
 
-interface CategoryProps {
+import type { Product, Products } from '~/types'
+
+interface CardsListProps {
   route: string
-  items: any[]
+  items: Products
 }
 
-export const CardsList: FunctionComponent<CategoryProps> = ({
+export const CardsList: FunctionComponent<CardsListProps> = ({
   route,
   items,
 }) => {
@@ -21,11 +23,16 @@ export const CardsList: FunctionComponent<CategoryProps> = ({
 
 interface CardItemsProps {
   route: string
-  item: any
+  item: Product
 }
 
 const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
-  const itemImageUrl = item.image?.url ? item.image?.url : item.images[0]?.url
+  const itemImageUrl =
+    item.images[0]?.url ||
+    item.categories[0].image.url ||
+    item.collections[0].image.url ||
+    ''
+
   const hasCategory = Boolean(
     item.categories?.length && item.categories[0]?.name
   )

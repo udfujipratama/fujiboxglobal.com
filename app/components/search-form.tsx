@@ -4,6 +4,10 @@ import { useLocation, useNavigate, useSearchParams } from 'remix'
 
 interface SearchFormProps {}
 
+type FormValues = {
+  searchQuery: string
+}
+
 export const SearchForm: FunctionComponent<SearchFormProps> = () => {
   const navigate = useNavigate()
   const [searchParams] = useSearchParams()
@@ -22,13 +26,14 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
     }
   }, [location, searchQuery, reset])
 
-  const onSubmit = (data: any) => {
+  const onSubmit = (data: FormValues) => {
     try {
       if (data.searchQuery) {
         const q = data.searchQuery
         navigate(`/produk?q=${q}`)
       }
     } catch (error) {
+      // eslint-disable-next-line no-console
       console.error(error)
     }
   }

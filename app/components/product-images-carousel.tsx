@@ -1,7 +1,9 @@
 import { FunctionComponent } from 'react'
 
+import type { Images } from '~/types'
+
 interface ProductImagesCarouselProps {
-  productImages: any[]
+  productImages: Images
 }
 
 export const ProductImagesCarousel: FunctionComponent<
