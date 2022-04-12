@@ -3,6 +3,7 @@ import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { ProductDetail } from '~/contents'
 import { graphcmsClient, SEOHandle } from '~/lib'
+import { Product } from '~/types'
 
 export const handle: SEOHandle = {
   getSitemapEntries: async () => {
@@ -16,7 +17,7 @@ export const handle: SEOHandle = {
     const response = await graphcmsClient.query(allProductsQuery).toPromise()
     const { products } = response.data
 
-    return products.map((product: any) => {
+    return products.map((product: Product) => {
       return { route: `/produk/${product.slug}`, priority: 0.8 }
     })
   },
@@ -37,6 +38,7 @@ export const meta: MetaFunction = ({ data }) => {
   return {
     title: `${product?.name} - Produk - Fujibox`,
     description,
+    // og:image: ` ${product.images[0].url}`,
   }
 }
 
