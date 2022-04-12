@@ -36,8 +36,6 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
     koleksi: collectionQuery,
   })
 
-  console.log({ previousPageLink })
-
   const nextPageLink = queryString.stringify({
     page: pageQuery + 1,
     q: searchQuery,
