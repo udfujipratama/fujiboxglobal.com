@@ -20,7 +20,7 @@ const Categorycard: FunctionComponent<CategoryCardProps> = ({ category }) => {
       <div className="card-body absolute bottom-0 left-0">
         <div className="card-actions justify-end">
           <Link
-            to={`/kategori/${category.slug}`}
+            to={`/produk?kategori=${category.slug}`}
             className="btn btn-sm btn-primary"
           >
             {category.name}
