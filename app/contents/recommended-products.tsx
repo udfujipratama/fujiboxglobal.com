@@ -1,10 +1,10 @@
 import { FunctionComponent } from 'react'
 
 import { ProductCards } from '~/components'
-import { TProduct } from '~/types'
+import { Products } from '~/types'
 
 interface RecommendedProductsProps {
-  products: TProduct[]
+  products: Products
 }
 
 export const RecommendedProducts: FunctionComponent<
@@ -13,7 +13,7 @@ export const RecommendedProducts: FunctionComponent<
   return (
     <div className="container my-10 max-w-5xl">
       <h3 className="text-2xl mb-5">Rekomendasi</h3>
-      <ProductCards route="produk" items={products} />
+      <ProductCards route="produk" products={products} />
     </div>
   )
 }
