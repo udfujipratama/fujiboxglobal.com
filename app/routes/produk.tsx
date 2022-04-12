@@ -59,7 +59,7 @@ export const loader: LoaderFunction = async ({ request }) => {
             slug
           }
         }
-        productsConnection {
+        productsConnection(where: { OR: [{ name_contains: $searchQuery }] }) {
           aggregate {
             count
           }
