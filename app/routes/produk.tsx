@@ -122,7 +122,14 @@ export const loader: LoaderFunction = async ({ request }) => {
             slug
           }
         }
-        productsConnection {
+        productsConnection(
+          where: {
+            OR: [
+              { collections_some: { slug: $slug } }
+              { categories_some: { slug: $slug } }
+            ]
+          }
+        ) {
           aggregate {
             count
           }
