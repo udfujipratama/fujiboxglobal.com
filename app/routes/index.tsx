@@ -2,6 +2,7 @@ import { gql } from '@urql/core'
 import { Link, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { ProductCards, Hero, InstagramHero, WhatsAppCard } from '~/components'
+import { CategoryCards } from '~/contents'
 import { graphcmsClient, SEOHandle } from '~/lib'
 
 export const handle: SEOHandle = {
@@ -33,6 +34,15 @@ export const loader: LoaderFunction = async () => {
         categories {
           name
           slug
+        }
+      }
+
+      categories {
+        id
+        slug
+        name
+        image {
+          url
         }
       }
     }
@@ -85,7 +95,7 @@ export default function Index() {
             />
           </div>
 
-          {/* <CategoryCards route="kategori" categories={categories} /> */}
+          <CategoryCards categories={categories} />
         </div>
       </div>
 
