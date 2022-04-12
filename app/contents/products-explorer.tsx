@@ -1,15 +1,17 @@
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import { FunctionComponent } from 'react'
 import { Link, useSearchParams } from 'remix'
 
 import { ProductCards, PaginationButtons } from '~/components'
 import { ProductsExplorerSidebar } from '~/contents'
 
+import type { Categories, Collections, Connection, Products } from '~/types'
+
 interface ProductsExplorerProps {
-  categories: any[]
-  productsConnection: any
-  collections: any[]
-  products: any[]
+  categories: Categories
+  productsConnection: Connection
+  collections: Collections
+  products: Products
 }
 
 export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
@@ -57,9 +59,9 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
   )
 }
 
-ProductsExplorer.propTypes = {
-  categories: PropTypes.arrayOf(PropTypes.object).isRequired,
-  productsConnection: PropTypes.object.isRequired,
-  collections: PropTypes.arrayOf(PropTypes.object).isRequired,
-  products: PropTypes.arrayOf(PropTypes.object).isRequired,
-}
+// ProductsExplorer.propTypes = {
+//   categories: PropTypes.arrayOf(PropTypes.object).isRequired,
+//   productsConnection: PropTypes.object.isRequired,
+//   collections: PropTypes.arrayOf(PropTypes.object).isRequired,
+//   products: PropTypes.arrayOf(PropTypes.object).isRequired,
+// }

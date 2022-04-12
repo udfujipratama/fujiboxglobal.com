@@ -3,12 +3,13 @@ import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { ProductsExplorer } from '~/contents'
 import { graphcmsClient, SEOHandle } from '~/lib'
+import { Categories, Collections, Connection, Products } from '~/types'
 
 type LoaderData = {
-  products: any[]
-  productsConnection: any
-  categories: any[]
-  collections: any[]
+  products: Products
+  productsConnection: Connection
+  categories: Categories
+  collections: Collections
 }
 
 export const handle: SEOHandle = {
@@ -141,7 +142,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   })
 }
 
-export default function Products() {
+export default function ProductPage() {
   const { products, productsConnection, categories, collections } =
     useLoaderData<LoaderData>()
 
