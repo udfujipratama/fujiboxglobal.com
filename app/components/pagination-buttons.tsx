@@ -16,8 +16,6 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
   const { count } = productsConnection?.aggregate || 0
   const itemsPerPage = 10
 
-  console.log({ searchParams })
-
   const searchQuery = searchParams.get('q') || undefined
   const pageQuery: number = Number(searchParams.get('page')) || 1
   const categoryQuery = searchParams.get('kategori') || undefined
@@ -37,6 +35,8 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
     kategori: categoryQuery,
     koleksi: collectionQuery,
   })
+
+  console.log({ previousPageLink })
 
   const nextPageLink = queryString.stringify({
     page: pageQuery + 1,
@@ -62,6 +62,8 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
           const pageLink = queryString.stringify({
             page: pageNumber,
             q: searchQuery,
+            kategori: categoryQuery,
+            koleksi: collectionQuery,
           })
 
           return (
