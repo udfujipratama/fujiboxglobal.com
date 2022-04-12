@@ -52,7 +52,10 @@ export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
               <div className="flex flex-wrap gap-2">
                 {product.categories.map((category: Category) => {
                   return (
-                    <Link key={category.id} to={`/kategori/${category.slug}`}>
+                    <Link
+                      key={category.id}
+                      to={`/produk?kategori=${category.slug}`}
+                    >
                       {category.name}
                     </Link>
                   )
@@ -64,7 +67,7 @@ export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
                   return (
                     <Link
                       key={collection.id}
-                      to={`/koleksi/${collection.slug}`}
+                      to={`/produk?koleksi=${collection.slug}`}
                     >
                       {collection.name}
                     </Link>

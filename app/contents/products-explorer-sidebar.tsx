@@ -21,7 +21,10 @@ export const ProductsExplorerSidebar: FunctionComponent<
           <ul className="list-none">
             {categories.map((category) => {
               return (
-                <Link key={category.id} to={`/kategori/${category.slug}`}>
+                <Link
+                  key={category.id}
+                  to={`/produk?kategori=${category.slug}`}
+                >
                   <li className="py-1 md:py-2 link link-hover">
                     {category.name}
                   </li>
@@ -40,7 +43,7 @@ export const ProductsExplorerSidebar: FunctionComponent<
               return (
                 <Link
                   key={collection.id}
-                  to={`/koleksi/${collection.slug}`}
+                  to={`/produk?koleksi=${collection.slug}`}
                   className="link link-hover"
                 >
                   <li className="py-1 md:py-2 link link-hover">

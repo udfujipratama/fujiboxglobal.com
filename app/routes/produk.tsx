@@ -28,6 +28,8 @@ export const meta: MetaFunction = () => {
 export const loader: LoaderFunction = async ({ request }) => {
   const url = new URL(request.url)
   const searchQuery = url.searchParams.get('q')
+  const categoryOrCollectionquery =
+    url.searchParams.get('kategori') || url.searchParams.get('koleksi')
 
   // Logic for the pagination
   const pageQuery = Number(url.searchParams.get('page'))
@@ -36,7 +38,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   const first = itemsPerPage
   const skip = pageQuery > 1 ? itemsPerPage * pageQuery - itemsPerPage : 0
 
-  // Logic for the data fetching whether filter or get all data
+  // Logic for the search data
   if (searchQuery) {
     const searchProductsQuery = gql`
       query SearchProducts($first: Int!, $skip: Int!, $searchQuery: String!) {
@@ -93,7 +95,70 @@ export const loader: LoaderFunction = async ({ request }) => {
       collections,
     })
   }
-  const allProductsQuery = gql`
+
+  // get all data by category or collection
+  if (categoryOrCollectionquery) {
+    const categorysOrcollectionsQuery = gql`
+      query CategoriesOrCollections($first: Int!, $skip: Int!, $slug: String!) {
+        products(
+          where: {
+            OR: [
+              { collections_some: { slug: $slug } }
+              { categories_some: { slug: $slug } }
+            ]
+          }
+          orderBy: updatedAt_DESC
+          first: $first
+          skip: $skip
+        ) {
+          id
+          slug
+          name
+          images(first: 1) {
+            url
+          }
+          categories(first: 1) {
+            name
+            slug
+          }
+        }
+        productsConnection {
+          aggregate {
+            count
+          }
+        }
+        categories {
+          id
+          slug
+          name
+        }
+        collections {
+          id
+          slug
+          name
+        }
+      }
+    `
+
+    const response = await graphcmsClient
+      .query(categorysOrcollectionsQuery, {
+        first,
+        skip,
+        slug: categoryOrCollectionquery,
+      })
+      .toPromise()
+    const { products, productsConnection, categories, collections } =
+      response.data
+
+    return json({
+      products,
+      productsConnection,
+      categories,
+      collections,
+    })
+  }
+
+  const allProductsquery = gql`
     query AllProducts($first: Int!, $skip: Int!) {
       products(orderBy: updatedAt_DESC, first: $first, skip: $skip) {
         id
@@ -126,7 +191,7 @@ export const loader: LoaderFunction = async ({ request }) => {
   `
 
   const response = await graphcmsClient
-    .query(allProductsQuery, {
+    .query(allProductsquery, {
       first,
       skip,
     })
