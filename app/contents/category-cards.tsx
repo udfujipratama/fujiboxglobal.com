@@ -17,11 +17,11 @@ const Categorycard: FunctionComponent<CategoryCardProps> = ({ category }) => {
       <figure>
         <img src={category.image.url} alt={category.slug} />
       </figure>
-      <div className="card-body absolute bottom-0 left-0">
+      <div className="card-body absolute inset-x-0 bottom-0">
         <div className="card-actions justify-end">
           <Link
             to={`/produk?kategori=${category.slug}`}
-            className="btn btn-sm btn-primary"
+            className="btn btn-xs lg:btn-sm btn-primary"
           >
             {category.name}
           </Link>

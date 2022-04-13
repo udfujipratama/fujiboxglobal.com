@@ -49,9 +49,9 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
 
   return (
     <div className="flex justify-center mt-10">
-      <div className="btn-group">
+      <div className="btn-group gap-4 lg:gap-0">
         {canPrevious && (
-          <Link to={`?${previousPageLink}`} className="btn btn-sm">
+          <Link to={`?${previousPageLink}`} className="btn btn-xs md:btn-md">
             «
           </Link>
         )}
@@ -68,14 +68,14 @@ export const PaginationButtons: FunctionComponent<PaginationButtonsProps> = ({
             <Link
               key={pageNumber}
               to={`?${pageLink}`}
-              className={`btn btn-sm ${isActive && 'btn-active'}`}
+              className={`btn btn-xs md:btn-md ${isActive && 'btn-active'}`}
             >
               {pageNumber}
             </Link>
           )
         })}
         {canNext && (
-          <Link to={`?${nextPageLink}`} className="btn btn-sm">
+          <Link to={`?${nextPageLink}`} className="btn btn-xs md:btn-md">
             »
           </Link>
         )}

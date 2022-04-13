@@ -90,7 +90,7 @@ export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
             <div>
               <a
                 href={`https://wa.me/6281291071355?text=Halo%20saya%20ingin%20tanya%20tentang%20produk%20ini%0A%0Ahttps%3A%2F%2Ffujiboxglobal.com%2Fproduk%2F${product.slug}`}
-                className="btn btn-block rounded-full gap-4 bg-whatsapp hover:bg-whatsapp"
+                className="btn btn-block gap-4 bg-whatsapp hover:bg-whatsapp"
                 target="_blank"
                 rel="noreferrer"
               >

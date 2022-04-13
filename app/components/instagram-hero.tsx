@@ -14,7 +14,7 @@ export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
             </h1>
             <a
               href="https://www.instagram.com/fujiboxglobal/?hl=en"
-              className="btn btn-block rounded-full gap-4 mt-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
+              className="btn btn-block gap-4 mt-5 bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500"
               target="_blank"
               rel="noreferrer"
             >
