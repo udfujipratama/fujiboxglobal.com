@@ -1,6 +1,7 @@
 import NProgress from 'nprogress'
 import { useEffect } from 'react'
 import {
+  Link,
   Links,
   LinksFunction,
   LiveReload,
@@ -8,6 +9,7 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useCatch,
   useTransition,
 } from 'remix'
 
@@ -81,13 +83,36 @@ export default function App() {
   )
 }
 
-// export function ErrorBoundary({ error }: { error: Error }) {
-//   return (
-//     <div>
-//       <h1>Error</h1>
-//       <p>{error.message}</p>
-//       <p>The stack trace is:</p>
-//       <pre>{error.stack}</pre>
-//     </div>
-//   )
-// }
+export function CatchBoundary() {
+  const caught = useCatch()
+  let message
+
+  switch (caught.status) {
+    case 401:
+      message = (
+        <div>
+          <p>Sorry, you don't have access to this page</p>
+        </div>
+      )
+      break
+    case 404:
+      message = (
+        <div>
+          <p>Sorry, this page doesn't exist.</p>
+        </div>
+      )
+      break
+    default:
+      throw new Error(caught.data || caught.statusText)
+  }
+  return (
+    <>
+      {message}
+      <p>
+        <Link to="/" prefetch="intent">
+          Mari kembali ke beranda
+        </Link>
+      </p>
+    </>
+  )
+}
