@@ -1,23 +1,11 @@
 import { Menu, Transition } from '@headlessui/react'
-import { FunctionComponent, Fragment } from 'react'
+import { Fragment } from 'react'
 import { Link } from 'remix'
 
 import { SearchForm } from '~/components'
-import { MenuItems } from '~/types'
+import { navigationLinks } from '~/data'
 
-interface NavbarProps {}
-
-const menuItems: MenuItems = [
-  { title: 'Beranda', link: '/' },
-  { title: 'Produk', link: '/produk' },
-  { title: 'Pemesanan', link: '/pemesanan' },
-]
-
-interface NavMenuProps {
-  menuItems: MenuItems
-}
-
-const NavMenu: FunctionComponent<NavMenuProps> = () => {
+const NavMenu = () => {
   return (
     <Menu as="div" className="relative inline-block text-left">
       <div>
@@ -49,14 +37,14 @@ const NavMenu: FunctionComponent<NavMenuProps> = () => {
       >
         <Menu.Items className="absolute z-10 right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="px-1 py-1 ">
-            {menuItems.map((menuItem, index) => {
+            {navigationLinks.map((nav, index) => {
               return (
-                <Menu.Item key={index}>
+                <Menu.Item key={nav.title}>
                   <Link
-                    to={menuItem.link}
+                    to={nav.link}
                     className="flex flex-col p-2 rounded-md active:bg-primary"
                   >
-                    {menuItem.title}
+                    {nav.title}
                   </Link>
                 </Menu.Item>
               )
@@ -68,7 +56,7 @@ const NavMenu: FunctionComponent<NavMenuProps> = () => {
   )
 }
 
-export const Navbar: FunctionComponent<NavbarProps> = () => {
+export const Navbar = () => {
   return (
     <div className="container lg py-4">
       <div className="navbar bg-base-100 gap-2">
@@ -87,6 +75,13 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
         <div>
           <div className="hidden lg:flex">
             <ul className="menu menu-horizontal p-0 text-primary">
+              {navigationLinks.map((nav: any) => {
+                return (
+                  <li key={nav.title}>
+                    <Link to={nav.link}>{nav.name}</Link>
+                  </li>
+                )
+              })}
               <li>
                 <Link to="/">Beranda</Link>
               </li>
@@ -96,10 +91,13 @@ export const Navbar: FunctionComponent<NavbarProps> = () => {
               <li>
                 <Link to="/pemesanan">Pemesanan</Link>
               </li>
+              <li>
+                <Link to="/pesanankhusus">Pesanan khusus</Link>
+              </li>
             </ul>
           </div>
           <div className="navbar-center flex lg:hidden">
-            <NavMenu menuItems={menuItems} />
+            <NavMenu />
           </div>
         </div>
       </div>
