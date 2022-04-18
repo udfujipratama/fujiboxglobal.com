@@ -7,8 +7,8 @@ export const PesananKhususFAQ = () => {
   return (
     <div className="container p-2">
       <div className="flex flex-col items-center">
-        <h1 className="text-xl md:text-2xl font-bold my-4 text-center">
-          F. A .Q
+        <h1 className="text-xl md:text-2xl font-bold my-2 text-center">
+          F.A.Q
         </h1>
         {faqPesananKhusus.map((faq) => {
           return (

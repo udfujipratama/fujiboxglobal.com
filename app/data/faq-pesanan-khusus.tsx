@@ -1,18 +1,16 @@
 export const faqPesananKhusus = [
   {
-    title: 'Question 1',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    title: 'Minimum order untuk barang ini ?',
+    description: 'Minimal pembelian untuk produk dibawah ini adalah 1000pcs',
   },
   {
-    title: 'Question 2',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    title: 'Apakah ini ready stock ?',
+    description:
+      'Barang ini belom ready stock, akan di produksi dalam waktu 1 bulan',
   },
   {
-    title: 'Question 3',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-  },
-  {
-    title: 'Question 4',
-    description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
+    title: 'Bagaimana proses pemesanannya ?',
+    description:
+      'Silahkan di pilih produk yang diinginkan lalu, regiterasi ke form yang tersedia',
   },
 ]

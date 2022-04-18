@@ -1,4 +1,5 @@
 import { FunctionComponent } from 'react'
+import { Link } from 'remix'
 
 import { PesananKhususFAQ } from '~/contents'
 
@@ -34,14 +35,14 @@ export const PesananKhusus: FunctionComponent<PesananKhususProps> = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">BOX</h2>
+            <h2 className="card-title">
+              FUJIBOX KRAFT | GABLE BOX JAR 2 | DUS SPECIAL FUJI
+            </h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions">
-              <input
-                type="button"
-                value="Buy Now"
-                className="btn btn-primary"
-              />
+              <Link to="/pesanan-khusus-detail" className="btn btn-primary">
+                Lihat produk
+              </Link>
             </div>
           </div>
         </div>
@@ -54,14 +55,14 @@ export const PesananKhusus: FunctionComponent<PesananKhususProps> = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">BOX</h2>
+            <h2 className="card-title">
+              FUJIBOX KRAFT | GABLE BOX JAR 2 | DUS SPECIAL FUJI
+            </h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions">
-              <input
-                type="button"
-                value="Buy Now"
-                className="btn btn-primary"
-              />
+              <Link to="/pesanan-khusus-detail" className="btn btn-primary">
+                Lihat produk
+              </Link>
             </div>
           </div>
         </div>
@@ -74,14 +75,14 @@ export const PesananKhusus: FunctionComponent<PesananKhususProps> = () => {
             />
           </figure>
           <div className="card-body items-center text-center">
-            <h2 className="card-title">BOX</h2>
+            <h2 className="card-title">
+              FUJIBOX KRAFT | GABLE BOX JAR 2 | DUS SPECIAL FUJI
+            </h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
             <div className="card-actions">
-              <input
-                type="button"
-                value="Buy Now"
-                className="btn btn-primary"
-              />
+              <Link to="/pesanan-khusus-detail" className="btn btn-primary">
+                Lihat produk
+              </Link>
             </div>
           </div>
         </div>
