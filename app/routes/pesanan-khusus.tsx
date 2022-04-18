@@ -8,7 +8,7 @@ interface PesananKhususProps {}
 export const PesananKhusus: FunctionComponent<PesananKhususProps> = () => {
   return (
     <div className="container">
-      <div className="hero h-300 bg-base-200 mb-4">
+      <div className="hero h-300 bg-base-200 mb-4 rounded-lg">
         <div className="hero-content text-center flex ">
           <div className="max-w-md">
             <h1 className="text-5xl font-bold text-left">Pesanan Khusus</h1>
