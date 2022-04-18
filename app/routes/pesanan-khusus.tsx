@@ -11,20 +11,16 @@ export const PesananKhusus: FunctionComponent<PesananKhususProps> = () => {
       <div className="hero h-300 bg-base-200 mb-4">
         <div className="hero-content text-center flex ">
           <div className="max-w-md">
-            <h1 className="text-5xl font-bold text-left">Hello there</h1>
+            <h1 className="text-5xl font-bold text-left">Pesanan Khusus</h1>
             <p className="py-6 text-left">
-              Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-              excepturi exercitationem quasi. In deleniti eaque aut repudiandae
-              et a id nisi.
+              Fujibox menyediakan beberapa produk khusus limited edition
+              pastikan anda membaca F.A.Q disamping sebelum melakukan pemesanan
             </p>
           </div>
           <PesananKhususFAQ />
         </div>
       </div>
 
-      <h1 className="text-2xl md:text-3xl font-bold mt-10 text-left">
-        Pesanan khusus
-      </h1>
       <div className="flex justify-around">
         <div className="card w-96 bg-base-100 shadow-xl">
           <figure className="px-10 pt-10">

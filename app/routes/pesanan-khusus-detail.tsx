@@ -66,9 +66,9 @@ const PesananKhususDetail: FunctionComponent<PesananKhususDetailProps> = () => {
               <div className="mt-4 w-full md:w-44">
                 <button
                   type="button"
-                  className="py-2 px-4  bg-whatsapp hover:bg-lime-700 text-white w-full text-center font-semibold shadow-md rounded-lg "
+                  className="p-2 bg-whatsapp hover:bg-lime-700 text-white w-full text-center font-semibold shadow-md rounded-lg "
                 >
-                  Saya ingin produk ini
+                  Join waiting List
                 </button>
               </div>
             </div>
