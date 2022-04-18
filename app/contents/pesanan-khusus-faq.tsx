@@ -16,7 +16,7 @@ export const PesananKhususFAQ = () => {
               {({ open }) => {
                 return (
                   <>
-                    <Disclosure.Button className="flex justify-between bg-primary p-4 my-4 text-white w-80">
+                    <Disclosure.Button className="flex justify-between bg-primary p-4 my-4 text-white w-80 rounded-lg">
                       <span>{faq.title}</span>
                       <IoIosArrowDropdown
                         className={`${
