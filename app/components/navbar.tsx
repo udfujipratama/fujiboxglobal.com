@@ -37,12 +37,12 @@ const NavMenu = () => {
       >
         <Menu.Items className="absolute z-10 right-0 w-56 mt-2 origin-top-right bg-white divide-y divide-gray-100 rounded-md shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           <div className="px-1 py-1 ">
-            {navigationLinks.map((nav, index) => {
+            {navigationLinks.map((nav) => {
               return (
                 <Menu.Item key={nav.title}>
                   <Link
                     to={nav.link}
-                    className="flex flex-col p-2 rounded-md active:bg-primary"
+                    className="flex flex-col p-2 rounded-md text-primary active:text-white hover:bg-primary text-white"
                   >
                     {nav.title}
                   </Link>
@@ -78,22 +78,10 @@ export const Navbar = () => {
               {navigationLinks.map((nav: any) => {
                 return (
                   <li key={nav.title}>
-                    <Link to={nav.link}>{nav.name}</Link>
+                    <Link to={nav.link}>{nav.title}</Link>
                   </li>
                 )
               })}
-              <li>
-                <Link to="/">Beranda</Link>
-              </li>
-              <li>
-                <Link to="/produk">Produk</Link>
-              </li>
-              <li>
-                <Link to="/pemesanan">Pemesanan</Link>
-              </li>
-              <li>
-                <Link to="/pesanankhusus">Pesanan khusus</Link>
-              </li>
             </ul>
           </div>
           <div className="navbar-center flex lg:hidden">
