@@ -38,7 +38,7 @@ export const meta: MetaFunction = ({ data }) => {
   return {
     title: `${product?.name} - Produk - Fujibox`,
     description,
-    // og:image: ` ${product.images[0].url}`,
+    'og:image': product?.images[0]?.url || '/images/logo/fujibox-logo.png',
   }
 }
 
