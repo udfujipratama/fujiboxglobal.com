@@ -2,6 +2,7 @@ import { gql } from '@urql/core'
 import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { ProductsExplorer } from '~/contents'
+import { QUERY_SEARCH_PRODUCTS } from '~/graphql'
 import { graphcmsClient, SEOHandle } from '~/lib'
 import { Categories, Collections, Connection, Products } from '~/types'
 
@@ -40,49 +41,8 @@ export const loader: LoaderFunction = async ({ request }) => {
 
   // Logic for the search data
   if (searchQuery) {
-    const searchProductsQuery = gql`
-      query SearchProducts($first: Int!, $skip: Int!, $searchQuery: String!) {
-        products(
-          orderBy: updatedAt_DESC
-          first: $first
-          skip: $skip
-          where: { OR: [{ name_contains: $searchQuery }] }
-        ) {
-          id
-          slug
-          name
-          images(first: 1) {
-            url
-          }
-          categories(first: 1) {
-            name
-            slug
-          }
-        }
-        productsConnection(where: { OR: [{ name_contains: $searchQuery }] }) {
-          aggregate {
-            count
-          }
-        }
-        categories {
-          id
-          slug
-          name
-        }
-        collections {
-          id
-          slug
-          name
-        }
-      }
-    `
-
     const response = await graphcmsClient
-      .query(searchProductsQuery, {
-        first,
-        skip,
-        searchQuery,
-      })
+      .query(QUERY_SEARCH_PRODUCTS, { first, skip, searchQuery })
       .toPromise()
 
     const { products, productsConnection, categories, collections } =
