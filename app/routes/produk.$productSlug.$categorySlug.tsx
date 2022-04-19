@@ -23,6 +23,7 @@ export const handle: SEOHandle = {
   },
 }
 
+// @ts-ignore
 export const meta: MetaFunction = ({ data }) => {
   const { product } = data
 
