@@ -10,7 +10,7 @@ export const Hero: FunctionComponent<HeroProps> = () => {
         <Link to="/produk">
           <img
             className="object-cover rounded-xl"
-            src="https://media.graphassets.com/K6pIb7yGT56oclM0hsX3?_gl=1*rjgnx9*_ga*MTE4NTgxMDE3OS4xNjUwMjY5MjA1*_ga_G6FYGSYGZ4*MTY1MDM0NTIxMi4zNi4xLjE2NTAzNDcxODUuNDE."
+            src="https://media.graphassets.com/rCqg924JSGKiBSioqWny?_gl=1*112thay*_ga*MTE4NTgxMDE3OS4xNjUwMjY5MjA1*_ga_G6FYGSYGZ4*MTY1MDM0NTIxMi4zNi4xLjE2NTAzNDgxMjAuNTM."
             alt="hero-cover"
           />
         </Link>
