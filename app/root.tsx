@@ -108,6 +108,7 @@ export function CatchBoundary() {
   return (
     <html lang="id">
       <head>
+        <title>Maaf halaman tidak ditemukan</title>
         <Meta />
         <Links />
       </head>
