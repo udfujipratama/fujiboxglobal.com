@@ -37,6 +37,17 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
     item.categories?.length && item.categories[0]?.name
   )
 
+  const hasSoldOut = Boolean(
+    item.collections?.length &&
+      item.collections[0]?.slug === 'idul-fitri-or-lebaran'
+  )
+
+  const LinkClassname = hasSoldOut
+    ? 'btn btn-disabled btn-sm text-xs'
+    : 'btn btn-primary btn-sm text-xs'
+
+  const LinkName = hasSoldOut ? 'SOLD OUT' : 'Lihat Produk'
+
   const LinkLihatProduk =
     route === 'kategori'
       ? `/${route}/${item.slug}`
@@ -50,15 +61,15 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
         </figure>
       )}
       <div className="card-body">
-        {hasCategory && route !== 'kategori' && (
+        {hasCategory && (
           <span className="text-[10px] text-slate-400">
             {item.categories[0]?.name}
           </span>
         )}
 
         <h2 className="card-title text-xs">{item.name}</h2>
-        <Link className="btn btn-primary btn-sm text-xs" to={LinkLihatProduk}>
-          Lihat produk
+        <Link className={LinkClassname} to={LinkLihatProduk}>
+          {LinkName}
         </Link>
       </div>
     </div>

@@ -67,7 +67,7 @@ export const loader: LoaderFunction = async ({ params }) => {
           name
           slug
         }
-        collections {
+        collections(first: 1) {
           id
           name
           slug
@@ -88,6 +88,11 @@ export const loader: LoaderFunction = async ({ params }) => {
             url
           }
           categories(first: 1) {
+            name
+            slug
+          }
+          collections(first: 1) {
+            id
             name
             slug
           }

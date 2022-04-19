@@ -58,6 +58,11 @@ export const loader: LoaderFunction = async ({ request }) => {
             name
             slug
           }
+          collections {
+            id
+            name
+            slug
+          }
         }
         productsConnection(where: { OR: [{ name_contains: $searchQuery }] }) {
           aggregate {
@@ -118,6 +123,11 @@ export const loader: LoaderFunction = async ({ request }) => {
             url
           }
           categories(first: 1) {
+            name
+            slug
+          }
+          collections(first: 1) {
+            id
             name
             slug
           }
