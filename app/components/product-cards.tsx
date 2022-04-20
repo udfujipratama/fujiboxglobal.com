@@ -37,16 +37,11 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
     item.categories?.length && item.categories[0]?.name
   )
 
-  const hasSoldOut = Boolean(
-    item.collections?.length &&
-      item.collections[0]?.slug === 'idul-fitri-or-lebaran'
-  )
-
-  const LinkClassname = hasSoldOut
+  const LinkClassname = item.soldOut
     ? 'btn btn-disabled btn-sm text-xs'
     : 'btn btn-primary btn-sm text-xs'
 
-  const LinkName = hasSoldOut ? 'SOLD OUT' : 'Lihat Produk'
+  const LinkName = item.soldOut ? 'SOLD OUT' : 'Lihat Produk'
 
   const LinkLihatProduk =
     route === 'kategori'

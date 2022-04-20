@@ -24,6 +24,7 @@ export type Product = {
   images: Images
   categories: Categories
   collections: Collections
+  soldOut: Scalars['Boolean']
 }
 
 export type Products = Array<Product>

@@ -63,6 +63,7 @@ export const loader: LoaderFunction = async ({ request }) => {
             name
             slug
           }
+          soldOut
         }
         productsConnection(where: { OR: [{ name_contains: $searchQuery }] }) {
           aggregate {
@@ -131,6 +132,7 @@ export const loader: LoaderFunction = async ({ request }) => {
             name
             slug
           }
+          soldOut
         }
         productsConnection(
           where: {
@@ -188,6 +190,7 @@ export const loader: LoaderFunction = async ({ request }) => {
           name
           slug
         }
+        soldOut
       }
       productsConnection {
         aggregate {
