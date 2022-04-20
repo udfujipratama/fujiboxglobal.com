@@ -1,7 +1,6 @@
 import NProgress from 'nprogress'
 import { useEffect } from 'react'
 import {
-  Link,
   Links,
   LinksFunction,
   LiveReload,
@@ -9,11 +8,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-  useCatch,
   useTransition,
 } from 'remix'
 
-import { Layout } from '~/components'
+import { Layout, NotFoundPage } from '~/components'
 
 import type { MetaFunction } from 'remix'
 
@@ -84,42 +82,16 @@ export default function App() {
 }
 
 export function CatchBoundary() {
-  const caught = useCatch()
-  let message
-
-  switch (caught.status) {
-    case 401:
-      message = (
-        <div>
-          <p>Sorry, you don't have access to this page</p>
-        </div>
-      )
-      break
-    case 404:
-      message = (
-        <div>
-          <p>Sorry, this page doesn't exist.</p>
-        </div>
-      )
-      break
-    default:
-      throw new Error(caught.data || caught.statusText)
-  }
   return (
     <html lang="id">
       <head>
-        <title>Maaf halaman tidak ditemukan</title>
+        <title>halaman tidak ditemukan</title>
         <Meta />
         <Links />
       </head>
       <body>
         <Layout>
-          {message}
-          <p>
-            <Link to="/" prefetch="intent">
-              Mari kembali ke beranda
-            </Link>
-          </p>
+          <NotFoundPage />
         </Layout>
         <ScrollRestoration />
         <Scripts />
