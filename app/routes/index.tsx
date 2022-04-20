@@ -1,8 +1,8 @@
-import { gql } from '@urql/core'
 import { Link, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
-import { ProductCards, Hero, InstagramHero, WhatsAppCard } from '~/components'
-import { CategoryCards } from '~/contents'
+import { Hero, InstagramHero, WhatsAppCard } from '~/components'
+import { CategoryCards, ProductHorizontalCards } from '~/contents'
+import { QUERY_PRODUCT } from '~/graphql'
 import { graphcmsClient, SEOHandle } from '~/lib'
 
 export const handle: SEOHandle = {
@@ -19,36 +19,7 @@ export const meta: MetaFunction = () => {
 }
 
 export const loader: LoaderFunction = async () => {
-  const PRODUCTS_QUERY = gql`
-    query NewProductsCollection {
-      newProducts: products(
-        last: 5
-        where: { collections_some: { slug: "produk-terbaru" } }
-      ) {
-        name
-        slug
-        images {
-          url
-          id
-        }
-        categories {
-          name
-          slug
-        }
-      }
-
-      categories {
-        id
-        slug
-        name
-        image {
-          url
-        }
-      }
-    }
-  `
-
-  const response = await graphcmsClient.query(PRODUCTS_QUERY).toPromise()
+  const response = await graphcmsClient.query(QUERY_PRODUCT).toPromise()
 
   const { newProducts, categories } = response.data
 
@@ -71,8 +42,8 @@ export default function Index() {
             Lihat semua produk
           </Link>
         </div>
-
-        <ProductCards route="produk" products={newProducts} />
+        {/* <ProductCards route="produk" products={newProducts} /> */}
+        <ProductHorizontalCards route="produk" products={newProducts} />
       </div>
 
       <WhatsAppCard />
