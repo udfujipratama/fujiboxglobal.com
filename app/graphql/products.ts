@@ -12,9 +12,14 @@ export const FRAGMENT_PRODUCT = gql`
       name
       slug
     }
+    collections(first: 1) {
+      id
+      name
+      slug
+    }
+    soldOut
   }
 `
-
 export const QUERY_SEARCH_PRODUCTS = gql`
   query SearchProducts($first: Int!, $skip: Int!, $searchQuery: String!) {
     products(
@@ -31,7 +36,6 @@ export const QUERY_SEARCH_PRODUCTS = gql`
         count
       }
     }
-
     categories {
       id
       slug
@@ -42,6 +46,91 @@ export const QUERY_SEARCH_PRODUCTS = gql`
       id
       slug
       name
+    }
+  }
+
+  ${FRAGMENT_PRODUCT}
+`
+export const QUERY_CATEGORY_OR_COLLECTION = gql`
+  query CategoriesOrCollections($first: Int!, $skip: Int!, $slug: String!) {
+    products(
+      where: {
+        OR: [
+          { collections_some: { slug: $slug } }
+          { categories_some: { slug: $slug } }
+        ]
+      }
+      orderBy: updatedAt_DESC
+      first: $first
+      skip: $skip
+    ) {
+      ...ProductDetails
+    }
+    productsConnection(
+      where: {
+        OR: [
+          { collections_some: { slug: $slug } }
+          { categories_some: { slug: $slug } }
+        ]
+      }
+    ) {
+      aggregate {
+        count
+      }
+    }
+    categories {
+      id
+      slug
+      name
+    }
+    collections {
+      id
+      slug
+      name
+    }
+  }
+  ${FRAGMENT_PRODUCT}
+`
+export const QUERY_ALL_PRODUCT = gql`
+  query AllProducts($first: Int!, $skip: Int!) {
+    products(orderBy: updatedAt_DESC, first: $first, skip: $skip) {
+      ...ProductDetails
+    }
+    productsConnection {
+      aggregate {
+        count
+      }
+    }
+    categories {
+      id
+      slug
+      name
+    }
+    collections {
+      id
+      slug
+      name
+    }
+  }
+
+  ${FRAGMENT_PRODUCT}
+`
+export const QUERY_PRODUCT = gql`
+  query NewProductsCollection {
+    newProducts: products(
+      last: 10
+      where: { collections_some: { slug: "produk-terbaru" } }
+    ) {
+      ...ProductDetails
+    }
+
+    categories {
+      id
+      slug
+      name
+      image {
+        url
+      }
     }
   }
 
