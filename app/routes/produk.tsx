@@ -81,6 +81,12 @@ export const loader: LoaderFunction = async ({ request }) => {
             name
             slug
           }
+          collections(first: 1) {
+            id
+            name
+            slug
+          }
+          soldOut
         }
         productsConnection(
           where: {
@@ -138,6 +144,7 @@ export const loader: LoaderFunction = async ({ request }) => {
           name
           slug
         }
+        soldOut
       }
       productsConnection {
         aggregate {

@@ -106,13 +106,25 @@ export function CatchBoundary() {
       throw new Error(caught.data || caught.statusText)
   }
   return (
-    <>
-      {message}
-      <p>
-        <Link to="/" prefetch="intent">
-          Mari kembali ke beranda
-        </Link>
-      </p>
-    </>
+    <html lang="id">
+      <head>
+        <title>Maaf halaman tidak ditemukan</title>
+        <Meta />
+        <Links />
+      </head>
+      <body>
+        <Layout>
+          {message}
+          <p>
+            <Link to="/" prefetch="intent">
+              Mari kembali ke beranda
+            </Link>
+          </p>
+        </Layout>
+        <ScrollRestoration />
+        <Scripts />
+        <LiveReload />
+      </body>
+    </html>
   )
 }

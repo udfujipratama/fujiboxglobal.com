@@ -5,12 +5,12 @@ interface HeroProps {}
 
 export const Hero: FunctionComponent<HeroProps> = () => {
   return (
-    <div className="container lg mb-8">
+    <div className="container">
       <div className="hero">
-        <Link to="/koleksi/idul-fitri-or-lebaran">
+        <Link to="/produk">
           <img
             className="object-cover rounded-xl"
-            src="https://media.graphassets.com/kGDjy6KARruA0MeAFoaH?_gl=1*1f23h42*_ga*OTYxMjM0NjA0LjE2NDc4NDkwNDU.*_ga_G6FYGSYGZ4*MTY0OTA0NzcwNi4xMS4xLjE2NDkwNDc3MjIuNDQ."
+            src="https://media.graphassets.com/rCqg924JSGKiBSioqWny?_gl=1*112thay*_ga*MTE4NTgxMDE3OS4xNjUwMjY5MjA1*_ga_G6FYGSYGZ4*MTY1MDM0NTIxMi4zNi4xLjE2NTAzNDgxMjAuNTM."
             alt="hero-cover"
           />
         </Link>

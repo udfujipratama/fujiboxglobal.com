@@ -17,7 +17,15 @@ export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
   products,
 }) => {
   const descriptionHtml = product?.description?.html
+  const hasSoldOut = Boolean(
+    product.collections?.length &&
+      product.collections[0]?.slug === 'idul-fitri-or-lebaran'
+  )
+  const LinkClassname = hasSoldOut
+    ? 'btn btn-block btn-disabled gap-4'
+    : 'btn btn-block gap-4 bg-whatsapp hover:bg-whatsapp'
 
+  const LinkName = hasSoldOut ? 'SOLD OUT' : 'Ingin produk ini'
   return (
     <>
       <div className="container max-w-5xl">
@@ -89,12 +97,12 @@ export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
             </div>
             <div>
               <a
-                href={`https://wa.me/6281291071355?text=Halo%20saya%20ingin%20tanya%20tentang%20produk%20ini%0A%0Ahttps%3A%2F%2Ffujiboxglobal.com%2Fproduk%2F${product.slug}`}
-                className="btn btn-block gap-4 bg-whatsapp hover:bg-whatsapp"
+                href={`https://wa.me/6281291071355?text=Halo%20saya%20ingin%20tanya%20tentang%20produk%20ini%0A%0Ahttps%3A%2F%2Ffujiboxglobal.com%2Fproduk%2F${product.slug}%2F${product.categories[0].slug}`}
+                className={LinkClassname}
                 target="_blank"
                 rel="noreferrer"
               >
-                <span className="text-lg">Ingin produk ini</span>
+                <span className="text-lg">{LinkName}</span>
                 <span className="text-2xl">
                   <IoLogoWhatsapp />
                 </span>

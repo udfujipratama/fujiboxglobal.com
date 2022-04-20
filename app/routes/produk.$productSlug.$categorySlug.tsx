@@ -23,6 +23,7 @@ export const handle: SEOHandle = {
   },
 }
 
+// @ts-ignore
 export const meta: MetaFunction = ({ data }) => {
   const { product } = data
 
@@ -38,7 +39,7 @@ export const meta: MetaFunction = ({ data }) => {
   return {
     title: `${product?.name} - Produk - Fujibox`,
     description,
-    // og:image: ` ${product.images[0].url}`,
+    'og:image': product?.images[0]?.url || '/images/logo/fujibox-logo.png',
   }
 }
 
@@ -67,7 +68,7 @@ export const loader: LoaderFunction = async ({ params }) => {
           name
           slug
         }
-        collections {
+        collections(first: 1) {
           id
           name
           slug
@@ -88,6 +89,11 @@ export const loader: LoaderFunction = async ({ params }) => {
             url
           }
           categories(first: 1) {
+            name
+            slug
+          }
+          collections(first: 1) {
+            id
             name
             slug
           }
