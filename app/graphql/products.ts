@@ -118,7 +118,7 @@ export const QUERY_ALL_PRODUCT = gql`
 export const QUERY_PRODUCT = gql`
   query NewProductsCollection {
     newProducts: products(
-      last: 10
+      last: 30
       where: { collections_some: { slug: "produk-terbaru" } }
     ) {
       ...ProductDetails

@@ -1,7 +1,11 @@
 import { Link, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { Hero, InstagramHero, WhatsAppCard } from '~/components'
-import { CategoryCards, ProductHorizontalCards } from '~/contents'
+import {
+  CategoryCards,
+  ProductCarouselCards,
+  // ProductHorizontalCards,
+} from '~/contents'
 import { QUERY_PRODUCT } from '~/graphql'
 import { graphcmsClient, SEOHandle } from '~/lib'
 
@@ -42,8 +46,8 @@ export default function Index() {
             Lihat semua produk
           </Link>
         </div>
-        {/* <ProductCards route="produk" products={newProducts} /> */}
-        <ProductHorizontalCards route="produk" products={newProducts} />
+        <ProductCarouselCards route="produk" products={newProducts} />
+        {/* <ProductHorizontalCards route="produk" products={newProducts} /> */}
       </div>
 
       <WhatsAppCard />

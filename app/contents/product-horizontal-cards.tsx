@@ -12,7 +12,7 @@ export const ProductHorizontalCards: FunctionComponent<
   ProductHorizontalCardsProps
 > = ({ route, products }) => {
   return (
-    <div className="flex items-center space-x-12 overflow-x-auto py-6">
+    <div className="flex items-center space-x-12 overflow-x-auto p-6">
       {products.map((item, index) => {
         return <CardItem key={item.id || index} route={route} item={item} />
       })}
