@@ -5,7 +5,7 @@ interface WhatsAppCardProps {}
 
 export const WhatsAppCard: FunctionComponent<WhatsAppCardProps> = () => {
   return (
-    <div className="container mb-8">
+    <div className="container my-10">
       <div className="card card-side bg-whatsapp text-white shadow-xl ">
         <div className="card-body">
           <div className="flex flex-col md:flex-row justify-between md:items-center">

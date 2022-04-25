@@ -112,7 +112,7 @@ export const ProductCarouselCards: FunctionComponent<
         </div>
         <div
           ref={carousel}
-          className="container flex gap-12 p-4 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+          className="container flex gap-8 p-4 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
         >
           {products.map((item, index) => {
             return <CardItem key={item.id || index} route={route} item={item} />
@@ -151,7 +151,7 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
       : `/${route}/${item.slug}/${item.categories[0].slug}`
 
   return (
-    <div className="card card-compact shrink-0 bg-base-100 shadow-xl w-48">
+    <div className="card card-compact shrink-0 bg-base-100 shadow-xl w-48 lg:w-1/5">
       {itemImageUrl && (
         <figure>
           <img src={itemImageUrl} alt={item.name} />
