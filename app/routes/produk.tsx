@@ -1,7 +1,11 @@
-import { gql } from '@urql/core'
 import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { ProductsExplorer } from '~/contents'
+import {
+  QUERY_SEARCH_PRODUCTS,
+  QUERY_CATEGORY_OR_COLLECTION,
+  QUERY_ALL_PRODUCT,
+} from '~/graphql'
 import { graphcmsClient, SEOHandle } from '~/lib'
 import { Categories, Collections, Connection, Products } from '~/types'
 
@@ -40,55 +44,8 @@ export const loader: LoaderFunction = async ({ request }) => {
 
   // Logic for the search data
   if (searchQuery) {
-    const searchProductsQuery = gql`
-      query SearchProducts($first: Int!, $skip: Int!, $searchQuery: String!) {
-        products(
-          orderBy: updatedAt_DESC
-          first: $first
-          skip: $skip
-          where: { OR: [{ name_contains: $searchQuery }] }
-        ) {
-          id
-          slug
-          name
-          images(first: 1) {
-            url
-          }
-          categories(first: 1) {
-            name
-            slug
-          }
-          collections {
-            id
-            name
-            slug
-          }
-          soldOut
-        }
-        productsConnection(where: { OR: [{ name_contains: $searchQuery }] }) {
-          aggregate {
-            count
-          }
-        }
-        categories {
-          id
-          slug
-          name
-        }
-        collections {
-          id
-          slug
-          name
-        }
-      }
-    `
-
     const response = await graphcmsClient
-      .query(searchProductsQuery, {
-        first,
-        skip,
-        searchQuery,
-      })
+      .query(QUERY_SEARCH_PRODUCTS, { first, skip, searchQuery })
       .toPromise()
 
     const { products, productsConnection, categories, collections } =
@@ -104,63 +61,8 @@ export const loader: LoaderFunction = async ({ request }) => {
 
   // get all data by category or collection
   if (categoryOrCollectionquery) {
-    const categorysOrcollectionsQuery = gql`
-      query CategoriesOrCollections($first: Int!, $skip: Int!, $slug: String!) {
-        products(
-          where: {
-            OR: [
-              { collections_some: { slug: $slug } }
-              { categories_some: { slug: $slug } }
-            ]
-          }
-          orderBy: updatedAt_DESC
-          first: $first
-          skip: $skip
-        ) {
-          id
-          slug
-          name
-          images(first: 1) {
-            url
-          }
-          categories(first: 1) {
-            name
-            slug
-          }
-          collections(first: 1) {
-            id
-            name
-            slug
-          }
-          soldOut
-        }
-        productsConnection(
-          where: {
-            OR: [
-              { collections_some: { slug: $slug } }
-              { categories_some: { slug: $slug } }
-            ]
-          }
-        ) {
-          aggregate {
-            count
-          }
-        }
-        categories {
-          id
-          slug
-          name
-        }
-        collections {
-          id
-          slug
-          name
-        }
-      }
-    `
-
     const response = await graphcmsClient
-      .query(categorysOrcollectionsQuery, {
+      .query(QUERY_CATEGORY_OR_COLLECTION, {
         first,
         skip,
         slug: categoryOrCollectionquery,
@@ -177,41 +79,8 @@ export const loader: LoaderFunction = async ({ request }) => {
     })
   }
 
-  const allProductsquery = gql`
-    query AllProducts($first: Int!, $skip: Int!) {
-      products(orderBy: updatedAt_DESC, first: $first, skip: $skip) {
-        id
-        slug
-        name
-        images(first: 1) {
-          url
-        }
-        categories(first: 1) {
-          name
-          slug
-        }
-        soldOut
-      }
-      productsConnection {
-        aggregate {
-          count
-        }
-      }
-      categories {
-        id
-        slug
-        name
-      }
-      collections {
-        id
-        slug
-        name
-      }
-    }
-  `
-
   const response = await graphcmsClient
-    .query(allProductsquery, {
+    .query(QUERY_ALL_PRODUCT, {
       first,
       skip,
     })

@@ -47,7 +47,7 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
           name="searchQuery"
           type="text"
           placeholder="Search…"
-          className="input input-xs md:w-[700px] md:h-[49px] input-bordered rounded"
+          className="input input-xs md:w-[500px] md:h-[49px] input-bordered rounded"
         />
         <button
           type="submit"

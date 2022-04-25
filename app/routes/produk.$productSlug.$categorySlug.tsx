@@ -2,6 +2,7 @@ import { gql } from '@urql/core'
 import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { ProductDetail } from '~/contents'
+import { QUERY_ONE_PRODUCT_BY_SLUG } from '~/graphql'
 import { graphcmsClient, SEOHandle } from '~/lib'
 import { Product } from '~/types'
 
@@ -45,64 +46,9 @@ export const meta: MetaFunction = ({ data }) => {
 
 export const loader: LoaderFunction = async ({ params }) => {
   const { productSlug, categorySlug } = params
-  const oneProductBySlugQuery = gql`
-    query OneProductBySlug($productSlug: String!, $categorySlug: String!) {
-      product(where: { slug: $productSlug }) {
-        id
-        name
-        slug
-        material
-        height
-        length
-        width
-        description {
-          html
-          text
-        }
-        images {
-          id
-          url
-        }
-        categories {
-          id
-          name
-          slug
-        }
-        collections(first: 1) {
-          id
-          name
-          slug
-        }
-      }
-      # this query for recommended-products
-      category(where: { slug: $categorySlug }) {
-        id
-        name
-        image {
-          url
-        }
-        products(first: 5) {
-          id
-          name
-          slug
-          images(first: 1) {
-            url
-          }
-          categories(first: 1) {
-            name
-            slug
-          }
-          collections(first: 1) {
-            id
-            name
-            slug
-          }
-        }
-      }
-    }
-  `
+
   const response = await graphcmsClient
-    .query(oneProductBySlugQuery, {
+    .query(QUERY_ONE_PRODUCT_BY_SLUG, {
       productSlug,
       categorySlug,
     })
