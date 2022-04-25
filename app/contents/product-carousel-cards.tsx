@@ -1,76 +1,123 @@
-import { FunctionComponent } from 'react'
-import { HiChevronLeft, HiChevronRight } from 'react-icons/hi'
-import { Link, useLocation } from 'remix'
+import { useState, useRef, useEffect, FunctionComponent } from 'react'
+import { Link } from 'remix'
 
-import type { Product, Products } from '~/types'
+import { Product, Products } from '~/types'
 
 interface ProductCarouselCardsProps {
   route: string
   products: Products
 }
 
-const TransfromArray = (products: any) => {
-  const items = products.reduce((resultArray: any, item: any, index: any) => {
-    const chunkIndex = Math.floor(index / 6)
-
-    if (!resultArray[chunkIndex]) {
-      // eslint-disable-next-line no-param-reassign
-      resultArray[chunkIndex] = []
-    }
-
-    resultArray[chunkIndex].push(item)
-
-    return resultArray
-  }, [])
-  return items
-}
-
 export const ProductCarouselCards: FunctionComponent<
   ProductCarouselCardsProps
 > = ({ route, products }) => {
-  const AllProducts = TransfromArray(products)
-  const location = useLocation()
-  const numSlide = Number(location.hash.slice(-1))
+  const maxScrollWidth = useRef(0)
+  const [currentIndex, setCurrentIndex] = useState(0)
+  const carousel = useRef<HTMLHeadingElement>(null)
 
-  const prevSlide = `#slide${numSlide - 1}`
-  const nextSlide = `#slide${numSlide + 1}`
-  const totalSlide = AllProducts.length - 1
+  const movePrev = () => {
+    if (currentIndex > 0) {
+      setCurrentIndex((prevState) => {
+        return prevState - 1
+      })
+    }
+  }
 
-  const canPrevSlide = numSlide > 0
-  const canNextSlide = numSlide < totalSlide
+  const moveNext = () => {
+    if (
+      carousel.current !== null &&
+      carousel.current.offsetWidth * currentIndex <= maxScrollWidth.current
+    ) {
+      setCurrentIndex((prevState) => {
+        return prevState + 1
+      })
+    }
+  }
+
+  const isDisabled = (direction: any) => {
+    if (direction === 'prev') {
+      return currentIndex <= 0
+    }
+
+    if (direction === 'next' && carousel.current !== null) {
+      return (
+        carousel.current.offsetWidth * currentIndex >= maxScrollWidth.current
+      )
+    }
+
+    return false
+  }
+
+  useEffect(() => {
+    if (carousel !== null && carousel.current !== null) {
+      carousel.current.scrollLeft = carousel.current.offsetWidth * currentIndex
+    }
+  }, [currentIndex])
+
+  useEffect(() => {
+    maxScrollWidth.current = carousel.current
+      ? carousel.current.scrollWidth - carousel.current.offsetWidth
+      : 0
+  }, [])
+  // @ts-ignore
 
   return (
-    <div className="relative">
-      {canPrevSlide && (
-        <div className="hidden md:absolute top-1/3 -left-10 z-10">
-          <Link to={prevSlide} className="btn btn-circle btn-primary">
-            <HiChevronLeft />
-          </Link>
-        </div>
-      )}
-      <div className="carousel p-4">
-        {AllProducts.map((Products: any[], index: any) => {
-          return (
-            <div
-              key={index}
-              id={`slide${index}`}
-              className="carousel-item gap-2 md:justify-around"
+    <div className="container my-2 mx-auto">
+      <div className="relative overflow-hidden">
+        <div className="flex justify-between absolute top left w-full h-full">
+          <button
+            type="button"
+            onClick={movePrev}
+            className="xs:hidden lg:hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+            disabled={isDisabled('prev')}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-12 w-20 -ml-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
             >
-              {Products.map((item) => {
-                return (
-                  <CardItem key={item.id || index} route={route} item={item} />
-                )
-              })}
-            </div>
-          )
-        })}
-        {canNextSlide && (
-          <div className="hidden md:absolute top-1/3 -right-10 z-10">
-            <Link to={nextSlide} className="btn btn-circle btn-primary">
-              <HiChevronRight />
-            </Link>
-          </div>
-        )}
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M15 19l-7-7 7-7"
+              />
+            </svg>
+            <span className="sr-only">Prev</span>
+          </button>
+          <button
+            type="button"
+            onClick={moveNext}
+            className="xs:hidden lg:hover:bg-blue-900/75 text-white w-10 h-full text-center opacity-75 hover:opacity-100 disabled:opacity-25 disabled:cursor-not-allowed z-10 p-0 m-0 transition-all ease-in-out duration-300"
+            disabled={isDisabled('next')}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              className="h-12 w-20 -ml-5"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              strokeWidth={2}
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M9 5l7 7-7 7"
+              />
+            </svg>
+            <span className="sr-only">Next</span>
+          </button>
+        </div>
+        <div
+          ref={carousel}
+          className="container flex gap-12 p-4 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
+        >
+          {products.map((item, index) => {
+            return <CardItem key={item.id || index} route={route} item={item} />
+          })}
+        </div>
       </div>
     </div>
   )
@@ -104,7 +151,7 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
       : `/${route}/${item.slug}/${item.categories[0].slug}`
 
   return (
-    <div className="card card-compact bg-base-100 shadow-xl w-52">
+    <div className="card card-compact shrink-0 bg-base-100 shadow-xl w-48">
       {itemImageUrl && (
         <figure>
           <img src={itemImageUrl} alt={item.name} />
