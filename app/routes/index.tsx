@@ -3,8 +3,9 @@ import { Link, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 import { Hero, InstagramHero, WhatsAppCard } from '~/components'
 import {
   CategoryCards,
-  ProductCarouselCards,
   // ProductHorizontalCards,
+  // SectionCards,
+  ProductCarouselCards,
 } from '~/contents'
 import { QUERY_PRODUCT } from '~/graphql'
 import { graphcmsClient, SEOHandle } from '~/lib'
@@ -52,7 +53,8 @@ export default function Index() {
 
       <WhatsAppCard />
 
-      <div className="container my-10">
+      <div className="container">
+        {/* <SectionCards /> */}
         <div className="flex w-full justify-between flex-col gap-4">
           <div className="flex flex-col">
             <div className="flex flex-wrap items-center gap-4 mb-4">
