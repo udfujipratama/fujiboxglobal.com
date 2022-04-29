@@ -1,7 +1,9 @@
 import { FunctionComponent } from 'react'
 import { Link } from 'remix'
 
-import { ProductCarouselCards } from './product-carousel-cards'
+// import { ProductCarouselCards } from './product-carousel-cards'
+
+import { ProductCarouselTrendyCards } from './product-carousel-trendyol-cards'
 
 import { Products } from '~/types'
 
@@ -23,7 +25,8 @@ export const ProductNewSection: FunctionComponent<ProductNewSectionProps> = ({
           Lihat semua produk
         </Link>
       </div>
-      <ProductCarouselCards route="produk" products={products} />
+      <ProductCarouselTrendyCards route="produk" products={products} />
+      {/* <ProductCarouselCards route="produk" products={products} /> */}
     </div>
   )
 }
