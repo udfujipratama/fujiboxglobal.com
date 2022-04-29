@@ -10,6 +10,7 @@ export const QUERY_ONE_PRODUCT_BY_SLUG = gql`
       height
       length
       width
+      soldOut
       description {
         html
         text
@@ -40,6 +41,7 @@ export const QUERY_ONE_PRODUCT_BY_SLUG = gql`
         id
         name
         slug
+        soldOut
         images(first: 1) {
           url
         }

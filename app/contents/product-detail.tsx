@@ -17,15 +17,12 @@ export const ProductDetail: FunctionComponent<ProductDetailProps> = ({
   products,
 }) => {
   const descriptionHtml = product?.description?.html
-  const hasSoldOut = Boolean(
-    product.collections?.length &&
-      product.collections[0]?.slug === 'idul-fitri-or-lebaran'
-  )
-  const LinkClassname = hasSoldOut
+
+  const LinkClassname = product.soldOut
     ? 'btn btn-block btn-disabled gap-4'
     : 'btn btn-block gap-4 bg-whatsapp hover:bg-whatsapp'
 
-  const LinkName = hasSoldOut ? 'SOLD OUT' : 'Ingin produk ini'
+  const LinkName = product.soldOut ? 'SOLD OUT' : 'Ingin produk ini'
   return (
     <>
       <div className="container max-w-5xl">
