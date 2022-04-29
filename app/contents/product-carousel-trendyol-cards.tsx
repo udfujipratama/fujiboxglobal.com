@@ -6,13 +6,12 @@ import { Link } from 'remix'
 import { Product, Products } from '~/types'
 
 interface ProductCarouselTrendyCardsProps {
-  route: string
   products: Products
 }
 
 export const ProductCarouselTrendyCards: FunctionComponent<
   ProductCarouselTrendyCardsProps
-> = ({ route, products }) => {
+> = ({ products }) => {
   const [show, setShow] = useState(5)
   const [slide, setSlide] = useState(5)
   const [arrow, setArrow] = useState(true)
@@ -53,7 +52,7 @@ export const ProductCarouselTrendyCards: FunctionComponent<
         leftArrow={leftArrowComponent}
       >
         {products.map((item, index) => {
-          return <CardItem key={item.id || index} route={route} item={item} />
+          return <CardItem key={item.id || index} item={item} />
         })}
       </Carousel>
     </div>
@@ -61,11 +60,10 @@ export const ProductCarouselTrendyCards: FunctionComponent<
 }
 
 interface CardItemsProps {
-  route: string
   item: Product
 }
 
-const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
+const CardItem: FunctionComponent<CardItemsProps> = ({ item }) => {
   const itemImageUrl =
     item.images[0]?.url ||
     item.categories[0].image.url ||
@@ -82,10 +80,7 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
 
   const LinkName = item.soldOut ? 'SOLD OUT' : 'Lihat Produk'
 
-  const LinkLihatProduk =
-    route === 'kategori'
-      ? `/${route}/${item.slug}`
-      : `/${route}/${item.slug}/${item.categories[0].slug}`
+  const LinkLihatProduk = `/produk/${item.slug}/${item.categories[0].slug}`
 
   return (
     <div className="card card-compact m-4 bg-base-100 shadow-xl">

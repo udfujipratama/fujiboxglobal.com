@@ -13,7 +13,7 @@ export const RecommendedProducts: FunctionComponent<
   return (
     <div className="container my-10 max-w-5xl">
       <h3 className="text-2xl mb-5">Rekomendasi</h3>
-      <ProductCards route="produk" products={products} />
+      <ProductCards products={products} />
     </div>
   )
 }

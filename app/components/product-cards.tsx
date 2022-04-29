@@ -4,29 +4,26 @@ import { Link } from 'remix'
 import type { Product, Products } from '~/types'
 
 interface ProductCardsProps {
-  route: string
   products: Products
 }
 
 export const ProductCards: FunctionComponent<ProductCardsProps> = ({
-  route,
   products,
 }) => {
   return (
     <div className="grid gap-4 grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
       {products.map((item, index) => {
-        return <CardItem key={item.id || index} route={route} item={item} />
+        return <CardItem key={item.id || index} item={item} />
       })}
     </div>
   )
 }
 
 interface CardItemsProps {
-  route: string
   item: Product
 }
 
-const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
+const CardItem: FunctionComponent<CardItemsProps> = ({ item }) => {
   const itemImageUrl =
     item.images[0]?.url ||
     item.categories[0].image.url ||
@@ -43,10 +40,7 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
 
   const LinkName = item.soldOut ? 'SOLD OUT' : 'Lihat Produk'
 
-  const LinkLihatProduk =
-    route === 'kategori'
-      ? `/${route}/${item.slug}`
-      : `/${route}/${item.slug}/${item.categories[0].slug}`
+  const LinkLihatProduk = `/produk/${item.slug}/${item.categories[0].slug}`
 
   return (
     <div className="card card-compact bg-base-100 shadow-xl w-full">

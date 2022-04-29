@@ -25,8 +25,8 @@ export const ProductNewSection: FunctionComponent<ProductNewSectionProps> = ({
           Lihat semua produk
         </Link>
       </div>
-      <ProductCarouselTrendyCards route="produk" products={products} />
-      {/* <ProductCarouselCards route="produk" products={products} /> */}
+      <ProductCarouselTrendyCards products={products} />
+      {/* <ProductCarouselCards "produk" products={products} /> */}
     </div>
   )
 }

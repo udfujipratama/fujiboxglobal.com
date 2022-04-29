@@ -115,7 +115,7 @@ export const ProductCarouselCards: FunctionComponent<
           className="container flex gap-8 p-4 overflow-x-auto scroll-smooth snap-x snap-mandatory touch-pan-x z-0"
         >
           {products.map((item, index) => {
-            return <CardItem key={item.id || index} route={route} item={item} />
+            return <CardItem key={item.id || index} item={item} />
           })}
         </div>
       </div>
@@ -124,11 +124,10 @@ export const ProductCarouselCards: FunctionComponent<
 }
 
 interface CardItemsProps {
-  route: string
   item: Product
 }
 
-const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
+const CardItem: FunctionComponent<CardItemsProps> = ({ item }) => {
   const itemImageUrl =
     item.images[0]?.url ||
     item.categories[0].image.url ||
@@ -145,10 +144,7 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ route, item }) => {
 
   const LinkName = item.soldOut ? 'SOLD OUT' : 'Lihat Produk'
 
-  const LinkLihatProduk =
-    route === 'kategori'
-      ? `/${route}/${item.slug}`
-      : `/${route}/${item.slug}/${item.categories[0].slug}`
+  const LinkLihatProduk = `/produk/${item.slug}/${item.categories[0].slug}`
 
   return (
     <div className="card card-compact shrink-0 bg-base-100 shadow-xl w-48 lg:w-1/5">

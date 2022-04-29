@@ -1,4 +1,3 @@
-// import PropTypes from 'prop-types'
 import { FunctionComponent } from 'react'
 import { Link } from 'remix'
 
@@ -43,7 +42,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
 
         <div>
           {products.length > 0 ? (
-            <ProductCards route="produk" products={products} />
+            <ProductCards products={products} />
           ) : (
             <p>Maaf tidak ada produk tersedia.</p>
           )}
@@ -54,10 +53,3 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
     </div>
   )
 }
-
-// ProductsExplorer.propTypes = {
-//   categories: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   productsConnection: PropTypes.object.isRequired,
-//   collections: PropTypes.arrayOf(PropTypes.object).isRequired,
-//   products: PropTypes.arrayOf(PropTypes.object).isRequired,
-// }
