@@ -83,7 +83,7 @@ const CardItem: FunctionComponent<CardItemsProps> = ({ item }) => {
   const LinkLihatProduk = `/produk/${item.slug}/${item.categories[0].slug}`
 
   return (
-    <div className="card card-compact m-4 bg-base-100 shadow-xl">
+    <div className="card card-compact m-4 bg-base-100 shadow-xl hover:shadow-2xl">
       {itemImageUrl && (
         <figure>
           <img src={itemImageUrl} alt={item.name} />

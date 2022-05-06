@@ -12,7 +12,7 @@ interface CategoryCardProps {
 
 const Categorycard: FunctionComponent<CategoryCardProps> = ({ category }) => {
   return (
-    <div className="card card-compact shadow-xl">
+    <div className="card card-compact shadow-xl hover:shadow-2xl">
       <figure>
         <img src={category.image.url} alt={category.slug} />
       </figure>
