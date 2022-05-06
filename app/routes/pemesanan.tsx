@@ -23,7 +23,7 @@ export default function Pemesanan() {
       <div className="container flex justify-center">
         <iframe
           title="Formulir pemesanan"
-          src="https://docs.google.com/forms/d/e/1FAIpQLScSeQraKJFqo8iIxZYo30h0usmJSvGPNfGDGDAi3m7DJHb3JQ/viewform?embedded=true"
+          src="https://docs.google.com/forms/d/e/1FAIpQLSdMXXwloKeYV5m3ae7C2dQPFlj3mcJQLdAvuuTc681bf1bDWQ/viewform?embedded=true"
           width="640"
           height="1500"
           frameBorder="0"
