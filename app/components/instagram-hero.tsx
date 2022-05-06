@@ -25,7 +25,7 @@ export const InstagramHero: FunctionComponent<InstagramCardProps> = () => {
             </a>
           </div>
           <iframe
-            className="w-full aspect-[4/3] mb-4"
+            className="w-full aspect-[4/3] mb-4 rounded-2xl"
             title="instagram-card"
             src="https://embedsocial.com/facebook_album/pro_hashtag/bf5e9745e763f521063fc73ea47cb1e1bcc2202c"
             width="1200"
