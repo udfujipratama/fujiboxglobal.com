@@ -1,5 +1,6 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
+import { FiShoppingCart } from 'react-icons/fi'
 import { Link } from 'remix'
 
 import { SearchForm } from '~/components'
@@ -49,6 +50,11 @@ const NavMenu = () => {
                 </Menu.Item>
               )
             })}
+            <Menu.Item>
+              <span>
+                <FiShoppingCart />
+              </span>
+            </Menu.Item>
           </div>
         </Menu.Items>
       </Transition>
@@ -82,6 +88,11 @@ export const Navbar = () => {
                   </li>
                 )
               })}
+              <li>
+                <span>
+                  <FiShoppingCart />
+                </span>
+              </li>
             </ul>
           </div>
           <div className="navbar-center flex lg:hidden">
