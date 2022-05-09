@@ -30,7 +30,7 @@ export const ProductCarouselTrendyCards: FunctionComponent<
 
   // @ts-ignore
   useEffect(() => {
-    if (window.screen.width < 400) {
+    if (window.screen.width < 800) {
       setShow(1.5)
       setSlide(2)
       setArrow(false)
