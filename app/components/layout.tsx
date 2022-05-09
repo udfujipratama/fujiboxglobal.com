@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 
-import { Navbar, Footer } from '~/components'
+import { Footer, NavbarHyper } from '~/components'
 
 interface LayoutProps {
   children: React.ReactNode
@@ -9,7 +9,8 @@ interface LayoutProps {
 export const Layout: FunctionComponent<LayoutProps> = ({ children }) => {
   return (
     <div>
-      <Navbar />
+      {/* <Navbar /> */}
+      <NavbarHyper />
       <div className="mx-4">{children}</div>
       <Footer />
     </div>
