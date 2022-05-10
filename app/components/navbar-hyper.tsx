@@ -1,12 +1,9 @@
 import { FiShoppingCart, FiUser, FiMenu } from 'react-icons/fi'
 import { Link } from 'remix'
-import Swal from 'sweetalert2'
 
 import { SearchForm } from './search-form'
 
 import { navigationLinks } from '~/data'
-
-const MySwal = Swal
 
 export const NavbarHyper = () => {
   return (
@@ -45,13 +42,6 @@ export const NavbarHyper = () => {
             <span>
               <button
                 type="button"
-                onClick={() => {
-                  MySwal.fire({
-                    title: <strong>Good job!</strong>,
-                    html: <i>You clicked the button!</i>,
-                    icon: 'success',
-                  })
-                }}
                 className="block p-6 border-b-4 border-transparent hover:border-primary"
               >
                 <FiShoppingCart />
