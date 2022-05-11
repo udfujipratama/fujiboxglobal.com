@@ -44,7 +44,7 @@ export const SearchForm: FunctionComponent<SearchFormProps> = () => {
       <div className="relative">
         <input
           {...register('searchQuery')}
-          className=" md:w-[500px] md:h-[49px] py-4 pl-3 pr-16 text-sm border-2 border-gray-200 rounded-lg"
+          className="w-full  md:w-[500px] md:h-[49px] py-4 pl-3 pr-16 text-sm border-2 border-gray-200 rounded-lg"
           defaultValue={searchQuery}
           name="searchQuery"
           type="text"
