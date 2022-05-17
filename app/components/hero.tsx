@@ -5,12 +5,12 @@ interface HeroProps {}
 
 export const Hero: FunctionComponent<HeroProps> = () => {
   return (
-    <div className="container">
+    <div className="container mt-14 lg:mt-0">
       <div className="hero">
         <Link to="/produk">
           <img
             className="object-cover rounded-xl"
-            src="https://media.graphassets.com/rCqg924JSGKiBSioqWny?_gl=1*112thay*_ga*MTE4NTgxMDE3OS4xNjUwMjY5MjA1*_ga_G6FYGSYGZ4*MTY1MDM0NTIxMi4zNi4xLjE2NTAzNDgxMjAuNTM."
+            src="https://media.graphassets.com/1kMB4AxHQZCHXPmHGwJh?_gl=1*htehi0*_ga*MzMyNjYxNjAxLjE2NTIwNjk2NTE.*_ga_G6FYGSYGZ4*MTY1Mjc2Nzk2MS43LjEuMTY1Mjc2OTgyOS41Nw."
             alt="hero-cover"
           />
         </Link>

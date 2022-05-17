@@ -1,4 +1,4 @@
-import { FiShoppingCart, FiUser, FiMenu } from 'react-icons/fi'
+import { FiMenu } from 'react-icons/fi'
 import { Link } from 'remix'
 
 import { SearchForm } from './search-form'
@@ -38,8 +38,8 @@ export const NavbarHyper = () => {
         </nav>
 
         <div className="flex items-center ml-8">
-          <div className="flex items-center border-gray-100 divide-x divide-gray-100 border-x">
-            <span>
+          <div className="flex items-center justify-between border-gray-100 divide-x divide-gray-100 border-x">
+            {/* <span>
               <button
                 type="button"
                 className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
@@ -55,7 +55,7 @@ export const NavbarHyper = () => {
               >
                 <FiUser />
               </a>
-            </span>
+            </span> */}
             <span className="lg:hidden">
               <a
                 href="/"
