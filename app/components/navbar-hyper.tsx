@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import { FiMenu } from 'react-icons/fi'
 import { Link } from 'remix'
 
@@ -7,7 +8,7 @@ import { navigationLinks } from '~/data'
 
 export const NavbarHyper = () => {
   return (
-    <div className="flex flex-wrap items-center justify-between h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-8">
+    <div className="flex flex-wrap items-center  max-w-7xl mx-auto h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-8">
       <div className="flex items-center">
         <Link to="/" className="pl-4 lg:pl-0">
           <img
@@ -56,13 +57,34 @@ export const NavbarHyper = () => {
                 <FiUser />
               </a>
             </span> */}
+
             <span className="lg:hidden">
-              <a
-                href="/"
-                className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
-              >
-                <FiMenu />
-              </a>
+              <div className="dropdown dropdown-end">
+                <button
+                  type="button"
+                  tabIndex={0}
+                  className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
+                >
+                  <FiMenu />
+                </button>
+                <ul
+                  tabIndex={0}
+                  className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
+                >
+                  {navigationLinks.map((nav: any) => {
+                    return (
+                      <li key={nav.title}>
+                        <Link
+                          to={nav.link}
+                          className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
+                        >
+                          {nav.title}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
+              </div>
             </span>
           </div>
         </div>

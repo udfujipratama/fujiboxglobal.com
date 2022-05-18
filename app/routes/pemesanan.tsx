@@ -19,7 +19,7 @@ export const meta: MetaFunction = () => {
 
 export default function Pemesanan() {
   return (
-    <div className="flex flex-col md:flex-row gap-8 max-w-4xl mx-auto">
+    <div className="flex flex-col mt-28 md:flex-row gap-8 max-w-4xl mx-auto">
       <div className="container flex justify-center">
         <iframe
           title="Formulir pemesanan"
