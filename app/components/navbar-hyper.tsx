@@ -8,7 +8,7 @@ import { navigationLinks } from '~/data'
 
 const checkAndCloseDropDown = (e: any) => {
   const targetEl = e.currentTarget
-  if (targetEl && targetEl.matches(':focus')) {
+  if (targetEl && targetEl.matches(':focus-visible')) {
     setTimeout(() => {
       targetEl.blur()
     }, 0)
@@ -68,8 +68,7 @@ export const NavbarHyper = () => {
 
             <span className="lg:hidden">
               <div className="dropdown dropdown-end">
-                <button
-                  type="button"
+                <label
                   tabIndex={0}
                   className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
                   onMouseDown={(e) => {
@@ -77,7 +76,7 @@ export const NavbarHyper = () => {
                   }}
                 >
                   <FiMenu />
-                </button>
+                </label>
                 <ul
                   tabIndex={0}
                   className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"

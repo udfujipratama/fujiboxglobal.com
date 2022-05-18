@@ -23,8 +23,10 @@
     "react/function-component-definition": "off",
     "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],
     "react/jsx-props-no-spreading": "off",
+    "jsx-a11y/label-has-associated-control": "off",
     "react/no-unescaped-entities": "off",
     "react/forbid-prop-types": "off",
+  "jsx-a11y/no-noninteractive-element-interactions": "off",
     "react/no-array-index-key": "off",
     "unused-imports/no-unused-imports": "error",
     "import/order": [
