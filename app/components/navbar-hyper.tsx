@@ -6,6 +6,14 @@ import { SearchForm } from './search-form'
 
 import { navigationLinks } from '~/data'
 
+const checkAndCloseDropDown = (e: any) => {
+  const targetEl = e.currentTarget
+  if (targetEl && targetEl.matches(':focus')) {
+    setTimeout(() => {
+      targetEl.blur()
+    }, 0)
+  }
+}
 export const NavbarHyper = () => {
   return (
     <div className="flex flex-wrap items-center  max-w-7xl mx-auto h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-8">
@@ -64,6 +72,9 @@ export const NavbarHyper = () => {
                   type="button"
                   tabIndex={0}
                   className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
+                  onMouseDown={(e) => {
+                    checkAndCloseDropDown(e)
+                  }}
                 >
                   <FiMenu />
                 </button>
@@ -77,6 +88,9 @@ export const NavbarHyper = () => {
                         <Link
                           to={nav.link}
                           className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
+                          onClick={(e) => {
+                            checkAndCloseDropDown(e)
+                          }}
                         >
                           {nav.title}
                         </Link>
