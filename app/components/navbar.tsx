@@ -8,7 +8,12 @@ import { navigationLinks } from '~/data'
 
 const checkAndCloseDropDown = (e: any) => {
   const targetEl = e.currentTarget
-  if (targetEl && targetEl.matches(':focus-visible')) {
+  if (
+    // for android chrome
+    (targetEl && targetEl.matches(':focus')) ||
+    // for ios chrome
+    (targetEl && targetEl.matches(':focus-visible'))
+  ) {
     setTimeout(() => {
       targetEl.blur()
     }, 0)
