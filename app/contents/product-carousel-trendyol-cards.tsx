@@ -5,12 +5,12 @@ import { Link } from 'remix'
 
 import { Product, Products } from '~/types'
 
-interface ProductCarouselTrendyCardsProps {
+interface ProductCarouselTrendyolCardsProps {
   products: Products
 }
 
-export const ProductCarouselTrendyCards: FunctionComponent<
-  ProductCarouselTrendyCardsProps
+export const ProductCarouselTrendyolCards: FunctionComponent<
+  ProductCarouselTrendyolCardsProps
 > = ({ products }) => {
   const [show, setShow] = useState(5)
   const [slide, setSlide] = useState(5)

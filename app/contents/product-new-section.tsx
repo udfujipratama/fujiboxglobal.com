@@ -3,7 +3,7 @@ import { Link } from 'remix'
 
 // import { ProductCarouselCards } from './product-carousel-cards'
 
-import { ProductCarouselTrendyCards } from './product-carousel-trendyol-cards'
+import { ProductCarouselTrendyolCards } from './product-carousel-trendyol-cards'
 
 import { Products } from '~/types'
 
@@ -25,8 +25,8 @@ export const ProductNewSection: FunctionComponent<ProductNewSectionProps> = ({
           Lihat semua produk
         </Link>
       </div>
-      <ProductCarouselTrendyCards products={products} />
-      {/* <ProductCarouselCards "produk" products={products} /> */}
+      <ProductCarouselTrendyolCards products={products} />
+      {/* <ProductCarouselCards products={products} /> */}
     </div>
   )
 }
