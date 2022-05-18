@@ -5,12 +5,12 @@ import { Link } from 'remix'
 
 import { Product, Products } from '~/types'
 
-interface ProductCarouselTrendyCardsProps {
+interface ProductCarouselTrendyolCardsProps {
   products: Products
 }
 
-export const ProductCarouselTrendyCards: FunctionComponent<
-  ProductCarouselTrendyCardsProps
+export const ProductCarouselTrendyolCards: FunctionComponent<
+  ProductCarouselTrendyolCardsProps
 > = ({ products }) => {
   const [show, setShow] = useState(5)
   const [slide, setSlide] = useState(5)
@@ -30,7 +30,7 @@ export const ProductCarouselTrendyCards: FunctionComponent<
 
   // @ts-ignore
   useEffect(() => {
-    if (window.screen.width < 400) {
+    if (window.screen.width < 800) {
       setShow(1.5)
       setSlide(2)
       setArrow(false)

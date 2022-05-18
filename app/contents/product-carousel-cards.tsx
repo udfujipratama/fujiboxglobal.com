@@ -4,13 +4,12 @@ import { Link } from 'remix'
 import { Product, Products } from '~/types'
 
 interface ProductCarouselCardsProps {
-  route: string
   products: Products
 }
 
 export const ProductCarouselCards: FunctionComponent<
   ProductCarouselCardsProps
-> = ({ route, products }) => {
+> = ({ products }) => {
   const maxScrollWidth = useRef(0)
   const [currentIndex, setCurrentIndex] = useState(0)
   const carousel = useRef<HTMLHeadingElement>(null)

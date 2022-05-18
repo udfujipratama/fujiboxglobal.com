@@ -20,7 +20,7 @@ export const ProductsExplorer: FunctionComponent<ProductsExplorerProps> = ({
   collections,
 }) => {
   return (
-    <div className="container my-10">
+    <div className="container my-2">
       <div className="flex w-full items-center mb-4">
         <nav className="text-sm breadcrumbs text-slate-400">
           <ul>
