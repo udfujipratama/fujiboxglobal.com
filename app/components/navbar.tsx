@@ -16,7 +16,7 @@ const checkAndCloseDropDown = (e: any) => {
 }
 export const Navbar = () => {
   return (
-    <div className="flex flex-wrap items-center  max-w-7xl mx-auto h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-8">
+    <div className="flex flex-wrap items-center w-full h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-36">
       <div className="flex items-center">
         <Link to="/" className="pl-4 lg:pl-0">
           <img
@@ -28,7 +28,7 @@ export const Navbar = () => {
       </div>
 
       <div className="flex items-center justify-end flex-1">
-        <nav className="hidden lg:tracking-wide lg:text-sm lg:space-x-4 lg:flex">
+        <nav className="hidden lg:tracking-wide lg:text-md lg:space-x-4 lg:flex">
           <span className="mt-2 w-full">
             <SearchForm />
           </span>

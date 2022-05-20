@@ -52,7 +52,7 @@ export const ProductCategoriesSection: FunctionComponent<SectionCardsProps> = ({
           </div>
         </div>
 
-        <div className="grid grid-cols-2 gap-4 lg:col-span-2 lg:grid-cols-3">
+        <div className="grid grid-cols-2 gap-4 lg:col-span-2 lg:grid-cols-4">
           {categories.map((category) => {
             return <Categorycard key={category.id} category={category} />
           })}
