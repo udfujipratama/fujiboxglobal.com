@@ -5,4 +5,18 @@ import { splitbee } from '~/lib'
 
 hydrate(<RemixBrowser />, document)
 
-splitbee.init()
+export const isEnvProduction = ENV?.NODE_ENV === 'production'
+export const isSameHostName =
+  window.location.hostname === 'https://fujiboxglobal.com'
+export const isProductionAllowed = isEnvProduction && isSameHostName
+
+console.log({
+  isEnvProduction,
+  isSameHostName,
+  isProductionAllowed,
+  ENV,
+})
+
+if (isProductionAllowed) {
+  splitbee.init()
+}

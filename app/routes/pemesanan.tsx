@@ -21,7 +21,7 @@ export default function Pemesanan() {
   return (
     <div className="flex flex-col mt-16 md:flex-row gap-8 max-w-4xl mx-auto">
       <div className="container flex justify-center">
-        <iframe
+        {/* <iframe
           title="Formulir pemesanan"
           src="https://docs.google.com/forms/d/e/1FAIpQLSdMXXwloKeYV5m3ae7C2dQPFlj3mcJQLdAvuuTc681bf1bDWQ/viewform?embedded=true"
           width="640"
@@ -31,9 +31,39 @@ export default function Pemesanan() {
           marginWidth={0}
         >
           Memuat formulir pemesanan...
-        </iframe>
+        </iframe> */}
+        <div className="container border-solid border-2 h-60 p-4 mt-3 flex flex-col justify-around">
+          <h1 className="text-xl text-center">
+            Ingin terhubung langsung dengan kami ?
+          </h1>
+          <a
+            href="https://wa.me/6281291071355?text=Halo%20saya%20ingin%20langsung%20terhubung%20dengan%20marketing%20fuji"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-lg btn-wide gap-2 bg-whatsapp mx-auto hover:bg-whatsapp"
+          >
+            Tanya Fujibox
+            <span>
+              <IoLogoWhatsapp />
+            </span>
+          </a>
+        </div>
+        <div className="container border-solid border-2 h-60 p-4 mt-3 flex flex-col justify-around">
+          <h1 className="text-xl text-center">中文服務</h1>
+          <a
+            href="https://wa.me/6281291071355?text=您好%2C%20我想直接聯繫%20FUJIBOX"
+            target="_blank"
+            rel="noreferrer"
+            className="btn btn-lg btn-wide gap-2 bg-whatsapp mx-auto hover:bg-whatsapp"
+          >
+            請問 Fujibox
+            <span>
+              <IoLogoWhatsapp />
+            </span>
+          </a>
+        </div>
       </div>
-      <div className="container border-solid border-2 h-60 p-4 mt-3 flex flex-col justify-around">
+      {/* <div className="container border-solid border-2 h-60 p-4 mt-3 flex flex-col justify-around">
         <h1 className="text-xl text-center">
           Ingin terhubung langsung dengan kami ?
         </h1>
@@ -48,7 +78,7 @@ export default function Pemesanan() {
             <IoLogoWhatsapp />
           </span>
         </a>
-      </div>
+      </div> */}
     </div>
   )
 }
