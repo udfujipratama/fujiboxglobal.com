@@ -1,13 +1,16 @@
 import NProgress from 'nprogress'
 import { useEffect } from 'react'
 import {
+  json,
   Links,
   LinksFunction,
   LiveReload,
+  LoaderFunction,
   Meta,
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLoaderData,
   useTransition,
 } from 'remix'
 
@@ -52,7 +55,14 @@ export const links: LinksFunction = () => {
   ]
 }
 
+export const loader: LoaderFunction = async () => {
+  return json({
+    ENV: { NODE_ENV: process.env.NODE_ENV },
+  })
+}
+
 export default function App() {
+  const data = useLoaderData()
   const transition = useTransition()
 
   useEffect(() => {
@@ -76,6 +86,14 @@ export default function App() {
         <ScrollRestoration />
         <Scripts />
         <LiveReload />
+        {data?.ENV && (
+          <script
+            // eslint-disable-next-line react/no-danger
+            dangerouslySetInnerHTML={{
+              __html: `window.ENV = ${JSON.stringify(data?.ENV)};`,
+            }}
+          />
+        )}
       </body>
     </html>
   )
