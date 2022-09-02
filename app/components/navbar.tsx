@@ -16,7 +16,7 @@ const checkAndCloseDropDown = (e: any) => {
 }
 export const Navbar = () => {
   return (
-    <div className="flex flex-wrap items-center w-full h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-36">
+    <div className="flex flex-wrap items-center w-full h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-12">
       <div className="flex items-center">
         <Link to="/" className="pl-4 lg:pl-0">
           <img
@@ -28,11 +28,13 @@ export const Navbar = () => {
       </div>
 
       <div className="flex items-center justify-end flex-1">
-        <nav className="hidden lg:tracking-wide lg:text-md lg:space-x-4 lg:flex">
+        <nav className="hidden lg:tracking-wide lg:text-md lg:flex lg:ml-24">
           <span className="mt-2 w-full">
             <SearchForm />
           </span>
+        </nav>
 
+        <div className="hidden lg:flex justify-end flex-1 gap-4">
           {navigationLinks.map((nav: any) => {
             return (
               <Link
@@ -44,28 +46,10 @@ export const Navbar = () => {
               </Link>
             )
           })}
-        </nav>
+        </div>
 
         <div className="flex items-center ml-8">
           <div className="flex items-center justify-between border-gray-100 divide-x divide-gray-100 border-x">
-            {/* <span>
-              <button
-                type="button"
-                className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
-              >
-                <FiShoppingCart />
-              </button>
-            </span>
-
-            <span>
-              <a
-                href="/"
-                className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
-              >
-                <FiUser />
-              </a>
-            </span> */}
-
             <span className="lg:hidden">
               <div className="dropdown dropdown-end">
                 <label
