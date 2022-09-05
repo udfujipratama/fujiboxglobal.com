@@ -38,6 +38,9 @@ module.exports = {
         fujibox: '#2f5f99',
         whatsapp: '#48BB78',
       },
+      scale: {
+        30: '.3',
+      },
     },
   },
 }
