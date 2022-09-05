@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import { FiMenu } from 'react-icons/fi'
-import { Link } from 'remix'
+import { Link, useLocation } from 'remix'
 
 import { SearchForm } from './search-form'
 
@@ -20,6 +20,17 @@ const checkAndCloseDropDown = (e: any) => {
   }
 }
 export const Navbar = () => {
+  const location = useLocation()
+  if (
+    location.pathname === '/pesanan-khusus' ||
+    location.pathname === '/pesanan-khusus-harga'
+  ) {
+    return PesananKhususNavbar()
+  }
+  return MainNavbar()
+}
+
+const MainNavbar = () => {
   return (
     <div className="flex flex-wrap items-center w-full h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-12">
       <div className="flex items-center">
@@ -94,6 +105,43 @@ export const Navbar = () => {
 
       <div className="w-full bg-white p-4 lg:hidden">
         <SearchForm />
+      </div>
+    </div>
+  )
+}
+
+const PesananKhususNavbar = () => {
+  return (
+    <div className="flex flex-wrap items-center w-full h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-12">
+      <div className="flex items-center">
+        <Link to="/" className="pl-4 lg:pl-0">
+          <img
+            className="max-h-10"
+            src="/images/logo/fujibox-logo.png"
+            alt="Fujibox"
+          />
+        </Link>
+      </div>
+
+      <div className="flex items-center justify-end flex-1 gap-4">
+        <Link
+          to="/"
+          className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
+        >
+          Kembali ke Beranda
+        </Link>
+        <Link
+          to="/pesanan-khusus"
+          className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
+        >
+          Pesanan Khusus
+        </Link>
+        <Link
+          to="/pesanan-khusus-harga"
+          className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
+        >
+          Penawaran kami
+        </Link>
       </div>
     </div>
   )
