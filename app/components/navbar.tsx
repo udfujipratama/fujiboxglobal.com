@@ -23,7 +23,7 @@ export const Navbar = () => {
   const location = useLocation()
   if (
     location.pathname === '/pesanan-khusus' ||
-    location.pathname === '/pesanan-khusus-harga'
+    location.pathname === '/pesanan-khusus-penawaran'
   ) {
     return PesananKhususNavbar()
   }
@@ -137,10 +137,10 @@ const PesananKhususNavbar = () => {
           Pesanan Khusus
         </Link>
         <Link
-          to="/pesanan-khusus-harga"
+          to="/pesanan-khusus-penawaran"
           className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
         >
-          Penawaran kami
+          Penawaran
         </Link>
       </div>
 
@@ -178,10 +178,10 @@ const PesananKhususNavbar = () => {
               </li>
               <li>
                 <Link
-                  to="/pesanan-khusus-harga"
+                  to="/pesanan-khusus-penawaran"
                   className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
                 >
-                  Penawaran kami
+                  Penawaran
                 </Link>
               </li>
             </ul>
