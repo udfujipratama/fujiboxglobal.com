@@ -1,8 +1,10 @@
 import { FunctionComponent } from 'react'
 
-interface PesananKhusushargaProps {}
+interface PesananKhususPenawaranProps {}
 
-const PesananKhususharga: FunctionComponent<PesananKhusushargaProps> = () => {
+const PesananKhususPenawaran: FunctionComponent<
+  PesananKhususPenawaranProps
+> = () => {
   return (
     <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
@@ -146,7 +148,7 @@ const PesananKhususharga: FunctionComponent<PesananKhusushargaProps> = () => {
             </a>
           </div>
         </div>
-        <div className="flex flex-col relative transition duration-300 bg-white rounded shadow-sm hover:shadow border-fujibox">
+        <div className="flex flex-col relative transition duration-300 bg-white rounded shadow-sm hover:shadow border-2 border-fujibox">
           <div className="absolute inset-x-0 top-0 flex justify-center -mt-3">
             <div className="inline-block px-3 py-1 text-xs font-medium tracking-wider text-white uppercase rounded bg-fujibox z-10">
               Paling Laris
@@ -386,4 +388,4 @@ const PesananKhususharga: FunctionComponent<PesananKhusushargaProps> = () => {
   )
 }
 
-export default PesananKhususharga
+export default PesananKhususPenawaran
