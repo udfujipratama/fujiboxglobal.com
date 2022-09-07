@@ -2,6 +2,7 @@ import { LoaderFunction, MetaFunction, useLoaderData } from 'remix'
 
 import { Hero, InstagramHero, WhatsAppCard } from '~/components'
 import { ProductCategoriesSection, ProductNewSection } from '~/contents'
+import { PesananKhususBanner } from '~/contents/pesanan-khusus'
 import { QUERY_PRODUCT } from '~/graphql'
 import { graphcmsClient, SEOHandle } from '~/lib'
 
@@ -35,6 +36,8 @@ export default function Index() {
   return (
     <>
       <Hero />
+
+      <PesananKhususBanner />
 
       <ProductNewSection products={newProducts} />
 
