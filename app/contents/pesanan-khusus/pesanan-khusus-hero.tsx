@@ -31,13 +31,6 @@ export const PesananKhususHero: FunctionComponent<
             >
               <span className="mr-3">Coba sekarang</span>
             </a>
-            <a
-              href="/"
-              aria-label=""
-              className="inline-flex items-center font-semibold text-rose-600 transition-colors duration-200 hover:text-rose-700"
-            >
-              Get 15% discount
-            </a>
           </div>
         </div>
         <div className="relative lg:w-1/2">
