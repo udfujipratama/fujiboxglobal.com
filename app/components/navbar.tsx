@@ -1,24 +1,13 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
-import { FiMenu } from 'react-icons/fi'
+import { Menu, Transition } from '@headlessui/react'
+import { Fragment } from 'react'
+import { IoMenuSharp } from 'react-icons/io5'
 import { Link, useLocation } from 'remix'
 
 import { SearchForm } from './search-form'
 
 import { navigationLinks } from '~/data'
 
-const checkAndCloseDropDown = (e: any) => {
-  const targetEl = e.currentTarget
-  if (
-    // for android chrome
-    (targetEl && targetEl.matches(':focus')) ||
-    // for ios chrome
-    (targetEl && targetEl.matches(':focus-visible'))
-  ) {
-    setTimeout(() => {
-      targetEl.blur()
-    }, 0)
-  }
-}
 export const Navbar = () => {
   const location = useLocation()
   if (
@@ -64,40 +53,50 @@ const MainNavbar = () => {
           })}
         </div>
 
-        <div className="flex items-center ml-8">
-          <div className="flex items-center justify-between border-gray-100 divide-x divide-gray-100 border-x">
+        <div className="flex items-center mr-4">
+          <div className="flex items-center justify-between  divide-x border-x">
             <span className="lg:hidden">
-              <div className="dropdown dropdown-end">
-                <label
-                  tabIndex={0}
-                  className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
-                  onMouseDown={(e) => {
-                    checkAndCloseDropDown(e)
-                  }}
+              <Menu as="div" className="relative inline-block text-left">
+                <div>
+                  <Menu.Button className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium text-black  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                    <IoMenuSharp />
+                  </Menu.Button>
+                </div>
+
+                <Transition
+                  as={Fragment}
+                  enter="transition ease-out duration-100"
+                  enterFrom="transform opacity-0 scale-95"
+                  enterTo="transform opacity-100 scale-100"
+                  leave="transition ease-in duration-75"
+                  leaveFrom="transform opacity-100 scale-100"
+                  leaveTo="transform opacity-0 scale-95"
                 >
-                  <FiMenu />
-                </label>
-                <ul
-                  tabIndex={0}
-                  className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
-                >
-                  {navigationLinks.map((nav: any) => {
-                    return (
-                      <li key={nav.title}>
-                        <Link
-                          to={nav.link}
-                          className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
-                          onClick={(e) => {
-                            checkAndCloseDropDown(e)
-                          }}
-                        >
-                          {nav.title}
-                        </Link>
-                      </li>
-                    )
-                  })}
-                </ul>
-              </div>
+                  <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                    {navigationLinks.map((nav: any) => {
+                      return (
+                        <div className="px-1 py-1 " key={nav.title}>
+                          <Menu.Item>
+                            {({ active }) => (
+                              // eslint-disable-next-line arrow-body-style
+                              <Link
+                                to={nav.link}
+                                className={`${
+                                  active
+                                    ? 'bg-fujibox text-white'
+                                    : 'text-gray-900'
+                                } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                              >
+                                {nav.title}
+                              </Link>
+                            )}
+                          </Menu.Item>
+                        </div>
+                      )
+                    })}
+                  </Menu.Items>
+                </Transition>
+              </Menu>
             </span>
           </div>
         </div>
@@ -146,46 +145,71 @@ const PesananKhususNavbar = () => {
 
       <div className="flex items-center border-gray-100 divide-x divide-gray-100 border-x">
         <span className="lg:hidden">
-          <div className="dropdown dropdown-end">
-            <label
-              tabIndex={0}
-              className="block p-4 lg:p-6 border-b-4 border-transparent hover:border-primary"
-              onMouseDown={(e) => {
-                checkAndCloseDropDown(e)
-              }}
+          <Menu as="div" className="relative inline-block text-left">
+            <div>
+              <Menu.Button className="inline-flex w-full justify-center rounded-md px-4 py-2 text-sm font-medium text-black  focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-opacity-75">
+                <IoMenuSharp />
+              </Menu.Button>
+            </div>
+
+            <Transition
+              as={Fragment}
+              enter="transition ease-out duration-100"
+              enterFrom="transform opacity-0 scale-95"
+              enterTo="transform opacity-100 scale-100"
+              leave="transition ease-in duration-75"
+              leaveFrom="transform opacity-100 scale-100"
+              leaveTo="transform opacity-0 scale-95"
             >
-              <FiMenu />
-            </label>
-            <ul
-              tabIndex={0}
-              className="menu dropdown-content p-2 shadow bg-base-100 rounded-box w-52 mt-4"
-            >
-              <li>
-                <Link
-                  to="/"
-                  className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
-                >
-                  Kembali ke Beranda
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/pesanan-khusus"
-                  className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
-                >
-                  Pesanan Khusus
-                </Link>
-              </li>
-              <li>
-                <Link
-                  to="/pesanan-khusus-penawaran"
-                  className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
-                >
-                  Penawaran
-                </Link>
-              </li>
-            </ul>
-          </div>
+              <Menu.Items className="absolute right-0 mt-2 w-56 origin-top-right divide-y divide-gray-100 rounded-md bg-white shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none z-10">
+                <div className="px-1 py-1">
+                  <Menu.Item>
+                    {({ active }) => (
+                      // eslint-disable-next-line arrow-body-style
+                      <Link
+                        to="/"
+                        className={`${
+                          active ? 'bg-fujibox text-white' : 'text-gray-900'
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      >
+                        Kembali ke Beranda
+                      </Link>
+                    )}
+                  </Menu.Item>
+                </div>
+                <div className="px-1 py-1">
+                  <Menu.Item>
+                    {({ active }) => (
+                      // eslint-disable-next-line arrow-body-style
+                      <Link
+                        to="/pesanan-khusus"
+                        className={`${
+                          active ? 'bg-fujibox text-white' : 'text-gray-900'
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      >
+                        Pesanan Khusus
+                      </Link>
+                    )}
+                  </Menu.Item>
+                </div>
+                <div className="px-1 py-1">
+                  <Menu.Item>
+                    {({ active }) => (
+                      // eslint-disable-next-line arrow-body-style
+                      <Link
+                        to="/pesanan-khusus-penawaran"
+                        className={`${
+                          active ? 'bg-fujibox text-white' : 'text-gray-900'
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      >
+                        Penawaran
+                      </Link>
+                    )}
+                  </Menu.Item>
+                </div>
+              </Menu.Items>
+            </Transition>
+          </Menu>
         </span>
       </div>
     </div>
