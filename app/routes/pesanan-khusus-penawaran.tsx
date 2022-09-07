@@ -6,10 +6,10 @@ const PesananKhususPenawaran: FunctionComponent<
   PesananKhususPenawaranProps
 > = () => {
   return (
-    <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+    <div className="px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8">
       <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
         <div>
-          <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-teal-900 uppercase rounded-full bg-teal-accent-400">
+          <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-fujibox">
             Harga baru
           </p>
         </div>
@@ -29,7 +29,7 @@ const PesananKhususPenawaran: FunctionComponent<
               alt="Plan"
             />
           </div>
-          <div className="flex flex-col justify-between flex-grow p-8 border border-t-0 rounded-b">
+          <div className="flex flex-col justify-around flex-grow p-8 border border-t-0 rounded-b">
             <div>
               <div className="text-2xl font-semibold">Kraft box</div>
 
@@ -133,7 +133,10 @@ const PesananKhususPenawaran: FunctionComponent<
                   <p className="font-medium text-black">Free laminasi dalam</p>
                 </li>
               </ul>
-              <div className="flex item-center justify-center mt-6">
+              <div className="flex item-center justify-center mt-8 mb-4 relative">
+                <span className="absolute inset-x-0 -top-4 left-8 h-16 text-gray-600">
+                  Mulai dari
+                </span>
                 <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-3xl">
                   Rp. 900
                 </div>
@@ -161,7 +164,7 @@ const PesananKhususPenawaran: FunctionComponent<
               alt="Plan"
             />
           </div>
-          <div className="flex flex-col justify-between flex-grow p-8 border border-t-0 rounded-b">
+          <div className="flex flex-col justify-around flex-grow p-8 border border-t-0 rounded-b">
             <div>
               <div className="text-2xl font-semibold">Lunch Box</div>
 
@@ -265,7 +268,10 @@ const PesananKhususPenawaran: FunctionComponent<
                   <p className="font-medium text-black">Free laminasi dalam</p>
                 </li>
               </ul>
-              <div className="flex item-center justify-center mt-6">
+              <div className="flex item-center justify-center mt-8 mb-4 relative">
+                <span className="absolute inset-x-0 -top-4 left-8 h-16 text-gray-600">
+                  Mulai dari
+                </span>
                 <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-3xl">
                   Rp. 800
                 </div>
@@ -288,7 +294,7 @@ const PesananKhususPenawaran: FunctionComponent<
               alt="Plan"
             />
           </div>
-          <div className="flex flex-col justify-between flex-grow p-8 border border-t-0 rounded-b">
+          <div className="flex flex-col justify-evenly flex-grow p-8 border border-t-0 rounded-b">
             <div>
               <div className="text-2xl font-semibold">Corrugated Box</div>
 
@@ -368,7 +374,10 @@ const PesananKhususPenawaran: FunctionComponent<
                   <p className="font-medium text-black">Cetak 1 warna</p>
                 </li>
               </ul>
-              <div className="flex item-center justify-center mt-6">
+              <div className="flex item-center justify-center mt-8 mb-4 relative">
+                <span className="absolute inset-x-0 -top-4 left-8 h-16 text-gray-600">
+                  Mulai dari
+                </span>
                 <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-3xl">
                   Rp. 1.200
                 </div>
