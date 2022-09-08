@@ -6,7 +6,7 @@ export const PesananKhususBrands: FunctionComponent<
   PesananKhususbrandsProps
 > = () => {
   return (
-    <section className="px-4 py-20 mx-auto max-w-7xl">
+    <section className="px-4 py-8 mx-auto max-w-7xl">
       <h1 className="mb-12 text-sm font-bold tracking-wide text-center text-gray-800 uppercase">
         Kami bangga menjadi bagian dari perjalanan mereka
       </h1>
