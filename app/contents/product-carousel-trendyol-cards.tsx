@@ -1,9 +1,10 @@
+import { Link } from '@remix-run/react'
 import { Carousel } from '@trendyol-js/react-carousel'
-import { FunctionComponent, useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa'
-import { Link } from "@remix-run/react";
 
-import { Product, Products } from '~/types'
+import type { FunctionComponent } from 'react'
+import type { Product, Products } from '~/types'
 
 interface ProductCarouselTrendyolCardsProps {
   products: Products

@@ -1,6 +1,19 @@
-# Welcome to Remix!
+# Fujibox Global Website
 
+- [fujiboxglobal.com](https://fujiboxglobal.com)
 - [Remix Docs](https://remix.run/docs)
+
+## Stack
+
+- HTML
+- CSS
+- JavaScript
+- TypeScript
+- React
+- Remix
+- Carousel
+  - https://github.com/akiran/react-slick
+  - https://github.com/metafizzy/flickity
 
 ## Deployment
 
