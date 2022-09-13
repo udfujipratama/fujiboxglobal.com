@@ -9,4 +9,5 @@ node_modules
 
 /build/
 /public/build
+/api
 /api/index.js
