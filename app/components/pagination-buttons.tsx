@@ -1,6 +1,6 @@
 import queryString from 'query-string'
 import { FunctionComponent } from 'react'
-import { Link, useLocation, useSearchParams } from 'remix'
+import { Link, useLocation, useSearchParams } from "@remix-run/react";
 
 import type { Connection } from '~/types'
 

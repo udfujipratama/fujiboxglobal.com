@@ -1,7 +1,7 @@
 import { Disclosure } from '@headlessui/react'
 import { FunctionComponent } from 'react'
 import { IoIosArrowDropdown } from 'react-icons/io'
-import { Link } from 'remix'
+import { Link } from "@remix-run/react";
 
 import type { Categories, Collections } from '~/types'
 

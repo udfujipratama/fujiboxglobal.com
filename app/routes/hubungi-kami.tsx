@@ -1,6 +1,6 @@
 import { AiFillInstagram, AiFillFacebook } from 'react-icons/ai'
 import { IoLogoWhatsapp } from 'react-icons/io'
-import { MetaFunction } from 'remix'
+import { MetaFunction } from "@remix-run/node";
 
 import { SEOHandle } from '~/lib'
 

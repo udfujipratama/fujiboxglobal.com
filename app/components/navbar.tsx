@@ -2,7 +2,7 @@
 import { Menu, Transition } from '@headlessui/react'
 import { Fragment } from 'react'
 import { IoMenuSharp } from 'react-icons/io5'
-import { Link, useLocation } from 'remix'
+import { Link, useLocation } from "@remix-run/react";
 
 import { SearchForm } from './search-form'
 

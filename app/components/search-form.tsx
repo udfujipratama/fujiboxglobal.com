@@ -1,7 +1,7 @@
 import { FunctionComponent, useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { FiSearch } from 'react-icons/fi'
-import { useLocation, useNavigate, useSearchParams } from 'remix'
+import { useLocation, useNavigate, useSearchParams } from "@remix-run/react";
 
 interface SearchFormProps {}
 

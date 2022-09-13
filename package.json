@@ -10,12 +10,12 @@
     "dev": "concurrently 'npm run dev:css' 'remix dev'",
     "dev:css": "tailwindcss -w -i ./styles/app.css -o app/styles/app.css",
     "lint": "eslint . --ext .js,.jsx,.ts,.tsx",
-    "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx",
-    "postinstall": "remix setup node"
+    "lint:fix": "eslint . --fix --ext .js,.jsx,.ts,.tsx"
   },
   "dependencies": {
     "@balavishnuvj/remix-seo": "^1.0.2",
     "@headlessui/react": "1.7.1",
+    "@remix-run/node": "^1.7.0",
     "@remix-run/react": "^1.7.0",
     "@remix-run/vercel": "^1.7.0",
     "@splitbee/web": "^0.3.0",
@@ -29,8 +29,7 @@
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "7.35.0",
-    "react-icons": "^4.4.0",
-    "remix": "^1.7.0"
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.7.0",

@@ -1,9 +1,8 @@
 import { renderToString } from 'react-dom/server'
-import { RemixServer } from 'remix'
+import type { EntryContext } from "@remix-run/node";
+import { RemixServer } from "@remix-run/react";
 
 import { otherRootRouteHandlers } from './other-root-routes.server'
-
-import type { EntryContext } from 'remix'
 
 export default async function handleRequest(
   request: Request,

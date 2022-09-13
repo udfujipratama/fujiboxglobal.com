@@ -1,7 +1,7 @@
 import { Carousel } from '@trendyol-js/react-carousel'
 import { FunctionComponent, useEffect, useState } from 'react'
 import { FaAngleRight, FaAngleLeft } from 'react-icons/fa'
-import { Link } from 'remix'
+import { Link } from "@remix-run/react";
 
 import { Product, Products } from '~/types'
 

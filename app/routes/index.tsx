@@ -1,4 +1,5 @@
-import { LoaderFunction, MetaFunction, useLoaderData } from 'remix'
+import { LoaderFunction, MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
 import { Hero, InstagramHero, WhatsAppCard } from '~/components'
 import { ProductCategoriesSection, ProductNewSection } from '~/contents'

@@ -1,5 +1,6 @@
 import { gql } from '@urql/core'
-import { json, LoaderFunction, MetaFunction, useLoaderData } from 'remix'
+import { json, LoaderFunction, MetaFunction } from "@remix-run/node";
+import { useLoaderData } from "@remix-run/react";
 
 import { ProductDetail } from '~/contents'
 import { QUERY_ONE_PRODUCT_BY_SLUG } from '~/graphql'

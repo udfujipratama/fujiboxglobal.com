@@ -1,6 +1,6 @@
 import { FunctionComponent } from 'react'
 import { IoLogoWhatsapp } from 'react-icons/io'
-import { Link } from 'remix'
+import { Link } from "@remix-run/react";
 
 import { ProductImagesCarousel } from '~/components'
 import { RecommendedProducts } from '~/contents'
