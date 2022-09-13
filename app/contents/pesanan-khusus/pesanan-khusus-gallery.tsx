@@ -19,7 +19,7 @@ export const PesananKhususGallery: FunctionComponent<
         <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
           <img
             className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://images.unsplash.com/photo-1559087316-47ce212113b7?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=946&q=80"
+            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/e0m4VmK5QK6ygRu4mj6h"
             alt=""
           />
         </div>
@@ -27,7 +27,7 @@ export const PesananKhususGallery: FunctionComponent<
         <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
           <img
             className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://images.unsplash.com/photo-1595246007497-15e0ed4b8d96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/8Fgm4u7iQPiECV2b2vv2"
             alt=""
           />
         </div>
@@ -35,7 +35,7 @@ export const PesananKhususGallery: FunctionComponent<
         <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
           <img
             className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://images.unsplash.com/photo-1595246135406-803418233494?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/oSFJCfTtStmV34JOjwEm"
             alt=""
           />
         </div>

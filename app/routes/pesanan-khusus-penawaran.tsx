@@ -20,7 +20,7 @@ const PesananKhususPenawaran: FunctionComponent<
           Berikut kami sediakan beberapa pilihan untuk anda
         </p>
       </div>
-      <div className="grid max-w-md gap-10 row-gap-8 lg:max-w-screen-lg sm:row-gap-10 lg:grid-cols-3 xl:max-w-screen-lg sm:mx-auto">
+      <div className="grid max-w-md gap-10 row-gap-8 lg:max-w-screen-lg sm:row-gap-10 lg:grid-cols-2 xl:max-w-screen-lg sm:mx-auto">
         <div className="flex flex-col relative transition duration-300 bg-white rounded shadow-sm hover:shadow border-fujibox">
           <div className="relative w-full h-48">
             <img
@@ -31,7 +31,7 @@ const PesananKhususPenawaran: FunctionComponent<
           </div>
           <div className="flex flex-col justify-around flex-grow p-8 border border-t-0 rounded-b">
             <div>
-              <div className="text-2xl font-semibold">Kraft box</div>
+              <div className="text-2xl font-semibold">Lunchbox Kraft</div>
 
               <ul className="my-4 space-y-2">
                 <li className="flex items-center">
@@ -56,7 +56,31 @@ const PesananKhususPenawaran: FunctionComponent<
                       />
                     </svg>
                   </div>
-                  <p className="font-medium text-black">Minimum 1000pcs</p>
+                  <p className="font-medium text-black">Ukuran 18 x 11 x 5cm</p>
+                </li>
+                <li className="flex items-center">
+                  <div className="mr-3">
+                    <svg
+                      className="w-4 h-4 text-teal-accent-400"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeWidth="2"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="6,12 10,16 18,8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="none"
+                        r="11"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <p className="font-medium text-black">Food Grade</p>
                 </li>
                 <li className="flex items-center">
                   <div className="mr-3">
@@ -81,7 +105,57 @@ const PesananKhususPenawaran: FunctionComponent<
                     </svg>
                   </div>
                   <p className="font-medium text-black">
-                    Free ongkir untuk daerah Jakarta, Depok, Bekasi, Tangerang
+                    Bahan Kraft PE 290 Gr
+                  </p>
+                </li>
+                <li className="flex items-center">
+                  <div className="mr-3">
+                    <svg
+                      className="w-4 h-4 text-teal-accent-400"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeWidth="2"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="6,12 10,16 18,8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="none"
+                        r="11"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <p className="font-medium text-black">Minimum 500pcs</p>
+                </li>
+                <li className="flex items-center">
+                  <div className="mr-3">
+                    <svg
+                      className="w-4 h-4 text-teal-accent-400"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeWidth="2"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="6,12 10,16 18,8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="none"
+                        r="11"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <p className="font-medium text-black">
+                    Free Ongkir untuk daerah Jakarta, dan sekitarnya
                   </p>
                 </li>
                 <li className="flex items-center">
@@ -134,7 +208,7 @@ const PesananKhususPenawaran: FunctionComponent<
                 </li>
               </ul>
               <div className="flex item-center justify-center mt-8 mb-4 relative">
-                <span className="absolute inset-x-0 -top-4 left-8 h-16 text-gray-600">
+                <span className="absolute inset-x-0 -top-4 left-8 lg:left-20 h-16 text-gray-600">
                   Mulai dari
                 </span>
                 <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-3xl">
@@ -166,9 +240,83 @@ const PesananKhususPenawaran: FunctionComponent<
           </div>
           <div className="flex flex-col justify-around flex-grow p-8 border border-t-0 rounded-b">
             <div>
-              <div className="text-2xl font-semibold">Lunch Box</div>
+              <div className="text-2xl font-semibold">Lunchbox Kraft</div>
 
               <ul className="my-4 space-y-2">
+                <li className="flex items-center">
+                  <div className="mr-3">
+                    <svg
+                      className="w-4 h-4 text-teal-accent-400"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeWidth="2"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="6,12 10,16 18,8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="none"
+                        r="11"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <p className="font-medium text-black">Ukuran 18 x 11 x 5cm</p>
+                </li>
+                <li className="flex items-center">
+                  <div className="mr-3">
+                    <svg
+                      className="w-4 h-4 text-teal-accent-400"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeWidth="2"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="6,12 10,16 18,8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="none"
+                        r="11"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <p className="font-medium text-black">Food Grade</p>
+                </li>
+                <li className="flex items-center">
+                  <div className="mr-3">
+                    <svg
+                      className="w-4 h-4 text-teal-accent-400"
+                      viewBox="0 0 24 24"
+                      strokeLinecap="round"
+                      strokeWidth="2"
+                    >
+                      <polyline
+                        fill="none"
+                        stroke="currentColor"
+                        points="6,12 10,16 18,8"
+                      />
+                      <circle
+                        cx="12"
+                        cy="12"
+                        fill="none"
+                        r="11"
+                        stroke="currentColor"
+                      />
+                    </svg>
+                  </div>
+                  <p className="font-medium text-black">
+                    Bahan Kraft PE 290 Gr
+                  </p>
+                </li>
                 <li className="flex items-center">
                   <div className="mr-3">
                     <svg
@@ -216,7 +364,7 @@ const PesananKhususPenawaran: FunctionComponent<
                     </svg>
                   </div>
                   <p className="font-medium text-black">
-                    Free ongkir untuk daerah Jakarta, Depok, Bekasi, Tangerang
+                    Free Ongkir untuk daerah Jakarta, dan sekitarnya
                   </p>
                 </li>
                 <li className="flex items-center">
@@ -269,11 +417,11 @@ const PesananKhususPenawaran: FunctionComponent<
                 </li>
               </ul>
               <div className="flex item-center justify-center mt-8 mb-4 relative">
-                <span className="absolute inset-x-0 -top-4 left-8 h-16 text-gray-600">
+                <span className="absolute inset-x-0 -top-4 left-8 lg:left-20 h-16 text-gray-600">
                   Mulai dari
                 </span>
                 <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-3xl">
-                  Rp. 800
+                  Rp. 850
                 </div>
                 <div className="text-gray-500 text-lg pt-2">/ pcs</div>
               </div>
@@ -286,7 +434,7 @@ const PesananKhususPenawaran: FunctionComponent<
             </a>
           </div>
         </div>
-        <div className="flex flex-col relative transition duration-300 bg-white rounded shadow-sm hover:shadow border-fujibox">
+        {/* <div className="flex flex-col relative transition duration-300 bg-white rounded shadow-sm hover:shadow border-fujibox">
           <div className="relative w-full h-48">
             <img
               src="https://images.unsplash.com/photo-1595246135406-803418233494?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
@@ -346,7 +494,7 @@ const PesananKhususPenawaran: FunctionComponent<
                     </svg>
                   </div>
                   <p className="font-medium text-black">
-                    Free ongkir untuk daerah Jakarta, Depok, Bekasi, Tangerang
+                    Free Ongkir untuk daerah Jakarta, dan sekitarnya
                   </p>
                 </li>
                 <li className="flex items-center">
@@ -391,7 +539,7 @@ const PesananKhususPenawaran: FunctionComponent<
               Saya ingin pesan
             </a>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   )
