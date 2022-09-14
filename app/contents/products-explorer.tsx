@@ -1,5 +1,5 @@
+import { Link } from '@remix-run/react'
 import { FunctionComponent } from 'react'
-import { Link } from "@remix-run/react";
 
 import { ProductCards, PaginationButtons } from '~/components'
 import { ProductsExplorerSidebar } from '~/contents'
