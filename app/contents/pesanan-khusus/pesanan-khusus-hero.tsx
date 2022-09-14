@@ -35,8 +35,8 @@ export const PesananKhususHero: FunctionComponent<
         </div>
         <div className="relative lg:w-1/2">
           <img
-            className="object-cover w-full h-56 rounded shadow-lg sm:h-96"
-            src="https://images.pexels.com/photos/3182812/pexels-photo-3182812.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260"
+            className="object-cover w-full h-48 rounded-lg shadow-md sm:h-96"
+            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/gvbuzqkFQCm1MasLNOk0"
             alt=""
           />
         </div>

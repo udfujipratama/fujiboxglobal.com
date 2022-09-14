@@ -1,10 +1,17 @@
+/* eslint-disable react/destructuring-assignment */
 import { FunctionComponent } from 'react'
 
-interface PesananKhususGalleryProps {}
+import { Galleries } from '~/types'
+
+interface PesananKhususGalleryProps {
+  galleries: Galleries
+}
 
 export const PesananKhususGallery: FunctionComponent<
   PesananKhususGalleryProps
-> = () => {
+> = ({ galleries }) => {
+  const { pic } = galleries[0]
+
   return (
     <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
@@ -16,51 +23,20 @@ export const PesananKhususGallery: FunctionComponent<
         </h2>
       </div>
       <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
-        <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-          <img
-            className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/e0m4VmK5QK6ygRu4mj6h"
-            alt=""
-          />
-        </div>
-
-        <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-          <img
-            className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/8Fgm4u7iQPiECV2b2vv2"
-            alt=""
-          />
-        </div>
-
-        <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-          <img
-            className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/oSFJCfTtStmV34JOjwEm"
-            alt=""
-          />
-        </div>
-
-        <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-          <img
-            className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://images.unsplash.com/photo-1626253274763-bdabe2f097c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1354&q=80"
-            alt=""
-          />
-        </div>
-        <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-          <img
-            className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://images.unsplash.com/photo-1626253274763-bdabe2f097c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1354&q=80"
-            alt=""
-          />
-        </div>
-        <div className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl">
-          <img
-            className="object-cover w-full h-56 md:h-64 xl:h-80"
-            src="https://images.unsplash.com/photo-1626253274763-bdabe2f097c5?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1354&q=80"
-            alt=""
-          />
-        </div>
+        {pic.map((img: any, index: any) => {
+          return (
+            <div
+              key={index + 1}
+              className="relative overflow-hidden transition duration-200 transform rounded shadow-lg hover:-translate-y-2 hover:shadow-2xl"
+            >
+              <img
+                className="object-cover w-full h-56 md:h-64 xl:h-80"
+                src={img.url}
+                alt={`item${index + 1}`}
+              />
+            </div>
+          )
+        })}
       </div>
     </div>
   )
