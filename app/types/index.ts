@@ -12,6 +12,11 @@ export type RichText = {
   text: Scalars['String']
 }
 
+export type Gallery = {
+  pic: Array<string>
+}
+export type Galleries = Array<Gallery>
+
 export type Product = {
   id: Scalars['ID']
   slug: Scalars['String']
