@@ -13,30 +13,30 @@ export const PesananKhususBrands: FunctionComponent<
       <div className="grid grid-cols-2 gap-10 text-center lg:grid-cols-4">
         <div className="flex items-center justify-center">
           <img
-            src="images/logoipsum/1.svg"
-            alt="Todoist Logo"
-            className="block object-contain h-12"
+            src="https://media.graphassets.com/output=format:jpg/resize=width:500,height:500/GsJeuGozTHekzpHN5g5K"
+            alt="brandlogo"
+            className="block object-contain h-36"
           />
         </div>
         <div className="flex items-center justify-center">
           <img
-            src="images/logoipsum/2.svg"
-            alt="Slack Logo"
-            className="block object-contain h-12"
+            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/LkUQFHZQUu4k5jTAD7EL"
+            alt="brandlogo"
+            className="block object-contain h-24"
           />
         </div>
         <div className="flex items-center justify-center">
           <img
-            src="images/logoipsum/3.svg"
-            alt="Typeform Logo"
-            className="block object-contain h-12"
+            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/G6pl0vgtSMq7q7JrCraz"
+            alt="brandlogo"
+            className="block object-contain h-24"
           />
         </div>
         <div className="flex items-center justify-center">
           <img
-            src="images/logoipsum/4.svg"
-            alt="Algolia Logo"
-            className="block object-contain h-12"
+            src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/RbKIXy4QqmWi2rGCiUbg"
+            alt="brandlogo"
+            className="block object-contain h-36"
           />
         </div>
       </div>
