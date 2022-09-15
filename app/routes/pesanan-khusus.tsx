@@ -14,9 +14,8 @@ import { graphcmsClient } from '~/lib'
 interface PesananKhususProps {}
 
 export const loader: LoaderFunction = async () => {
-  const first = 8
   const response = await graphcmsClient
-    .query(QUERY_ALL_PESANAN_KHUSUS_GALLERIES, { first })
+    .query(QUERY_ALL_PESANAN_KHUSUS_GALLERIES, {})
     .toPromise()
   const { pesananKhususGalleries } = response.data
   return json({
