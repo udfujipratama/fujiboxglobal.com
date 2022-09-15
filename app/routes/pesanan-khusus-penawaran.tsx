@@ -22,9 +22,9 @@ const PesananKhususPenawaran: FunctionComponent<
       </div>
       <div className="grid max-w-md gap-10 row-gap-8 lg:max-w-screen-lg sm:row-gap-10 lg:grid-cols-2 xl:max-w-screen-lg sm:mx-auto">
         <div className="flex flex-col relative transition duration-300 bg-white rounded shadow-sm hover:shadow border-fujibox">
-          <div className="relative w-full h-48">
+          <div className="relative w-full h-[12rem] lg:h-[18rem]">
             <img
-              src="https://images.unsplash.com/photo-1595246007497-15e0ed4b8d96?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+              src="https://media.graphassets.com/output=format:jpg/resize=width:500,height:500/ei97RhogTiubjeIx4cF0"
               className="object-cover w-full h-full rounded-t"
               alt="Plan"
             />
@@ -211,7 +211,7 @@ const PesananKhususPenawaran: FunctionComponent<
                 <span className="absolute inset-x-0 -top-4 left-8 lg:left-20 h-16 text-gray-600">
                   Mulai dari
                 </span>
-                <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-3xl">
+                <div className="mt-1 mb-4 mr-1 font-bold text-2xl lg:text-4xl">
                   Rp. 900
                 </div>
                 <div className="text-gray-500 text-lg pt-2">/ pcs</div>
@@ -231,9 +231,9 @@ const PesananKhususPenawaran: FunctionComponent<
               Paling Laris
             </div>
           </div>
-          <div className="relative w-full h-48">
+          <div className="relative w-full h-[12rem] lg:h-[18rem]">
             <img
-              src="https://images.unsplash.com/photo-1595246140625-573b715d11dc?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+              src="https://media.graphassets.com/output=format:jpg/resize=width:500,height:500/ei97RhogTiubjeIx4cF0"
               className="object-cover w-full h-full rounded-t"
               alt="Plan"
             />
@@ -420,7 +420,7 @@ const PesananKhususPenawaran: FunctionComponent<
                 <span className="absolute inset-x-0 -top-4 left-8 lg:left-20 h-16 text-gray-600">
                   Mulai dari
                 </span>
-                <div className="mt-1 mb-4 mr-1 text-4xl font-bold sm:text-3xl">
+                <div className="mt-1 mb-4 mr-1 font-bold text-2xl lg:text-4xl">
                   Rp. 850
                 </div>
                 <div className="text-gray-500 text-lg pt-2">/ pcs</div>
