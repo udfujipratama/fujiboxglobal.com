@@ -212,7 +212,7 @@ const PesananKhususPenawaran: FunctionComponent<
                   Mulai dari
                 </span>
                 <div className="mt-1 mb-4 mr-1 font-bold text-2xl lg:text-4xl">
-                  Rp. 900
+                  Rp. 950
                 </div>
                 <div className="text-gray-500 text-lg pt-2">/ pcs</div>
               </div>
