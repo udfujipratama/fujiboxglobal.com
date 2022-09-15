@@ -1,7 +1,9 @@
 /* eslint-disable react/destructuring-assignment */
-import { FunctionComponent } from 'react'
+import { FunctionComponent, useState, useCallback } from 'react'
+import ImageViewer from 'react-simple-image-viewer'
 
 import { Galleries } from '~/types'
+import { transformArrayObjectToArrayString } from '~/utils'
 
 interface PesananKhususGalleryProps {
   galleries: Galleries
@@ -10,8 +12,20 @@ interface PesananKhususGalleryProps {
 export const PesananKhususGallery: FunctionComponent<
   PesananKhususGalleryProps
 > = ({ galleries }) => {
+  const [currentImage, setCurrentImage] = useState(0)
+  const [isViewerOpen, setIsViewerOpen] = useState(false)
   const { pic } = galleries[0]
+  const newPic = transformArrayObjectToArrayString(pic)
 
+  const openImageViewer = useCallback((index: any) => {
+    setCurrentImage(index)
+    setIsViewerOpen(true)
+  }, [])
+
+  const closeImageViewer = () => {
+    setCurrentImage(0)
+    setIsViewerOpen(false)
+  }
   return (
     <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
@@ -23,7 +37,7 @@ export const PesananKhususGallery: FunctionComponent<
         </h2>
       </div>
       <div className="grid gap-6 row-gap-5 mb-8 lg:grid-cols-4 sm:row-gap-6 sm:grid-cols-2">
-        {pic.map((img: any, index: any) => {
+        {newPic.map((img: any, index: any) => {
           return (
             <div
               key={index + 1}
@@ -31,13 +45,29 @@ export const PesananKhususGallery: FunctionComponent<
             >
               <img
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
-                src={img.url}
+                src={img}
                 alt={`item${index + 1}`}
+                onClick={() => {
+                  return openImageViewer(index)
+                }}
               />
             </div>
           )
         })}
       </div>
+      {isViewerOpen && (
+        <ImageViewer
+          src={newPic}
+          currentIndex={currentImage}
+          disableScroll
+          backgroundStyle={{
+            backgroundColor: 'rgba(0,0,0,0.8)',
+            zIndex: '99',
+          }}
+          closeOnClickOutside
+          onClose={closeImageViewer}
+        />
+      )}
     </div>
   )
 }
