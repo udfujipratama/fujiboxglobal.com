@@ -7,7 +7,7 @@ export const PesananKhususBanner: FunctionComponent<
   PesananKhususBannerProps
 > = () => {
   return (
-    <div className="py-8 mx-auto sm:max-w-xl md:max-w-full lg:w-screen md:px-24 lg:px-[3.5rem] lg:py-6">
+    <div className="container mt-14 ">
       <div className="flex flex-col max-w-screen overflow-hidden bg-white border rounded-lg drop-shadow-lg lg:flex-row sm:mx-auto">
         <div className="relative lg:w-1/2">
           <img
