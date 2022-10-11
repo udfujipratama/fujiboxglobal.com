@@ -1,8 +1,8 @@
 /* eslint-disable jsx-a11y/no-noninteractive-tabindex */
 import { Menu, Transition } from '@headlessui/react'
+import { Link, useLocation } from '@remix-run/react'
 import { Fragment } from 'react'
 import { IoMenuSharp } from 'react-icons/io5'
-import { Link, useLocation } from "@remix-run/react";
 
 import { SearchForm } from './search-form'
 
@@ -111,7 +111,7 @@ const MainNavbar = () => {
 
 const PesananKhususNavbar = () => {
   return (
-    <div className="flex flex-wrap items-center justify-between w-full h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-12">
+    <div className="flex flex-wrap items-center justify-between max-w-8xl mx-auto h-24 sticky top-0 z-50 bg-white sm:px-6 lg:px-12">
       <div className="flex items-center">
         <Link to="/" className="pl-4 lg:pl-0">
           <img
