@@ -17,19 +17,19 @@ export const loader: LoaderFunction = async () => {
   const response = await graphcmsClient
     .query(QUERY_ALL_PESANAN_KHUSUS_GALLERIES, {})
     .toPromise()
+
   const { pesananKhususGalleries } = response.data
-  return json({
-    pesananKhususGalleries,
-  })
+  return json({ pesananKhususGalleries })
 }
 const PesananKhusus: FunctionComponent<PesananKhususProps> = () => {
-  const { pesananKhususGalleries } = useLoaderData()
+  // const { pesananKhususGalleries } = useLoaderData()
+
   return (
     <>
       <PesananKhususHero />
       <PesananKhususBrands />
       <PesananKhususWcs />
-      <PesananKhususGallery galleries={pesananKhususGalleries} />
+      {/* <PesananKhususGallery galleries={pesananKhususGalleries} /> */}
     </>
   )
 }
