@@ -1,2 +1,2 @@
 export * from './navigation-links'
-export * from './faq-pesanan-khusus'
+export * from './pesanan-khusus-penawaran'

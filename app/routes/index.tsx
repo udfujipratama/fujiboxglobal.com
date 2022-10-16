@@ -1,8 +1,14 @@
-import { MetaFunction } from '@remix-run/node'
+import { json, LoaderFunction, MetaFunction } from '@remix-run/node'
+import { useLoaderData } from '@remix-run/react'
 
-import PesananKhusus from './pesanan-khusus'
-
-import { SEOHandle } from '~/lib'
+import {
+  PesananKhususBrands,
+  PesananKhususGallery,
+  PesananKhususHero,
+  PesananKhususWcs,
+} from '~/contents/pesanan-khusus'
+import { QUERY_ALL_PESANAN_KHUSUS_GALLERIES } from '~/graphql'
+import { SEOHandle, graphcmsClient } from '~/lib'
 
 export const handle: SEOHandle = {
   getSitemapEntries: async () => {
@@ -17,32 +23,24 @@ export const meta: MetaFunction = () => {
   }
 }
 
-// export const loader: LoaderFunction = async () => {
-//   const response = await graphcmsClient.query(QUERY_PRODUCT).toPromise()
+export const loader: LoaderFunction = async () => {
+  const response = await graphcmsClient
+    .query(QUERY_ALL_PESANAN_KHUSUS_GALLERIES, {})
+    .toPromise()
 
-//   const { newProducts, categories } = response.data
-
-//   return {
-//     newProducts,
-//     categories,
-//   }
-// }
+  const { pesananKhususGalleries } = response.data
+  return json({ pesananKhususGalleries })
+}
 
 export default function Index() {
+  const { pesananKhususGalleries } = useLoaderData()
+
   return (
     <>
-      <PesananKhusus />
-      {/* <Hero />
-
-      <PesananKhususBanner />
-
-      <ProductNewSection products={newProducts} />
-
-      <WhatsAppCard />
-
-      <ProductCategoriesSection categories={categories} />
-
-      <InstagramHero /> */}
+      <PesananKhususHero />
+      <PesananKhususBrands />
+      <PesananKhususWcs />
+      <PesananKhususGallery galleries={pesananKhususGalleries} />
     </>
   )
 }

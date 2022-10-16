@@ -22,14 +22,14 @@ export const loader: LoaderFunction = async () => {
   return json({ pesananKhususGalleries })
 }
 const PesananKhusus: FunctionComponent<PesananKhususProps> = () => {
-  // const { pesananKhususGalleries } = useLoaderData()
+  const { pesananKhususGalleries } = useLoaderData()
 
   return (
     <>
       <PesananKhususHero />
       <PesananKhususBrands />
       <PesananKhususWcs />
-      {/* <PesananKhususGallery galleries={pesananKhususGalleries} /> */}
+      <PesananKhususGallery galleries={pesananKhususGalleries} />
     </>
   )
 }
