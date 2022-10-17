@@ -13,7 +13,7 @@ export const CorrugatedBoxSeries: FunctionComponent<
     <div className="flex flex-col relative transition duration-300 bg-white rounded shadow-sm hover:shadow border-fujibox">
       <div className="relative w-full h-[12rem] lg:h-[18rem]">
         <img
-          src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/bmcFT7BAQG2npwFkPf4B"
+          src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/4Md1673YRAPiRAIRcC8Q"
           className="object-cover w-full h-full rounded-t"
           alt="Plan"
         />
