@@ -15,7 +15,7 @@ const PesananKhususNavbar = () => {
         <Link to="/" className="pl-4 lg:pl-0">
           <img
             className="max-h-8 lg:max-h-10"
-            src="/images/logo/fujibox-logo.png"
+            src="/images/logo/fujiboxlogo.svg"
             alt="Fujibox"
           />
         </Link>
