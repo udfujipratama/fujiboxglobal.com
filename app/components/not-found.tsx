@@ -1,4 +1,4 @@
-import { Link, useCatch } from 'remix'
+import { Link, useCatch } from "@remix-run/react";
 
 export const NotFoundPage = () => {
   const caught = useCatch()

@@ -1,5 +1,6 @@
-import { json, LoaderFunction, MetaFunction } from '@remix-run/node'
+import { json, LoaderFunction } from '@remix-run/node'
 import { useLoaderData } from '@remix-run/react'
+import { FunctionComponent } from 'react'
 
 import {
   PesananKhususBrands,
@@ -8,20 +9,9 @@ import {
   PesananKhususWcs,
 } from '~/contents/pesanan-khusus'
 import { QUERY_ALL_PESANAN_KHUSUS_GALLERIES } from '~/graphql'
-import { SEOHandle, graphcmsClient } from '~/lib'
+import { graphcmsClient } from '~/lib'
 
-export const handle: SEOHandle = {
-  getSitemapEntries: async () => {
-    return [{ route: `/`, priority: 1 }]
-  },
-}
-
-export const meta: MetaFunction = () => {
-  return {
-    title: 'Fujibox',
-    description: 'Crafting a good packaging product.',
-  }
-}
+interface PesananKhususProps {}
 
 export const loader: LoaderFunction = async () => {
   const response = await graphcmsClient
@@ -31,8 +21,7 @@ export const loader: LoaderFunction = async () => {
   const { pesananKhususGalleries } = response.data
   return json({ pesananKhususGalleries })
 }
-
-export default function Index() {
+const PesananKhusus: FunctionComponent<PesananKhususProps> = () => {
   const { pesananKhususGalleries } = useLoaderData()
 
   return (
@@ -44,3 +33,5 @@ export default function Index() {
     </>
   )
 }
+
+export default PesananKhusus

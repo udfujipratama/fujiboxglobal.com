@@ -16,6 +16,7 @@
   "rules": {
     "@typescript-eslint/comma-dangle": ["error", "only-multiline"],
     "@typescript-eslint/no-unused-vars": ["error"],
+    "@typescript-eslint/consistent-type-imports": "off",
     "arrow-body-style": ["error", "always"],
     "comma-dangle": ["error", "only-multiline"],
     "import/no-cycle": "off",
@@ -26,9 +27,10 @@
     "jsx-a11y/label-has-associated-control": "off",
     "react/no-unescaped-entities": "off",
     "react/forbid-prop-types": "off",
-  "jsx-a11y/no-noninteractive-element-interactions": "off",
+    "jsx-a11y/no-noninteractive-element-interactions": "off",
     "react/no-array-index-key": "off",
     "unused-imports/no-unused-imports": "error",
+    "jsx-a11y/click-events-have-key-events": "off",
     "import/order": [
       "error",
       {

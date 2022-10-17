@@ -1,5 +1,5 @@
 import { FunctionComponent } from 'react'
-import { Link } from 'remix'
+import { Link } from "@remix-run/react";
 
 import { Categories, Category } from '~/types'
 

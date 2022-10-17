@@ -1,11 +1,10 @@
-import { FunctionComponent } from 'react'
-import { Link } from 'remix'
+import { Link } from '@remix-run/react'
 
-// import { ProductCarouselCards } from './product-carousel-cards'
+import { ProductCarouselCards } from './product-carousel-cards'
+// import { ProductCarouselTrendyolCards } from './product-carousel-trendyol-cards'
 
-import { ProductCarouselTrendyolCards } from './product-carousel-trendyol-cards'
-
-import { Products } from '~/types'
+import type { FunctionComponent } from 'react'
+import type { Products } from '~/types'
 
 interface ProductNewSectionProps {
   products: Products
@@ -25,8 +24,10 @@ export const ProductNewSection: FunctionComponent<ProductNewSectionProps> = ({
           Lihat semua produk
         </Link>
       </div>
-      <ProductCarouselTrendyolCards products={products} />
-      {/* <ProductCarouselCards products={products} /> */}
+      <ProductCarouselCards products={products} />
+
+      {/* FIXME */}
+      {/* <ProductCarouselTrendyolCards products={products} /> */}
     </div>
   )
 }
