@@ -1,16 +1,14 @@
 import { FunctionComponent } from 'react'
 
-interface LunchBoxSeriesProps {
+interface CorrugatedBoxSeriesProps {
   title: String
   size: String
   price: String
 }
 
-export const LunchBoxSeries: FunctionComponent<LunchBoxSeriesProps> = ({
-  title,
-  size,
-  price,
-}) => {
+export const CorrugatedBoxSeries: FunctionComponent<
+  CorrugatedBoxSeriesProps
+> = ({ title, size, price }) => {
   return (
     <div className="flex flex-col relative transition duration-300 bg-white rounded shadow-sm hover:shadow border-fujibox">
       <div className="relative w-full h-[12rem] lg:h-[18rem]">
@@ -49,6 +47,7 @@ export const LunchBoxSeries: FunctionComponent<LunchBoxSeriesProps> = ({
               </div>
               <p className="font-medium text-black">Ukuran {size}cm</p>
             </li>
+
             <li className="flex items-center">
               <div className="mr-3">
                 <svg
@@ -71,7 +70,9 @@ export const LunchBoxSeries: FunctionComponent<LunchBoxSeriesProps> = ({
                   />
                 </svg>
               </div>
-              <p className="font-medium text-black">Food Grade</p>
+              <p className="font-medium text-black">
+                Bahan Corrugated E-flute 150GSM / SINGLE WALL
+              </p>
             </li>
             <li className="flex items-center">
               <div className="mr-3">
@@ -95,31 +96,7 @@ export const LunchBoxSeries: FunctionComponent<LunchBoxSeriesProps> = ({
                   />
                 </svg>
               </div>
-              <p className="font-medium text-black">Bahan Kraft PE 290 Gr</p>
-            </li>
-            <li className="flex items-center">
-              <div className="mr-3">
-                <svg
-                  className="w-4 h-4 text-teal-accent-400"
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                >
-                  <polyline
-                    fill="none"
-                    stroke="currentColor"
-                    points="6,12 10,16 18,8"
-                  />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    fill="none"
-                    r="11"
-                    stroke="currentColor"
-                  />
-                </svg>
-              </div>
-              <p className="font-medium text-black">Minimum 1000pcs</p>
+              <p className="font-medium text-black">Minimum 500pcs</p>
             </li>
             <li className="flex items-center">
               <div className="mr-3">
@@ -144,30 +121,6 @@ export const LunchBoxSeries: FunctionComponent<LunchBoxSeriesProps> = ({
                 </svg>
               </div>
               <p className="font-medium text-black">Cetak 1 warna</p>
-            </li>
-            <li className="flex items-center">
-              <div className="mr-3">
-                <svg
-                  className="w-4 h-4 text-teal-accent-400"
-                  viewBox="0 0 24 24"
-                  strokeLinecap="round"
-                  strokeWidth="2"
-                >
-                  <polyline
-                    fill="none"
-                    stroke="currentColor"
-                    points="6,12 10,16 18,8"
-                  />
-                  <circle
-                    cx="12"
-                    cy="12"
-                    fill="none"
-                    r="11"
-                    stroke="currentColor"
-                  />
-                </svg>
-              </div>
-              <p className="font-medium text-black">Free laminasi dalam</p>
             </li>
           </ul>
           <div className="flex item-center justify-center mt-8 mb-4 relative">
