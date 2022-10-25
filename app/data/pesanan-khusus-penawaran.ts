@@ -2,12 +2,12 @@ export const PesananKhususLunchbox = [
   {
     title: 'Lunchbox Kraft M',
     size: '16 x 9 x 5',
-    price: '1035',
+    price: '1150',
   },
   {
     title: 'Lunchbox Kraft L',
     size: '18 x 11 x 5',
-    price: '1125',
+    price: '1250',
   },
 ]
 
