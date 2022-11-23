@@ -1,6 +1,5 @@
 /* eslint-disable react/destructuring-assignment */
-import { FunctionComponent, useState, useCallback } from 'react'
-import ImageViewer from 'react-simple-image-viewer'
+import { FunctionComponent } from 'react'
 
 import { Galleries } from '~/types'
 import { transformArrayObjectToArrayString } from '~/utils'
@@ -12,20 +11,9 @@ interface PesananKhususGalleryProps {
 export const PesananKhususGallery: FunctionComponent<
   PesananKhususGalleryProps
 > = ({ galleries }) => {
-  const [currentImage, setCurrentImage] = useState(0)
-  const [isViewerOpen, setIsViewerOpen] = useState(false)
   const { pic } = galleries[0]
   const newPic = transformArrayObjectToArrayString(pic)
 
-  const openImageViewer = useCallback((index: any) => {
-    setCurrentImage(index)
-    setIsViewerOpen(true)
-  }, [])
-
-  const closeImageViewer = () => {
-    setCurrentImage(0)
-    setIsViewerOpen(false)
-  }
   return (
     <div className="px-4 py-8 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
       <div className="flex flex-col mb-6 lg:justify-between lg:flex-row md:mb-8">
@@ -47,27 +35,11 @@ export const PesananKhususGallery: FunctionComponent<
                 className="object-cover w-full h-56 md:h-64 xl:h-80"
                 src={img}
                 alt={`item${index + 1}`}
-                onClick={() => {
-                  return openImageViewer(index)
-                }}
               />
             </div>
           )
         })}
       </div>
-      {isViewerOpen && (
-        <ImageViewer
-          src={newPic}
-          currentIndex={currentImage}
-          disableScroll
-          backgroundStyle={{
-            backgroundColor: 'rgba(0,0,0,0.8)',
-            zIndex: '99',
-          }}
-          closeOnClickOutside
-          onClose={closeImageViewer}
-        />
-      )}
     </div>
   )
 }
