@@ -81,6 +81,21 @@ const PesananKhususNavbar = () => {
                     {({ active }) => (
                       // eslint-disable-next-line arrow-body-style
                       <Link
+                        to="/katalog-produk"
+                        className={`${
+                          active ? 'bg-fujibox text-white' : 'text-gray-900'
+                        } group flex w-full items-center rounded-md px-2 py-2 text-sm`}
+                      >
+                        Katalog
+                      </Link>
+                    )}
+                  </Menu.Item>
+                </div>
+                <div className="px-1 py-1">
+                  <Menu.Item>
+                    {({ active }) => (
+                      // eslint-disable-next-line arrow-body-style
+                      <Link
                         to="/pesanan-khusus-penawaran"
                         className={`${
                           active ? 'bg-fujibox text-white' : 'text-gray-900'
