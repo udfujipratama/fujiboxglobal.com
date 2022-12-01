@@ -41,23 +41,29 @@ export const Hero: FunctionComponent<HeroProps> = () => {
         </div>
         <div className="hidden lg:flex items-center justify-center -mx-4 lg:pl-8">
           <div className="flex flex-col items-end px-3">
-            <img
-              className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
-              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/RtJKQoCtSGStsjRkIXOW"
-              alt=""
-            />
-            <img
-              className="object-cover w-60 h-60 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
-              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/ugRr1xTkuFLvSt8rCeig"
-              alt=""
-            />
+            <div className="relative overflow-hidden transition duration-200 transform hover:-translate-y-2">
+              <img
+                className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/RtJKQoCtSGStsjRkIXOW"
+                alt=""
+              />
+            </div>
+            <div className="relative overflow-hidden transition duration-200 transform hover:-translate-y-2">
+              <img
+                className="object-cover w-60 h-60 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/ugRr1xTkuFLvSt8rCeig"
+                alt=""
+              />
+            </div>
           </div>
           <div className="px-3">
-            <img
-              className="object-cover w-80 h-80 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
-              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/qqokVTXxTTywqIENkwWJ"
-              alt=""
-            />
+            <div className="relative overflow-hidden transition duration-200 transform hover:-translate-y-2">
+              <img
+                className="object-cover w-80 h-80 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/qqokVTXxTTywqIENkwWJ"
+                alt=""
+              />
+            </div>
           </div>
         </div>
         <div className="flex flex-wrap -m-4 lg:hidden">

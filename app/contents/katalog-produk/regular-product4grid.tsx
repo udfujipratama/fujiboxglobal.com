@@ -41,38 +41,46 @@ export const RegularProduct4Grid: FunctionComponent<
       <div className="flex flex-wrap -m-4">
         <div className="lg:w-1/4 sm:w-1/2 p-4">
           <div className="flex">
-            <img
-              alt="gallery"
-              className=" w-full h-full object-cover object-center"
-              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/R0zTwMJpQ3ChRRYlywES"
-            />
+            <div className="relative overflow-hidden transition duration-200 transform hover:-translate-y-2">
+              <img
+                alt="gallery"
+                className=" w-full h-full object-cover object-center"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/R0zTwMJpQ3ChRRYlywES"
+              />
+            </div>
           </div>
         </div>
         <div className="lg:w-1/4 sm:w-1/2 p-4">
           <div className="flex">
-            <img
-              alt="gallery"
-              className="w-full h-full object-cover object-center"
-              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/QxMcAdXXTE2WVRFRVVI8"
-            />
+            <div className="relative overflow-hidden transition duration-200 transform hover:-translate-y-2">
+              <img
+                alt="gallery"
+                className="w-full h-full object-cover object-center"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/QxMcAdXXTE2WVRFRVVI8"
+              />
+            </div>
           </div>
         </div>
         <div className="lg:w-1/4 sm:w-1/2 p-4">
           <div className="flex">
-            <img
-              alt="gallery"
-              className="w-full h-full object-cover object-center"
-              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/N0pwsYjOSX6epavKKDua"
-            />
+            <div className="relative overflow-hidden transition duration-200 transform hover:-translate-y-2">
+              <img
+                alt="gallery"
+                className="w-full h-full object-cover object-center"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/N0pwsYjOSX6epavKKDua"
+              />
+            </div>
           </div>
         </div>
         <div className="lg:w-1/4 sm:w-1/2 p-4">
           <div className="flex">
-            <img
-              alt="gallery"
-              className="w-full h-full object-cover object-center"
-              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/Hbe1VqCLTFqwsKwPgBAk"
-            />
+            <div className="relative overflow-hidden transition duration-200 transform hover:-translate-y-2">
+              <img
+                alt="gallery"
+                className="w-full h-full object-cover object-center"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/Hbe1VqCLTFqwsKwPgBAk"
+              />
+            </div>
           </div>
         </div>
       </div>
