@@ -2,8 +2,8 @@ import { FunctionComponent } from 'react'
 
 import {
   Hero,
-  RegularProduct,
-  SeasonalProduct,
+  RegularProduct3Grid,
+  RegularProduct4Grid,
 } from '~/contents/katalog-produk'
 
 interface KatalogProdukProps {}
@@ -12,8 +12,9 @@ const KatalogProduk: FunctionComponent<KatalogProdukProps> = () => {
   return (
     <>
       <Hero />
-      <SeasonalProduct />
-      <RegularProduct />
+
+      <RegularProduct3Grid />
+      <RegularProduct4Grid />
     </>
   )
 }

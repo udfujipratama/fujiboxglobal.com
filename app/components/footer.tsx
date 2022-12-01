@@ -1,5 +1,5 @@
+import { Link } from '@remix-run/react'
 import { FunctionComponent } from 'react'
-import { Link } from "@remix-run/react";
 
 interface FooterProps {}
 
@@ -10,11 +10,11 @@ export const Footer: FunctionComponent<FooterProps> = () => {
         <Link to="/" className="link link-hover">
           Beranda
         </Link>
-        <Link to="/produk" className="link link-hover">
-          Produk
+        <Link to="/katalog-produk" className="link link-hover">
+          Katalog
         </Link>
-        <Link to="/pemesanan" className="link link-hover">
-          Pemesanan
+        <Link to="/pesanan-khusus-penawaran" className="link link-hover">
+          Penawaran
         </Link>
       </div>
       <div>

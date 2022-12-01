@@ -4,40 +4,90 @@ interface HeroProps {}
 
 export const Hero: FunctionComponent<HeroProps> = () => {
   return (
-    <div className="relative bg-fujibox">
-      <div className="absolute inset-x-0 bottom-0">
-        <svg
-          viewBox="0 0 224 12"
-          fill="currentColor"
-          className="w-full -mb-1 text-white"
-          preserveAspectRatio="none"
-        >
-          <path d="M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z" />
-        </svg>
-      </div>
-      <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
-        <div className="relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center">
-          <h2 className="mb-6 font-sans text-3xl font-bold tracking-tight text-white sm:text-4xl sm:leading-none">
-            Katalog Fujibox
-          </h2>
-          <p className="mb-6 text-base text-indigo-100 md:text-lg">
-            COPY WRITING HERO
-          </p>
-          <a
-            href="/"
-            aria-label="Scroll down"
-            className="flex items-center justify-center w-10 h-10 mx-auto text-white duration-300 transform border border-gray-400 rounded-full hover:text-teal-accent-400 hover:border-teal-accent-400 hover:shadow hover:scale-110"
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="12"
-              height="12"
-              viewBox="0 0 12 12"
-              fill="currentColor"
+    <div className="px-4 py-4 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20">
+      <div className="grid gap-10 lg:grid-cols-2">
+        <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
+          <div className="max-w-xl mb-6">
+            <h2 className="max-w-lg mb-6 font-sans text-2xl lg:text-5xl font-bold tracking-tight text-red-500 sm:text-4xl sm:leading-none">
+              Chinese <br className="hidden md:block" />
+              New year{' '}
+              <span className="inline-block text-deep-purple-accent-400">
+                Special Edition
+              </span>
+            </h2>
+            <p className="text-base text-gray-700 md:text-xl">
+              Edisi spesial dalam rangka merayakan hari raya Imlek, mari jangan
+              sampai kehabisan !
+            </p>
+          </div>
+          <div>
+            <a
+              href="https://shopee.co.id/fujiboxglobal"
+              aria-label=""
+              className="inline-flex items-center font-semibold transition-colors duration-200 text-deep-purple-accent-400 hover:text-deep-purple-800"
+              target="_BLANK"
+              rel="noreferrer"
             >
-              <path d="M10.293,3.293,6,7.586,1.707,3.293A1,1,0,0,0,.293,4.707l5,5a1,1,0,0,0,1.414,0l5-5a1,1,0,1,0-1.414-1.414Z" />
-            </svg>
-          </a>
+              Pelajari lebih lanjut
+              <svg
+                className="inline-block w-3 ml-2"
+                fill="currentColor"
+                viewBox="0 0 12 12"
+              >
+                <path d="M9.707,5.293l-5-5A1,1,0,0,0,3.293,1.707L7.586,6,3.293,10.293a1,1,0,1,0,1.414,1.414l5-5A1,1,0,0,0,9.707,5.293Z" />
+              </svg>
+            </a>
+          </div>
+        </div>
+        <div className="hidden lg:flex items-center justify-center -mx-4 lg:pl-8">
+          <div className="flex flex-col items-end px-3">
+            <img
+              className="object-cover mb-6 rounded shadow-lg h-28 sm:h-48 xl:h-56 w-28 sm:w-48 xl:w-56"
+              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/RtJKQoCtSGStsjRkIXOW"
+              alt=""
+            />
+            <img
+              className="object-cover w-60 h-60 rounded shadow-lg sm:h-32 xl:h-40 sm:w-32 xl:w-40"
+              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/ugRr1xTkuFLvSt8rCeig"
+              alt=""
+            />
+          </div>
+          <div className="px-3">
+            <img
+              className="object-cover w-80 h-80 rounded shadow-lg sm:h-64 xl:h-80 sm:w-64 xl:w-80"
+              src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/qqokVTXxTTywqIENkwWJ"
+              alt=""
+            />
+          </div>
+        </div>
+        <div className="flex flex-wrap -m-4 lg:hidden">
+          <div className="lg:w-1/3 sm:w-1/2 p-4">
+            <div className="flex">
+              <img
+                alt="gallery"
+                className=" w-full h-full object-cover object-center"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/RtJKQoCtSGStsjRkIXOW"
+              />
+            </div>
+          </div>
+          <div className="lg:w-1/3 sm:w-1/2 p-4">
+            <div className="flex">
+              <img
+                alt="gallery"
+                className="w-full h-full object-cover object-center"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/ugRr1xTkuFLvSt8rCeig"
+              />
+            </div>
+          </div>
+          <div className="lg:w-1/3 sm:w-1/2 p-4">
+            <div className="flex">
+              <img
+                alt="gallery"
+                className="w-full h-full object-cover object-center"
+                src="https://media.graphassets.com/output=format:jpg/resize=height:800,fit:max/qqokVTXxTTywqIENkwWJ"
+              />
+            </div>
+          </div>
         </div>
       </div>
     </div>

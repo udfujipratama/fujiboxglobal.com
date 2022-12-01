@@ -6,4 +6,7 @@
   html {
     font-family: 'Nunito', system-ui, sans-serif;
   }
+  img {
+    pointer-events: none;
+  }
 }

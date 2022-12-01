@@ -1,3 +1,3 @@
 export * from './hero'
-export * from './seasonal-product'
-export * from './regular-product'
+export * from './regular-product4grid'
+export * from './regular-product3grid'
