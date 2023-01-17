@@ -1,11 +1,6 @@
-import { LoaderFunction, MetaFunction } from "@remix-run/node";
-import { useLoaderData } from "@remix-run/react";
+import { MetaFunction } from '@remix-run/node'
 
-import { Hero, InstagramHero, WhatsAppCard } from '~/components'
-import { ProductCategoriesSection, ProductNewSection } from '~/contents'
-import { PesananKhususBanner } from '~/contents/pesanan-khusus'
-import { QUERY_PRODUCT } from '~/graphql'
-import { graphcmsClient, SEOHandle } from '~/lib'
+import { SEOHandle } from '~/lib'
 
 export const handle: SEOHandle = {
   getSitemapEntries: async () => {
@@ -20,33 +15,39 @@ export const meta: MetaFunction = () => {
   }
 }
 
-export const loader: LoaderFunction = async () => {
-  const response = await graphcmsClient.query(QUERY_PRODUCT).toPromise()
-
-  const { newProducts, categories } = response.data
-
-  return {
-    newProducts,
-    categories,
-  }
-}
-
 export default function Index() {
-  const { newProducts, categories } = useLoaderData()
-
   return (
-    <>
-      <Hero />
+    <section className="bg-gray-50">
+      <div className="mx-auto max-w-screen-xl p-4 lg:flex lg:h-screen lg:items-center">
+        <div className="mx-auto max-w-xl text-center">
+          <h1 className="text-3xl font-extrabold sm:text-5xl">
+            Kami sedang mempersiapkan
+            <strong className="font-extrabold text-fujibox block">
+              Pengalaman berbelanja yang baru
+            </strong>
+          </h1>
 
-      <PesananKhususBanner />
+          <p className="mt-8 sm:text-xl sm:leading-relaxed">
+            untuk sementara kami bantu melalui
+          </p>
 
-      <ProductNewSection products={newProducts} />
+          <div className="mt-4 flex flex-wrap justify-center gap-4">
+            <a
+              className="block w-full rounded bg-[#03ac0e] px-12 py-3 text-sm font-medium text-white shadow hover:bg-[#03ac0e] focus:outline-none focus:ring sm:w-auto"
+              href="/get-started"
+            >
+              Tokopedia
+            </a>
 
-      <WhatsAppCard />
-
-      <ProductCategoriesSection categories={categories} />
-
-      <InstagramHero />
-    </>
+            <a
+              className="block w-full rounded bg-[#ff6600] px-12 py-3 text-sm font-medium text-white shadow hover:text-black focus:outline-none focus:ring sm:w-auto"
+              href="/about"
+            >
+              Shopee
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
   )
 }
