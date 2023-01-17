@@ -21,6 +21,7 @@ export const Navbar = () => {
         <li>
           <a
             href={tokopedia}
+            data-splitbee-event="Click Tokopedia navbar"
             target="_BLANK"
             className="rounded-lg px-3 py-2 text-[#03ac0e]"
             rel="noreferrer"
@@ -33,6 +34,7 @@ export const Navbar = () => {
         <li>
           <a
             href={shopee}
+            data-splitbee-event="Click Shopee navbar"
             target="_BLANK"
             className="rounded-lg px-3 py-2 text-[#ff6600]"
             rel="noreferrer"
