@@ -37,6 +37,7 @@ export default function Index() {
             {/* bg-[#03ac0e] */}
             <a
               className="block w-full rounded  px-12 py-3 text-sm font-medium text-black shadow focus:outline-none focus:ring sm:w-auto"
+              data-splitbee-event="Click Tokopedia"
               href={tokopedia}
               target="_blank"
               rel="noreferrer"
@@ -51,6 +52,7 @@ export default function Index() {
             {/* bg-[#ff6600] */}
             <a
               className="block w-full rounded  px-12 py-3 text-sm font-medium text-black shadow focus:outline-none focus:ring sm:w-auto"
+              data-splitbee-event="Click Shopee"
               href={shopee}
               target="_blank"
               rel="noreferrer"
