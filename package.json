@@ -14,7 +14,6 @@
   },
   "dependencies": {
     "@balavishnuvj/remix-seo": "^1.0.2",
-    "@headlessui/react": "1.7.1",
     "@remix-run/node": "^1.7.0",
     "@remix-run/react": "^1.7.0",
     "@remix-run/vercel": "^1.7.0",
@@ -26,10 +25,9 @@
     "prop-types": "15.8.1",
     "query-string": "7.1.1",
     "react": "^17.0.2",
-    "react-dom": "^17.0.2",    
+    "react-dom": "^17.0.2",
     "react-hook-form": "7.35.0",
-    "react-icons": "^4.4.0",
-    "react-simple-image-viewer": "^1.2.2"
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@remix-run/dev": "^1.7.0",
