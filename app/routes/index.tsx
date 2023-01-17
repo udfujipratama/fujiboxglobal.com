@@ -16,6 +16,8 @@ export const meta: MetaFunction = () => {
 }
 
 export default function Index() {
+  const tokopedia = 'https://www.tokopedia.com/fujiboxglobal'
+  const shopee = 'https://www.shopee.co.id/fujiboxglobal'
   return (
     <section className="bg-gray-50">
       <div className="mx-auto max-w-screen-xl p-4 lg:flex lg:h-screen lg:items-center">
@@ -32,18 +34,33 @@ export default function Index() {
           </p>
 
           <div className="mt-4 flex flex-wrap justify-center gap-4">
+            {/* bg-[#03ac0e] */}
             <a
-              className="block w-full rounded bg-[#03ac0e] px-12 py-3 text-sm font-medium text-white shadow hover:bg-[#03ac0e] focus:outline-none focus:ring sm:w-auto"
-              href="/get-started"
+              className="block w-full rounded  px-12 py-3 text-sm font-medium text-black shadow focus:outline-none focus:ring sm:w-auto"
+              href={tokopedia}
+              target="_blank"
+              rel="noreferrer"
             >
-              Tokopedia
+              <img
+                className="h-24 w-24 inline"
+                src="/images/logomarketplace/tokopedia.svg"
+                alt="tokopedialogo"
+              />
+              <span className="block">@Fujiboxglobal</span>
             </a>
-
+            {/* bg-[#ff6600] */}
             <a
-              className="block w-full rounded bg-[#ff6600] px-12 py-3 text-sm font-medium text-white shadow hover:text-black focus:outline-none focus:ring sm:w-auto"
-              href="/about"
+              className="block w-full rounded  px-12 py-3 text-sm font-medium text-black shadow focus:outline-none focus:ring sm:w-auto"
+              href={shopee}
+              target="_blank"
+              rel="noreferrer"
             >
-              Shopee
+              <img
+                className="h-24 w-24 inline"
+                src="/images/logomarketplace/shopee.svg"
+                alt="shopeelogo"
+              />
+              <span className="block">@Fujiboxglobal</span>
             </a>
           </div>
         </div>
