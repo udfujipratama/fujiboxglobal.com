@@ -17,7 +17,7 @@ export const Navbar = () => {
         />
       </a>
 
-      <ul className="flex items-center gap-2 text-sm font-medium text-gray-500">
+      <ul className="flex items-center gap-2 text-md font-medium text-gray-500">
         <li>
           <a
             href={tokopedia}
