@@ -55,8 +55,7 @@ export const links: LinksFunction = () => {
 }
 
 export const loader: LoaderFunction = async () => {
-  const grapchcms = process.env.GRAPHCMS_ENDPOINT as string
-  console.log({grapchcms})
+  
   return json({
     ENV: { NODE_ENV: process.env.NODE_ENV },
   })
