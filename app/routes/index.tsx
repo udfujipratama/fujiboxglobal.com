@@ -21,8 +21,8 @@ export const meta: MetaFunction = () => {
 }
 
 export const loader: LoaderFunction = async () => {
-  const response = await graphcmsClient.query(QUERY_PRODUCT).toPromise()
-
+  const response = await graphcmsClient.query(QUERY_PRODUCT,{}).toPromise()
+  
   const { newProducts, categories } = response.data
 
   return {
