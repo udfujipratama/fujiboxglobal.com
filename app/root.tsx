@@ -1,8 +1,4 @@
-import NProgress from 'nprogress'
-import { useEffect } from 'react'
-import type { MetaFunction } from "@remix-run/node";
 import { json, LinksFunction, LoaderFunction } from "@remix-run/node";
-
 import {
   Links,
   LiveReload,
@@ -13,8 +9,15 @@ import {
   useLoaderData,
   useTransition,
 } from "@remix-run/react";
+import NProgress from 'nprogress'
+import { useEffect } from 'react'
 
 import { Layout, NotFoundPage } from '~/components'
+
+import type { MetaFunction } from "@remix-run/node";
+
+
+
 
 import appStylesUrl from '~/styles/app.css'
 import nProgressStylesUrl from '~/styles/nprogress.css'
