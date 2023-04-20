@@ -25,8 +25,8 @@ export const Navbar = () => {
       <div className="flex items-center">
         <Link to="/" className="pl-4 lg:pl-0">
           <img
-            className="max-h-8 lg:max-h-10"
-            src="/images/logo/fujiboxlogo.svg"
+            className="max-h-20 lg:max-h-28"
+            src="/images/logo/fujibox-pesanankhusus-logo.png"
             alt="Fujibox"
           />
         </Link>
