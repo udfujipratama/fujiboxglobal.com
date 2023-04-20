@@ -26,8 +26,8 @@ export const meta: MetaFunction = () => {
   return {
     charset: 'utf-8',
     viewport: 'width=device-width,initial-scale=1',
-    title: 'Fujibox',
-    description: 'Crafting a good Packaging Product',
+    title: 'Pesanan Khusus Fujibox',
+    description: 'Pesanan Khusus dari Fujibox',
   }
 }
 
