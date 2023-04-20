@@ -18,10 +18,11 @@ export const handle: SEOHandle = {
 
 export const meta: MetaFunction = () => {
   return {
-    title: 'Fujibox',
-    description: 'Crafting a good packaging product.',
+    title: 'Pesanan Khusus Fujibox',
+    description: 'Pesanan Khusus dari Fujibox',
   }
 }
+
 
 export const loader: LoaderFunction = async () => {
   const response = await graphcmsClient

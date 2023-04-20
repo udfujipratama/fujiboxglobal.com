@@ -1,3 +1,4 @@
+import { MetaFunction } from '@remix-run/node'
 import { FunctionComponent } from 'react'
 
 import {
@@ -12,6 +13,13 @@ import {
 } from '~/data'
 
 interface PesananKhususPenawaranProps {}
+
+export const meta: MetaFunction = () => {
+  return {
+    title: 'Penawaran Fujibox',
+    description: 'Penawaran pesanan khusus dari Fujibox',
+  }
+}
 
 const PesananKhususPenawaran: FunctionComponent<
   PesananKhususPenawaranProps
