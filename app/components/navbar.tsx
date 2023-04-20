@@ -25,8 +25,8 @@ const MainNavbar = () => {
       <div className="flex items-center">
         <Link to="/" className="pl-4 lg:pl-0">
           <img
-            className="max-h-8 lg:max-h-10"
-            src="/images/logo/fujibox-logo.png"
+            className="max-h-20 lg:max-h-24"
+            src="/images/logo/fujibox-legacy-logo.png"
             alt="Fujibox"
           />
         </Link>
