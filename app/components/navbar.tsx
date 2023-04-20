@@ -102,7 +102,7 @@ const MainNavbar = () => {
         </div>
       </div>
 
-      <div className="w-full bg-white px-4 lg:hidden">
+      <div className="w-full bg-white px-4 pb-4 lg:hidden">
         <SearchForm />
       </div>
     </div>
