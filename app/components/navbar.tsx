@@ -21,11 +21,11 @@ export const Navbar = () => {
 
 const MainNavbar = () => {
   return (
-    <div className="flex flex-wrap items-center w-full h-24 pt-4 lg:pt-0 sticky top-0 z-50 bg-white sm:px-6 lg:px-12">
+    <div className="flex flex-wrap items-center w-full h-16 lg:h-24 lg:pt-4 lg:pt-0 sticky top-0 z-50 bg-white sm:px-6 lg:px-12">
       <div className="flex items-center">
         <Link to="/" className="pl-4 lg:pl-0">
           <img
-            className="max-h-20 lg:max-h-24"
+            className="max-h-16 lg:max-h-24"
             src="/images/logo/fujibox-legacy-logo.png"
             alt="Fujibox"
           />
@@ -102,7 +102,7 @@ const MainNavbar = () => {
         </div>
       </div>
 
-      <div className="w-full bg-white p-4 lg:hidden">
+      <div className="w-full bg-white px-4 lg:hidden">
         <SearchForm />
       </div>
     </div>

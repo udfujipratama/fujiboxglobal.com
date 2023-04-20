@@ -5,7 +5,7 @@ interface HeroProps {}
 
 export const Hero: FunctionComponent<HeroProps> = () => {
   return (
-    <div className="container mt-14 lg:mt-0">
+    <div className="container mt-20 lg:mt-0">
       <div className="hero">
         <Link to="/produk">
           <img
