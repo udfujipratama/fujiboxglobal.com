@@ -28,12 +28,12 @@ const PesananKhususNavbar = () => {
         >
           Beranda
         </Link>
-        <Link
+        {/* <Link
           to="/katalog-produk"
           className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
         >
           Katalog
-        </Link>
+        </Link> */}
         <Link
           to="/pesanan-khusus-penawaran"
           className="h-16 leading-[4rem] border-b-4 border-transparent hover:text-primary hover:border-primary"
