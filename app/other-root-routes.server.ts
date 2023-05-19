@@ -15,6 +15,9 @@ export const otherRootRoutes: Record<string, Handler> = {
   '/robots.txt': async () => {
     return generateRobotsTxt([
       { type: 'sitemap', value: 'https://fujiboxglobal.com/sitemap.xml' },
+      { type:'userAgent', value: '*'},
+      { type: 'allow', value: '/'},
+
     ])
   },
 }
